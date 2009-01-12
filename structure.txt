@@ -1,0 +1,82 @@
+= Structure =
+
+Discussion about a structure for the Mercurial Website. 
+
+== First step: The needs of visitors ==
+
+=== First time visitors ===
+
+''Imagine I'm a first time visitor of the website. How did I hear of Mercurial?''
+
+ * ''"I read an article or a blog post about it"'' 
+ * ''"I read a 'which VCS' discussion"'' 
+ * ''"I just read the word in a chat"'' 
+ * ''"A friend told me about Mercurial"'' 
+
+The last two users will want a basic overview 'what Mercurial is', before they 
+download. All will want a basic description how to use Mercurial - maybe after they 
+downloaded it. 
+
+Windows and MacOSX Users will want a Download-Link, as well as GNU/Linux users whose 
+distribution doesn't offer the most recent Mercurial version. 
+
+Windows Users should directly see a link to TortoiseHG. 
+
+<ArneBab> I just had a look on the git-scm.com site
+
+<ArneBab> They seem to get that quite well, but they miss information for extending 
+git (maybe they don't want it). 
+
+Their idea of having a guide for designers and one for coders is great! (two target 
+groups with entirely different needs). 
+
+Also the question ''What can I gain by using Mercurial?'' needs to be answered 
+somehwere. 
+
+
+=== People who want to learn more about Mercurial ===
+
+ 1. Returning visitors. ''"What changed since my last visit?"'' 
+ 2. Developers who want to try out workflows. ''"What else can I do with it?"''
+ 3. People who want to understand Mercurial. ''"How does it work internally?"''
+ 4. People who want to adapt Mercurial to their workflow. ''"How can I make Mercurial 
+work for me?"''
+ 5. People who want to contribute. ''"How can I help improve Mercurial with the 
+skills I have?"'' or ''"How can I help Mercurial most efficiently - what should I go 
+for?"''
+ 6. People who have a specific need. ''"How can I find exactly this?"''
+
+Group 5 needs a quick link to the most relevant extensions. 
+
+A specific need of group 6 could be ''"I heard about extension XY, where is it?"'' A 
+FAQ should be a good starting point, as well as the search function and maybe a short 
+list of very frequently asked questions. 
+
+
+=== People who are currently coding on Mercurial ===
+
+''They give additional momentum for the actual development''
+
+ * ''"How to do X?"''
+ * ''"Where and how can I tell others of my changes?"''
+ * ''"How can I send patches - how should I do them and how are their chances for 
+being accepted?"''
+
+
+
+== Some more ideas ==
+
+''You always need a section like this :) ''
+
+ * dsop: It's probably out of scope for this discussion, but I keep thinking it'd be 
+nice if there was some sort of "I'm using this" voting for extensions.
+
+ * ArneBab: Another point for the Website: "Testimonials" (what people like about 
+Mercurial). It would be great to find the reasons why the different projects chose 
+Mercurial, and get them on the site. 
+
+ * Which target group consists of multiplicators who will pass Mercurial along? - 
+that's something Git got somehow right: Integrators switch, then they push their devs 
+to switch and those push users to switch. Which chain can Mercurial use? 
+
+
