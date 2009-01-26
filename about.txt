@@ -1,0 +1,15 @@
+Mercurial Distributed SCM
+
+Mercurial is a distributed source control management tool. It aims to be a simple to use but powerful enough to handle large projects (<link>Project using Mercurial</link>). Mercurial is available on different platforms like Microsoft Windows, Mac OS X, Linux, FreeBSD, OpenSolaris and others.
+
+Distributed architecture
+Traditional version control systems such as CVS are typical client-server architectures with a central point to store the revisions of a project. In contrast, Mercurial is truly distribute, giving each developer a local copy of the entire development history.
+
+Fast
+Mercurials implementation and data structures are designed to be fast. You can generate diffs between revisions, or jump back in time within seconds. Therefore Mercurial is perfectly suiteable for large projects such as OpenJDK or NetBeans.
+
+Platform independent
+Mercurial was written with platform independence in mind. Therefore most of Mercurial is written in Python, with a small part written in C for performance reasons. As a result, binary releases are available on all major platforms.
+
+Open Source
+Mercurial is licensed under the terms of the GNU General Public License Version 2.
