@@ -4,11 +4,11 @@ Main page
 Mercurial is... 
 ---------------
 
-Mercurial is a free, distributed source control management tool. It offers you the power to handle projects of any size along with a very intuitive interface. 
+Mercurial is a free, distributed source control management tool. It offers you the power to efficiently handle projects of any size yet provides an easy, intuitive interface. 
 
-Every Mercurial clone is a full-fledged repository with complete history and revision tracking capabilities. It is independent of network access or a central server and committing, branching and merging are fast and cheap. 
+Every Mercurial clone is a full-fledged repository with complete history and revision tracking capabilities. It is independent of network access or a central server. Committing, branching and merging are fast and cheap. 
 
-Mercurial is used for version control of files, much like tools such as Git, Bazaar, Subversion and CVS. It is written in Python and available on many different platforms, including Microsoft Windows, Mac OS X, Linux, FreeBSD and OpenSolaris. 
+Mercurial is used for version control of files, much like tools such as [Git](http://git-scm.org), [Bazaar](http://bazaar-vcs.org), [Subversion](http://subversion.tigris.org/) and [CVS](http://www.nongnu.org/cvs/). It is written in Python and available on many different platforms, including Microsoft Windows, Mac OS X, Linux, FreeBSD and OpenSolaris. 
 
 
 Projects using Mercurial
