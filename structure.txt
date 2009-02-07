@@ -2,6 +2,12 @@
 
 Discussion about a structure for the Mercurial Website. 
 
+
+== First site ==
+
+Theme: Just works. 
+
+
 == First step: The needs of visitors ==
 
 === First time visitors ===
