@@ -1,3 +1,10 @@
 Main page
 =========
 
+Mercurial is... 
+---------------
+
+Mercurial is a free, distributed source control management tool. It easily handles large projects (<link>Project using Mercurial</link>) yet stays straightforward to use. 
+
+Mercurial is available on many different platforms, including Microsoft Windows, Mac OS X, Linux, FreeBSD, OpenSolaris and others. 
+
