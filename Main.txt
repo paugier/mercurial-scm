@@ -4,7 +4,9 @@ Main page
 Mercurial is... 
 ---------------
 
-Mercurial is a free, distributed source control management tool. It easily handles large projects (<link>Project using Mercurial</link>) yet stays straightforward to use. 
+Mercurial is a free, distributed source control management tool. It offers the power to handle large projects yet stays very easy to use. 
+
+Every Mercurial clone is a full-fledged repository with complete history and full revision tracking capabilities, so it is independent of network access or a central server. Committing, branching and merging are fast and cheap. 
 
 Mercurial is available on many different platforms, including Microsoft Windows, Mac OS X, Linux, FreeBSD, OpenSolaris and others. 
 
