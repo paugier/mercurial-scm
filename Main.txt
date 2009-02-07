@@ -14,8 +14,6 @@ Mercurial is used for version control of files, much like tools such as Git, Baz
 Projects using Mercurial
 ------------------------
 
--> http://www.selenic.com/mercurial/wiki/index.cgi/ProjectsUsingMercurial
-
 * [Mercurial](http://selenic.com/repo/hg)
 * [Mozilla](http://hg.mozilla.org/)
 * [Cython](http://hg.cython.org/)
@@ -23,6 +21,8 @@ Projects using Mercurial
 * [OpenJDK](http://hg.openjdk.java.net/)
 * [NetBeans](http://hg.netbeans.org/)
 * [Open Solaris](http://hg.genunix.org/)
+
+[and many more](http://www.selenic.com/mercurial/wiki/index.cgi/ProjectsUsingMercurial)
 
 
 Get Mercurial
@@ -53,6 +53,7 @@ $ hg init (project-directory)
 $ (add some files)
 $ hg add
 $ hg commit -m 'Initial commit'
+
 
 Footer
 ------
