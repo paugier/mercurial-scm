@@ -29,13 +29,16 @@ How you can benefit from using Mercurial
 ----------------------------------------
 
 ### Power and speed
-Mercurial offers you the power to efficiently handle projects of any size and kind. 
+Mercurial offers you the power and speed to efficiently handle projects of any size and kind. You can use a multitude of [workflows]() and enhance its functionality with [extensions](). 
 
 ### Ease of use
->No longer stumble over your tool.< >makes it easy to experiment with workflows without fear<
+Mercurials consistent and intuitive interface makes it easy to learn and understand. You can simply start with the [bare basics]() and learn incrementally or print a copy of the [hgbook]() to understand the big picture in one go. 
 
-### Extensibility
-><
+### Integrated webserver
+With the "serve" command, Mercurial offers you an integrated webserver as the fastest way to show and share your changes. 
+
+[bare basics]: Quick_Start - Learn to use Mercurial in 30 seconds (or similar). 
+
 
 Get Mercurial
 -------------
@@ -46,7 +49,7 @@ GNU/Linux: Just [get it from your package manager](link to a simple guide for th
 
 MacOSX: Download (app). 
 
--> A "news" link should be alongside the version. -
+-> A "news" link should be alongside the version. This makes the site itneresting to returning visitors.
 
 
 Mercurial Quick Start
