@@ -37,6 +37,9 @@ Mercurials consistent and intuitive interface makes it easy to learn and underst
 ### Integrated webserver
 With the "serve" command, Mercurial offers you an integrated webserver as the fastest way to show and share your work. 
 
+### Just works
+Mercurial strives to deliver on each of its promises. If it looks like you could use it for a specific task, chances are that it will just work on the first try. (if it doesn't, that's most likely no feature but a [bug](http://selenic.com/mercurial/bugs/))
+
 [bare basics]: Quick_Start - Learn to use Mercurial in 30 seconds (or similar). 
 
 
