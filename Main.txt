@@ -35,7 +35,7 @@ Mercurial offers you the power and speed to efficiently handle projects of any s
 Mercurials consistent and intuitive interface makes it easy to learn and understand. You can simply start with the [bare basics]() and learn incrementally or print a copy of the [hgbook]() to understand the big picture in one go. 
 
 ### Integrated webserver
-With the "serve" command, Mercurial offers you an integrated webserver as the fastest way to show and share your changes. 
+With the "serve" command, Mercurial offers you an integrated webserver as the fastest way to show and share your work. 
 
 [bare basics]: Quick_Start - Learn to use Mercurial in 30 seconds (or similar). 
 
