@@ -20,7 +20,7 @@ Projects using Mercurial
 * [MoinMoin](http://hg.moinmo.in/)
 * [OpenJDK](http://hg.openjdk.java.net/)
 * [NetBeans](http://hg.netbeans.org/)
-* [Open Solaris](http://hg.genunix.org/)
+* [OpenSolaris](http://hg.genunix.org/)
 
 [and many more](http://www.selenic.com/mercurial/wiki/index.cgi/ProjectsUsingMercurial)
 
