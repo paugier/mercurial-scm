@@ -1,0 +1,35 @@
+Hi ml,
+
+I would like to public announce a project to create a new end-user website for Mercurial. We have been working on that
+in the underground for the last two weeks and are now ready for the initial dump of our efforts.
+
+What?
+We are working on creating a new beginner-friendly website for Mercurial. It is not a replacement for the current wiki,
+but it should make it easier for new users to learn what Mercurial is, how to use and obtain it. We do not aim to
+provide neither detailed technical documentation on the website, nor guides to write extensions. We try to focus on
+Mercurials end-user, and want to reflect Mercurials simplicity and strenghts for this target audience by writing
+beginner guides, pointing to documentation and providing migration guides.
+
+Why?
+The current wiki is a great place for all details around Mercurial, but it lacks a good structure so that new users get
+the necessary details to start with Mercurial fast.
+
+How can you help?
+We currently do not have much manpower, but we need it. If you do not know how to hack on Mercurial itself but want to
+help the community, this is a perfect opportunity. Go write a easy to understand guide, get your hands dirty with the
+HTML or design new fancy icons, screenshots, etc and integrate them. We do not need great python hackers, we need people
+coming from Mercurial user base who have fun in writing or reviewing texts. If you are a native speaker, just go through
+the page and fix our faults. If you have a one line fix, don't hesitate to send a patch. We are happy about every help
+that we can get. Checkout the text/structure file and the hg-website wiki at bitbucket for more information on what is
+currently cooking.
+
+How to get your hands dirty:
+Grab the source from http://bitbucket.org/segv/hg-website/overview/ and send patches or pull requests to the mercurial
+developer mailinglist list.
+
+Who, when and where?!
+We try to get the page online as soon as possible and provide easy to remember domains for that purpose. Thanks to
+bitbucket.org and Jesper Noehr who provided and sponsored the layout, Arne Babenhauserheide for collecting information,
+structuring the page and writing texts and Matt for providing hosting.
+
+David
