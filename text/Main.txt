@@ -32,10 +32,10 @@ How you can benefit from using Mercurial
 Mercurial offers you the power and speed to efficiently handle projects of any size and kind. You can use a multitude of [workflows]() and enhance its functionality with [extensions](). 
 
 ### Ease of use
-Mercurials consistent and intuitive interface makes it easy to learn and understand. You can simply start with the [bare basics]() and learn incrementally or print a copy of the [hgbook]() to understand the big picture in one go. 
+Mercurials consistent and intuitive interface makes it easy to learn and understand. You can simply start with the [bare basics][] and learn incrementally or print a copy of the [hgbook]() to understand the big picture in one go. 
 
 ### Just works
-Mercurial strives to deliver on each of its promises. If it looks like you could use it for a specific task, chances are that it will just work on the first try. (if it doesn't, that's most likely no feature but a [bug](http://selenic.com/mercurial/bugs/))
+Mercurial strives to deliver on each of its promises. Most tasks just work on the first try and without requiring arcane knowledge. (If one doesn't, that's most likely no feature but a [bug](http://selenic.com/mercurial/bugs/). 
 
 [bare basics]: Quick_Start - Learn to use Mercurial in 30 seconds (or similar). 
 
@@ -75,7 +75,7 @@ $ hg commit -m 'Initial commit'
 
 -> [Workflows]()
 
-(maybe instead of "Take a look"; it would be great to be able to detect the OS of the visitor and show Windows users TortoiseHG while showing MacOSX and GNU/Linux users the Quick Start)
+(maybe instead of "Take a look"; it would be great to be able to [detect the OS](http://www.javascripter.net/faq/operatin.htm) of the visitor and show Windows users TortoiseHG while showing MacOSX and GNU/Linux users the Quick Start: )
 
 (### Integrated webserver
 With the "serve" command, Mercurial offers you an integrated webserver as the fastest way to show and share your work.)
