@@ -53,10 +53,6 @@
 				</div>
 			</div>
 
-			<div id="replace">
-			    That's a default content here
-		    </div>
-
 			<div class="row">
 				<div class="col big">
 					<h3>How you can benefit from Mercurial</h3>
@@ -76,9 +72,30 @@
 					</ol>
 				</div>
 				<div class="col">
-					<h3>Mercurial in action</h3>
-					<!-- Flash Player should definitely not come here!-->
-					<img src="images/tour.jpg" alt="">
+                            <h3>Mercurial Quick Start</h3>
+
+                                <div id="replace">
+<p><em>Clone a project and create a patch</em></p>
+
+<pre>$ hg clone http://bitbucket.org/ArneBab/hello
+$ cd hello
+$ (edit files)
+$ hg add (new files)
+$ hg commit -m 'My changes'
+$ hg export > patch.diff
+
+</pre>
+
+<p><em>Create a project and commit</em></p>
+
+<pre>$ hg init (project-directory)
+$ (add some files)
+$ hg add
+$ hg commit -m 'Initial commit'
+
+</pre>
+                    </div>
+					
 				</div>
 			</div>
 		</div>
