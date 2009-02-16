@@ -78,6 +78,7 @@ blockquote, q { quotes: "" ""; }
 .row { display: block; }
 .col { float: right; display: inline; width: 270px; margin: 25px; }
 .big { float: left; width: 470px; }
+.quote { float: right; width: 740px; text-align: right; margin-right: 25px;   }
 .big h2, .big h3 { margin-top: 20px; }
 
 /*
