@@ -1,0 +1,1 @@
+Random testimony: The code base for Hg is pretty small and yet its pretty feature complete. - Gerard Korsten 

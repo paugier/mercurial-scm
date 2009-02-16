@@ -1,0 +1,1 @@
+Random testimony: Simplicity, being distributed, extensibility, speed, familiarity, bash completion, understandable and reasonably small code base - Peter Arrenbrecht 

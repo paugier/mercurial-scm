@@ -15,7 +15,7 @@ function addLoadEvent(func) {
 
 var xmlhttp = null;
 
-function loadXMLDoc(url) {
+function loadXMLDoc(url, stateChange) {
     if (window.XMLHttpRequest) {// code for Firefox, Opera, IE7, etc.
         xmlhttp = new XMLHttpRequest();
     } else if (window.ActiveXObject) {// code for IE6, IE5
@@ -30,7 +30,8 @@ function loadXMLDoc(url) {
     }
 }
 
-function stateChange() {
+// client OS specific page section
+function browserUsageRequestStateChange() {
     if (xmlhttp.readyState==4) {// 4 = "loaded"
         document.getElementById('replace').innerHTML = xmlhttp.responseText;
     }
@@ -38,6 +39,21 @@ function stateChange() {
 
 addLoadEvent(function () {
     if (navigator.appVersion.indexOf("Win")!=-1) {
-        loadXMLDoc("win.html");
+        loadXMLDoc("win.html", browserUsageRequestStateChange);
     }
+});
+
+// random quotes
+function quoteRequestStateChange() {
+    if (xmlhttp.readyState==4) {// 4 = "loaded"
+        document.getElementById('quote').innerHTML = xmlhttp.responseText;
+    }
+}
+
+function randomNumber(low, high) {
+    return Math.floor(Math.random()*(high-low+1))+low;
+}
+
+addLoadEvent(function () {
+    loadXMLDoc("quotes/" + randomNumber(1, 17) + ".txt", quoteRequestStateChange);
 });

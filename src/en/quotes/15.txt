@@ -1,0 +1,1 @@
+Mercurial's conceptual model is clean and simple enough to carry around in my head" - hgbook 
