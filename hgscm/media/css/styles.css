@@ -78,7 +78,7 @@ blockquote, q { quotes: "" ""; }
 .row { display: block; }
 .col { float: right; display: inline; width: 270px; margin: 25px; }
 .big { float: left; width: 470px; }
-.big h2, .big h3 { margin-top: 20px; }
+.big h2 { margin-top: 20px; }
 
 /*
  * Logo
