@@ -127,7 +127,7 @@ blockquote, q { quotes: "" ""; }
 #home ol .i-2 { background-image: url(../images/bullet-big-2.png); } 
 #home ol .i-3 { background-image: url(../images/bullet-big-3.png); }
 #home ol a { text-decoration: none; }
-#home ol a:hover, #home h4 a:focus { text-decoration: underline; }
+#home ol a:hover { text-decoration: underline; }
 
 /*
  * Footer
