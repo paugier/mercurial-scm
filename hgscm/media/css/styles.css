@@ -62,7 +62,8 @@ label { float: left; width: 100px; padding-right: 10px; text-align: right; }
 table { border-collapse: separate; border-spacing: 0; font-family: Verdana, Helvetica, Arial, sans-serif; font-size: .7875em; }
 caption, th, td { text-align: left; font-weight: normal; }
 td, th { padding: 6px 8px; }
-thead td, thead th { background: #00B5F1; color: #fff; font-weight: bold; }
+.latest thead td, .latest thead th { background: #00B5F1; color: #fff; font-weight: bold; }
+thead td, thead th { background: #999; color: #fff; font-weight: bold; }
 tbody td { border-bottom: 1px solid #ccc; }
 
 /*
