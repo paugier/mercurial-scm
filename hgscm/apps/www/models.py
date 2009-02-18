@@ -1,9 +1,11 @@
 from django.db import models
 from django.utils import simplejson
+from django.conf import settings
+import os
 
 def get_download(platform, version):
     '''get the download for the right version'''
-    f = open('downloads.json')
+    f = open(os.path.join(settings.MEDIA_ROOT, "downloads.json"))
     list = simplejson.load(f)
     f.close()
     latest = version == 'latest' or not version
@@ -14,7 +16,7 @@ def get_download(platform, version):
                     return version['url']
 def get_latest_version():
     '''return the latest available version'''
-    f = open('downloads.json')
+    f = open(os.path.join(settings.MEDIA_ROOT, "downloads.json"))
     list = simplejson.load(f)
     f.close()
     for entry in list:

@@ -2,7 +2,9 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.utils import simplejson
-from apps.www.models import get_download, get_latest_version
+from django.conf import settings
+from hgscm.apps.www.models import get_download, get_latest_version
+import os
 
 def frontpage(request):
     return render_to_response("frontpage.html", { 'latest_version': get_latest_version() },
@@ -16,7 +18,7 @@ def thepage(request):
 def download(request, platform, version):
     return HttpResponseRedirect(get_download(platform, version))
 def downloads(request):
-    f = open("downloads.json")
+    f = open(os.path.join(settings.MEDIA_ROOT, "downloads.json"))
     list = simplejson.load(f)
     f.close()
     return render_to_response("downloads.html", {'downloads': list},
