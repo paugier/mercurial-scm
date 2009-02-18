@@ -14,7 +14,7 @@
             "identifier": "macosx104",
             "url": "http://mercurial.berkwood.com/binaries/Mercurial-1.1.1-py2.5-macosx10.4.zip"
         },{
-            "system": "Microsoft Windows",
+            "system": "Windows",
             "identifier": "windows",
             "url": "http://mercurial.berkwood.com/binaries/Mercurial-1.1.1.exe"
         },{
