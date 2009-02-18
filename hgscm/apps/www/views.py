@@ -7,3 +7,6 @@ def frontpage(request):
 def about(request):
     return render_to_response("about.html", { },
         RequestContext(request))
+def thepage(request):
+    return render_to_response("thepage.html", { },
+        RequestContext(request))
