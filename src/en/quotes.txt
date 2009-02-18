@@ -1,0 +1,18 @@
+## From the strengths of Mercurial discussion: 
+"I understood how to install Mercurial and how to use it in a few minutes." -Giorgos Keramidas
+Just works the way I expect - Paul Moore
+It took me one evening to get comfortable with it.  About a month to better understand its distributed nature. - Isaac Jurado 
+[Mercurial] can be configured to support either simple environments or very complicated streams of changes interacting in custom ways, and it does all that without becoming a humongous monster of complexity. - Giorgos Keramidas
+The dev's of Hg are generally friendly and approachable. - Gerard Korsten
+The code base for Hg is pretty small and yet its pretty feature complete. - Gerard Korsten
+Simplicity, being distributed, extensibility, speed, familiarity, bash completion, understandable and reasonably small code base - Peter Arrenbrecht
+The team on the project gradually grew from just me to a few people here and abroad. This was a totally seamless experience - Peter Arrenbrecht
+Easy to understand at a practical level. - Michael Estrand
+The included web server [...] replaces a lot of functionality of GUI tools in a truly multiplatform way. - Daniel Serpell
+There isn't much to learn to be effective. - Doug Philips
+It took my less than an hour to understand it. - Thomas Burdick
+It has a tortoise so I can actually show my boss its highly productive even in windows. - Thomas Burdick
+The commands usually do what I assume them to do. - Bastian Doetsch
+Mercurial's conceptual model is clean and simple enough to carry around in my head” - hgbook
+It's so easy to start a project; hg init, and you're good to go. - Paul Fisher
+It simply works [...]. - Hans Meine

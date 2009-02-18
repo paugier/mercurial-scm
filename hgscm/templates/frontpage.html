@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="col big">
 		<h1>Work easier <br> Work faster</h1>
-		<h2>Benefit now from one of the easiest and fastest Source Control Management systems. Mercurial makes working with documents easier.</h2>
+		<h2>Mercurial is a free, distributed source control management tool. It efficiently handles projects of any size and offers an easy and intuitive interface.</h2>
 	</div>
 	<div class="col">					
 		<a class="download typeface-js" href="javascript:void(0);">
@@ -14,38 +14,60 @@
 			<span>Windows XP | Vista | 7</span>
 		</a>
 		<dl>
-			<dt class="typeface-js">Requiurements</dt>
-			<dd>Python 2.5 (<a href="http://www.python.org">get python</a>)</dd>
+			<dt class="typeface-js">Requirements</dt>
+			<dd>Python 2.4 (<a href="http://www.python.org">get python</a>)</dd>
+			<!--2.4 is necessary for TortoiseHG, Mercurial only needs 2.3-->
 			
 			<dt>Another OS?<br><em>Get mercurial for:</em></dt>
 			<dd><a href="javascript:void(0);">Mac OS X</a></dd>
-			<dd><a href="javascript:void(0);">Linux</a></dd>						
+			<dd><a href="javascript:void(0);">Linux</a></dd>
+			<dd><a href="javascript:void(0);">other</a></dd>
 		</dl>				
 	</div>
 </div>
 
 <div class="row">
 	<div class="col big">
-		<h3>How can you benefit from Mercurial?</h3>
+		<h3>How you can benefit from Mercurial</h3>
 		<ol>
 			<li class="i-1">
-				<h4><a href="javascript:void(0);">Download and install</a></h4>
-				<p>Donec ut pede ac lorem iaculis aliquam. Curabitur feugiat, libero scelerisque laoreet malesuada, purus lorem fermentum quam, eget rhoncus quam sapien ac nulla. Praesent id turpis.</p>
+				<h4>It is <a href="{% url about %}">fast and powerful</a></h4>
+				<p>Mercurial offers you the power and speed to efficiently handle <a href="./who_uses_mercurial">projects of any size and kind</a>. You can use a multitude of <a href="./workflows">workflows</a> and easily enhance its functionality with <a href="./extensions">extensions</a>.</p>
 			</li>
 			<li class="i-2">
-				<h4><a href="javascript:void(0);">Follow our simple Guide to learn how you can Revision your documents with Mercurial</a></h4>
-				<p>Suspendisse pulvinar dolor nec massa. Mauris sit amet orci porta velit congue fringilla. Pellentesque ipsum libero, scelerisque luctus</p>
+				<h4>It is <a href="./learn_mercurial">easy to learn</a></h4>
+				<p>You can follow our simple <a href="guide">guide</a> to learn how to revision your documents with Mercurial, or just use the <a href="./quick_start">quick start</a> to get going instantly. </p>
 			</li>
 			<li class="i-3">
-				<h4><a href="javascript:void(0);">Get involved.</a></h4>
-				<p>Create extensions, translate the documentation, test beta versions.</p>
+				<h4>And it <a href="./testimonies">just works</a></h4>
+				<p>Mercurial strives to deliver on each of its promises. Most tasks simply work on the first try and without requiring arcane knowledge. <!--(If one doesn't, that's most likely no feature but a <a href="http://selenic.com/mercurial/bugs/">bug</a>. Please <a href="http://selenic.com/mercurial/bugs/">tell us about it</a>!) 
+				commented out because it feels awkward.--></p>
 			</li>
 		</ol>
 	</div>
 	<div class="col">
-		<h3>Take a look at Mercurial</h3>
-		<!-- Flash Player should probably come here-->
-		<img src="{{ MEDIA_URL }}images/tour.jpg" alt="">
+		<h3>Quick Start</h3>
+
+		<p><em>Clone a project and create a patch</em>
+<pre>$ hg clone http://hg-scm.org/hello
+$ cd hello
+$ (edit files)
+$ hg add (new files)
+$ hg commit -m 'My changes'
+$ hg export &gt; patch.diff
+
+</pre>
+</p>
+
+<p><em>Create a project and commit</em>
+<pre>$ cd (project-directory)
+$ hg init
+$ (add some files)
+$ hg add
+$ hg commit -m 'Initial commit'
+</pre>
+</p>
+	<!--Change into project dir before initiating repo to avoid a possible stumbling point.-->
 	</div>
 </div>
 

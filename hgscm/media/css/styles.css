@@ -78,6 +78,7 @@ blockquote, q { quotes: "" ""; }
 .row { display: block; }
 .col { float: right; display: inline; width: 270px; margin: 25px; }
 .big { float: left; width: 470px; }
+.quote { float: right; width: 740px; text-align: right; margin-right: 25px;   }
 .big h2, .big h3 { margin-top: 20px; }
 
 /*
@@ -125,6 +126,8 @@ blockquote, q { quotes: "" ""; }
 #home ol li { list-style: none; background: url(../images/bullet-big-1.png) no-repeat 0 0; padding-left: 60px; min-height: 43px; _height: 43px; }
 #home ol .i-2 { background-image: url(../images/bullet-big-2.png); } 
 #home ol .i-3 { background-image: url(../images/bullet-big-3.png); }
+#home ol a { text-decoration: none; }
+#home ol a:hover { text-decoration: underline; }
 
 /*
  * Footer
