@@ -1,1 +1,0 @@
-Random testimony: It's so easy to start a project; hg init, and you're good to go. - Paul Fisher 

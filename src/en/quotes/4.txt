@@ -1,1 +1,0 @@
-Random testimony: Mercurial strikes a marvelous balance between these two ends.  It can be configured to support either simple environments or very complicated streams of changes interacting in custom ways, and it does all that without becoming a humongous monster of complexity. - Giorgos Keramidas 
