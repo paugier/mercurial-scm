@@ -67,6 +67,8 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'hgscm.urls'
 
+MERCURIAL_TRICKS = os.path.join(BASE_DIR, "templates/tricks")
+
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, "templates"),
 )
