@@ -1,6 +1,6 @@
 [{
         "latest": "true",
-        "version": "1.1.2",
+        "version": "1.1.1",
         "versions": [{
             "system": "FreeBSD",
             "identifier": "freebsd",
@@ -20,7 +20,7 @@
         },{
             "system": "Source",
             "identifier": "source",
-            "url": "http://www.selenic.com/mercurial/release/mercurial-1.1.2.tar.gz"
+            "url": "http://www.selenic.com/mercurial/release/mercurial-1.1.1.tar.gz"
         }]
     }
 ]
