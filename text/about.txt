@@ -18,4 +18,4 @@ Open Source
 Mercurial is free software licensed under the terms of the GNU General Public License Version 2.
 
 Similar projects
-Mercurial is used for version control of files. Similar projects include [Git](http://git-scm.org), [Bazaar](http://bazaar-vcs.org), [Subversion](http://subversion.tigris.org/) and [CVS](http://www.nongnu.org/cvs/). 
+Mercurial is used for version control of files. Similar projects include [Git](http://git-scm.org) and [Bazaar](http://bazaar-vcs.org), and other version control systems without a distributed architecture include [Subversion](http://subversion.tigris.org/) and [CVS](http://www.nongnu.org/cvs/).
