@@ -1,0 +1,3 @@
+Notes: 
+* svn info -> hg paths
+* pull and push
