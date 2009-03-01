@@ -1,3 +1,4 @@
 Notes: 
 * svn info -> hg paths
 * pull and push
+* svn up -r REV -> hg up REV
