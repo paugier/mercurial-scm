@@ -1,6 +1,6 @@
 [{
         "latest": "true",
-        "version": "1.1.1",
+        "version": "1.2",
         "versions": [{
             "system": "FreeBSD",
             "identifier": "freebsd",
@@ -8,19 +8,19 @@
         },{
             "system": "MacOS X 10.5",
             "identifier": "macosx",
-            "url": "http://mercurial.berkwood.com/binaries/Mercurial-1.1.1-py2.5-macosx10.5.zip"
+            "url": "http://mercurial.berkwood.com/binaries/Mercurial-1.2-py2.5-macosx10.5.zip"
         },{
             "system": "MacOS X 10.4",
             "identifier": "macosx104",
-            "url": "http://mercurial.berkwood.com/binaries/Mercurial-1.1.1-py2.5-macosx10.4.zip"
+            "url": "http://mercurial.berkwood.com/binaries/Mercurial-1.2-py2.5-macosx10.4.zip"
         },{
             "system": "Windows",
             "identifier": "windows",
-            "url": "http://mercurial.berkwood.com/binaries/Mercurial-1.1.1.exe"
+            "url": "http://mercurial.berkwood.com/binaries/Mercurial-1.2.exe"
         },{
             "system": "Source",
             "identifier": "source",
-            "url": "http://www.selenic.com/mercurial/release/mercurial-1.1.1.tar.gz"
+            "url": "http://www.selenic.com/mercurial/release/mercurial-1.2.tar.gz"
         }]
     }
 ]
