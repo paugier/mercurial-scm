@@ -1,1 +1,0 @@
-Random testimony: The included web server [...] replaces a lot of functionality of GUI tools in a truly multiplatform way. - Daniel Serpell 

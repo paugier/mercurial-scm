@@ -19,7 +19,7 @@ a:hover, a:focus { text-decoration: none; }
 /*
  * General Document Settings
  */
-body { font: .875em/1.4285em "Times New Roman", Times, Georgia, serif; color: #666; width: 900px; margin: 0 auto; position: relative; }
+body { font: .925em/1.4285em "Times New Roman", Times, Georgia, serif; color: #111; width: 900px; margin: 0 auto; position: relative; }
 
 /*
  * Headings
@@ -29,6 +29,11 @@ h4, h5, h6 { font-size: 1em; margin: 0 0 .5em 0; }
 h1 { font-size: 2em; }
 h2 { font-size: 1.6em; }
 h3 { font-size: 1.3em; }
+
+/*
+ * WIP warning, can be removed once the site is 'finished'
+ */
+.wip-warning { font-size: 1em; font-family: Optimer, Helvetica, Arial, sans-serif; border: 1px solid #330; background-color: #fafa33; padding: 2px; text-align: center}
 
 /*
  * Lists
@@ -62,7 +67,8 @@ label { float: left; width: 100px; padding-right: 10px; text-align: right; }
 table { border-collapse: separate; border-spacing: 0; font-family: Verdana, Helvetica, Arial, sans-serif; font-size: .7875em; }
 caption, th, td { text-align: left; font-weight: normal; }
 td, th { padding: 6px 8px; }
-thead td, thead th { background: #00B5F1; color: #fff; font-weight: bold; }
+.latest thead td, .latest thead th { background: #00B5F1; color: #fff; font-weight: bold; }
+thead td, thead th { background: #999; color: #fff; font-weight: bold; }
 tbody td { border-bottom: 1px solid #ccc; }
 
 /*
@@ -78,6 +84,7 @@ blockquote, q { quotes: "" ""; }
 .row { display: block; }
 .col { float: right; display: inline; width: 270px; margin: 25px; }
 .big { float: left; width: 470px; }
+.quote { float: right; width: 740px; text-align: right; margin-right: 25px;   }
 .big h2 { margin-top: 20px; }
 
 /*
@@ -89,7 +96,7 @@ blockquote, q { quotes: "" ""; }
 /*
  * Nav
  */
-#nav { position: absolute; top: 17px; right: 0; background: #999; height: 42px; margin: 0; width: 665px; font-size: 1.1428em; *font-size: 16px; line-height: 42px; font-family: Optimer, Helvetica, Arial, sans-serif; overflow: hidden; }
+#nav { position: absolute; top: 41px; right: 0; background: #999; height: 42px; margin: 0; width: 665px; font-size: 1.1428em; *font-size: 16px; line-height: 42px; font-family: Optimer, Helvetica, Arial, sans-serif; overflow: hidden; }
 #nav li { float: left; margin: 0; padding: 0; list-style: none; }
 #nav a { float: left; color: #fff; text-decoration: none; padding: 0 16px; *padding: 0 14px; }
 #nav a:hover, #nav a:focus, #nav .active a { background: #00b5f1; }
@@ -97,7 +104,7 @@ blockquote, q { quotes: "" ""; }
 /*
  * Search
  */
-#search { position: absolute; right: 15px; top: 26px; color: #fff; width: 183px; height: 23px; background: url(../images/search.png) no-repeat 0 0; }
+#search { position: absolute; right: 15px; top: 50px; color: #fff; width: 183px; height: 23px; background: url(../images/search.png) no-repeat 0 0; }
 #search legend { display: none; }
 #search label { position: absolute; left: -9999px; }
 #search .text { width: 150px; background: none; border: none; margin: 0 0 0 5px; position: relative; top: 5px; color: #666; }
@@ -125,6 +132,8 @@ blockquote, q { quotes: "" ""; }
 #home ol li { list-style: none; background: url(../images/bullet-big-1.png) no-repeat 0 0; padding-left: 60px; min-height: 43px; _height: 43px; }
 #home ol .i-2 { background-image: url(../images/bullet-big-2.png); } 
 #home ol .i-3 { background-image: url(../images/bullet-big-3.png); }
+#home ol a { text-decoration: none; }
+#home ol a:hover { text-decoration: underline; }
 
 /*
  * Footer

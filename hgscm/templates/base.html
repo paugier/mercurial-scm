@@ -5,19 +5,22 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link href="{{ MEDIA_URL }}css/styles.css" type="text/css" rel="stylesheet">
 		<script type="text/javascript" src="{{ MEDIA_URL }}javascript/typeface.js"></script>
-		<script type="text/javascript" src="{{ MEDIA_URL }}javascript/optimer_regular.typeface.js"></script>					
+		<script type="text/javascript" src="{{ MEDIA_URL }}javascript/optimer_regular.typeface.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="{{ MEDIA_URL }}images/favicon.ico">
+
 		<title>Mercurial SCM</title>
 	</head>
 	<body id="home">
+	        <div class="wip-warning">Please note that this site is <em>work in progress and incomplete</em>! You probably want to <a href="http://www.selenic.com/mercurial" style="color: #3d3dfa">visit the official mercurial homepage</a> instead.</div>
 				
 		<h1 id="logo"><a href="/">mercurial</a></h1>
 			
 		<ul id="nav" class="typeface-js">
 			<li><a href="{% url about %}">about</a></li>
-			<li><a href="javascript:void(0);">download</a></li>
+			<li><a href="{% url downloads %}">download</a></li>
 			<li><a href="javascript:void(0);">extensions</a></li>
 			<li><a href="javascript:void(0);">docs</a></li>
-			<li><a href="javascript:void(0);">community</a></li>
+			<li><a href="http://www.selenic.com/mercurial">wiki</a></li>
 		</ul>
 		
 		<form id="search" method="post" action="search/">
@@ -42,7 +45,8 @@
 		<div id="footer">
 			design by <a href="http://www.designpunct.ro">punct</a> /
 			design courtesy of <a href="http://www.bitbucket.org/">bitbucket</a> /
-			licensed under <a href="http://www.gnu.org/licenses/gpl-2.0.txt">GPLv2</a>
+			licensed under <a href="http://www.gnu.org/licenses/gpl-2.0.txt">GPLv2</a> /
+			<a href="{% url thepage %}">about this page</a>
 		</div>
 		
 	</body>

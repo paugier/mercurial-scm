@@ -1,0 +1,8 @@
+<strong>Fold commits</strong>
+<pre>
+$ hg qimport -r tip -n 'tofold.patch'
+$ hg qpop
+$ hg qimport -r tip
+$ hg qfold 'tofold.patch'
+$ hg qfinish -a
+</pre>

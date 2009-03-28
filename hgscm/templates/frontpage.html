@@ -1,26 +1,15 @@
 {% extends "base.html" %}
 
+{% load extras %}
 {% block content %}
 
 <div class="row">
 	<div class="col big">
 		<h1>Work easier <br> Work faster</h1>
-		<h2>Benefit now from one of the easiest and fastest Source Control Management systems. Mercurial makes working with documents easier.</h2>
+		<h2>Mercurial is a free, distributed source control management tool. It efficiently handles projects of any size and offers an easy and intuitive interface.</h2>
 	</div>
 	<div class="col">					
-		<a class="download typeface-js" href="javascript:void(0);">
-			<strong>Download now</strong>
-			Mercurial <em>2.42</em>
-			<span>Windows XP | Vista | 7</span>
-		</a>
-		<dl>
-			<dt class="typeface-js">Requiurements</dt>
-			<dd>Python 2.5 (<a href="http://www.python.org">get python</a>)</dd>
-			
-			<dt>Another OS?<br><em>Get mercurial for:</em></dt>
-			<dd><a href="javascript:void(0);">Mac OS X</a></dd>
-			<dd><a href="javascript:void(0);">Linux</a></dd>						
-		</dl>				
+        {% download_button 'true' %}
 	</div>
 </div>
 
@@ -28,13 +17,14 @@
 	<div class="col big">
 		<h3>How you can benefit from Mercurial</h3>
 		<ol>
+		<!-- The three sections should now grow more compact as you go down, with power and speed the longest and just works only two simple, clean sentences. -->
 			<li class="i-1">
-				<h4>It is <a href="about.html">fast and powerful</a></h4>
-				<p>Mercurial offers you the power and speed to efficiently handle <a href="./who_uses_mercurial">projects of any size and kind</a>. You can use a multitude of <a href="./workflows">workflows</a> and easily enhance its functionality with <a href="./extensions">extensions</a>.</p>
+				<h4>It is <a href="{% url about %}">fast and powerful</a></h4>
+				<p>Mercurial offers you the power and speed to efficiently handle <a href="./who_uses_mercurial">projects of any size and kind</a>. Every clone contains the whole project history, so committing, branching, tagging and merging are local operations which makes them fast and convenient. You can use a multitude of <a href="./workflows">workflows</a> and easily enhance its functionality with <a href="./extensions">extensions</a>.</p>
 			</li>
 			<li class="i-2">
 				<h4>It is <a href="./learn_mercurial">easy to learn</a></h4>
-				<p>You can follow our simple <a href="guide">guide</a> to learn how to revision your documents with Mercurial, or just use the <a href="./quick_start">quick start</a> to get going instantly. </p>
+				<p>You can follow our simple <a href="guide">guide</a> to learn how to revision your documents with Mercurial, or just use the <a href="./quick_start">quick start</a> to get going instantly. If you already know Subversion, please see <a href="mercurial_for_svn_users">Mercurial for svn users</a>.</p>
 			</li>
 			<li class="i-3">
 				<h4>And it <a href="./testimonies">just works</a></h4>

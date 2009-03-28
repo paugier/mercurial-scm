@@ -67,8 +67,15 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'hgscm.urls'
 
+MERCURIAL_TRICKS = os.path.join(BASE_DIR, "templates/tricks")
+
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, "templates"),
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    'django.core.context_processors.media',
 )
 
 INSTALLED_APPS = (
