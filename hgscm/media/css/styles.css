@@ -19,7 +19,7 @@ a:hover, a:focus { text-decoration: none; }
 /*
  * General Document Settings
  */
-body { font: .925em/1.4285em "Times New Roman", Times, Georgia, serif; color: #111; width: 900px; margin: 0 auto; position: relative; }
+body { font: .875em/1.4285em "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif; color: #111; width: 900px; margin: 0 auto; position: relative; }
 
 /*
  * Headings
@@ -64,7 +64,7 @@ label { float: left; width: 100px; padding-right: 10px; text-align: right; }
 /*
  * Table
  */
-table { border-collapse: separate; border-spacing: 0; font-family: Verdana, Helvetica, Arial, sans-serif; font-size: .7875em; }
+table { border-collapse: separate; border-spacing: 0; font-size: 90% }
 caption, th, td { text-align: left; font-weight: normal; }
 td, th { padding: 6px 8px; }
 .latest thead td, .latest thead th { background: #00B5F1; color: #fff; font-weight: bold; }
@@ -122,14 +122,14 @@ blockquote, q { quotes: "" ""; }
  * Homepage
  */
 #home #logo { margin-bottom: 0 !important; }
-#home dl { margin: 0 30px; font-family: Verdana, Helvetica, Arial, sans-serif; font-size: .7142em; line-height: 1.4em; }
+#home dl { margin: 0 30px; font-family: Verdana, Helvetica, Arial, sans-serif; font-size: .80em; line-height: 1.4em; }
 #home h1 { font-size: 48px; line-height: 1em; margin: 0 0 20px 0; font-weight: normal; }
 #home h2, #home h3 { font-size: 22px; line-height: 1.2em; margin-bottom: 20px; font-weight: normal; }
 #home h4 { font-weight: normal; margin: 0; }
 #home h4 a { text-decoration: none; }
 #home h4 a:hover, #home h4 a:focus { text-decoration: underline; }
 #home ol { margin: 0; }
-#home ol li { list-style: none; background: url(../images/bullet-big-1.png) no-repeat 0 0; padding-left: 60px; min-height: 43px; _height: 43px; }
+#home ol li { list-style: none; background: url(../images/bullet-big-1.png) no-repeat 0 0; padding-left: 60px; min-height: 43px; _height: 43px; margin-bottom: 1.7em }
 #home ol .i-2 { background-image: url(../images/bullet-big-2.png); } 
 #home ol .i-3 { background-image: url(../images/bullet-big-3.png); }
 #home ol a { text-decoration: none; }
