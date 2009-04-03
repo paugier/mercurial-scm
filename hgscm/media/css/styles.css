@@ -33,7 +33,7 @@ h3 { font-size: 1.3em; }
 /*
  * WIP warning, can be removed once the site is 'finished'
  */
-.wip-warning { font-size: 1em; font-family: Optimer, Helvetica, Arial, sans-serif; border: 1px solid #330; background-color: #fafa33; padding: 2px; text-align: center}
+.wip-warning { font-size: 1.1em; font-family: Optimer, Helvetica, Arial, sans-serif; border: 1px solid #330; background-color: #fafa33; padding: 2px; text-align: center}
 
 /*
  * Lists
@@ -96,7 +96,7 @@ blockquote, q { quotes: "" ""; }
 /*
  * Nav
  */
-#nav { position: absolute; top: 41px; right: 0; background: #999; height: 42px; margin: 0; width: 665px; font-size: 1.1428em; *font-size: 16px; line-height: 42px; font-family: Optimer, Helvetica, Arial, sans-serif; overflow: hidden; }
+#nav { position: absolute; top: 41px; right: 0; background: #999; height: 42px; margin: 0; width: 665px; font-size: 1.2428em; *font-size: 16px; line-height: 42px; font-family: Optimer, Helvetica, Arial, sans-serif; overflow: hidden; }
 #nav li { float: left; margin: 0; padding: 0; list-style: none; }
 #nav a { float: left; color: #fff; text-decoration: none; padding: 0 16px; *padding: 0 14px; }
 #nav a:hover, #nav a:focus, #nav .active a { background: #00b5f1; }
