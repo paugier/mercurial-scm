@@ -238,10 +238,56 @@ $ cd integration
 $ hg import change3.diff
 $ hg import change4.diff
 
-That's it. They can now test your changes in feature clones. If tehy accept it, they 
+That's it. They can now test your changes in feature clones. If they accept them, 
+they pull the changes into the main repository. 
 
 Note: The patchbomb extension automates the email-sending, but you don't need it for this workflow. 
 
 ==== Using a shared repository ====
 
--> bitbucket
+Sending changes by mail might be the easiest way to reach people, but it creates additional workload: You have to send mails and then import the changes manually. Luckily there's an easier way which works quite well for smaller teams: The shared push repository. 
+
+Till now we transferred all changes either via email or via pull, but there's yet another way: pushing. As the name suggests it's just the opposite of pulling: You push your changes into another repository. 
+
+But to make use of it, we first need something we can push to. 
+
+By default "hg serve" doesn't allow pushing, since that would be a major security hole. You can allow pushing in the server, but that's no solution when you live in different timezones, so we'll go with another approach here: Using a shared repository on BitBucket. Doing so has a bit higher starting cost and takes a bit longer to explain, but it's well worth the effort spent. 
+
+For it you first need to setup a BitBucket Account. Just signup there and then hover your mouse over "Repositories". There click the item at the bottom of the opening dialog which say "Create new". 
+
+Give it a name and a description, and if you want to keep it hidden from the public, select "private". 
+
+$ firefox http://bitbucket.org
+
+Now your repository is created and you see instructions to "push" code to it. for that you'll use a command similar to the following (just with a different URL): 
+
+$ hg push https://bitbucket.org/ArneBab/1w6/
+
+(Replace the URL with the URL of your created repository. If your username is "Foo" and your repository is named "bar", the URL will be https://bitbucket.org/Foo/bar/)
+
+Mercurial will ask for your BitBucket password, then push your code. 
+
+Voilà, your code is online. 
+
+Now it's time to tell all your collegues to sign up at BitBucket, too. 
+
+After that you can click the "Admin" tab of your created repository and add the names of your collegues on the right side under "Permission: Writers". Now they are allowed to push code to the repository. 
+
+(If you chose to make the repository private, you'll need to add them to "Permission: Readers", too)
+
+If one of you now wants to publish changes, he'll simply push them to the repository, and all others get them by pulling. 
+
+Publish your changes: 
+
+$ hg push https://bitbucket.org/ArneBab/1w6/
+
+Pull others changes into your local repository: 
+
+$ hg pull https://bitbucket.org/ArneBab/1w6/
+
+People who join you in development can also just clone this repository, as if one of you were using "hg serve": 
+
+$ hg clone https://bitbucket.org/ArneBab/1w6/ 1w6
+
+That local repository will automatically be configured to pull/push from/to the online repository, so new contributors can just use "hg push" and "hg pull" without an URL. 
+
