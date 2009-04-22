@@ -1,4 +1,4 @@
-= (Some) Mercurial Workflows =
+= Learning Mercurial in Workflows =
 
 With Mercurial you can use a multitude of different workflows. This page shows some of them, including their use cases. 
 
