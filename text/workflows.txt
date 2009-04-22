@@ -4,7 +4,7 @@ With Mercurial you can use a multitude of different workflows. This page shows s
 
 It is intended to make it easier for you to create your own workflow. 
 
-To write this page we gathered [real life workflows](wiki - workflows), so every workflow in here has proven itself in real life usage. We begin with basic workflows and then go on to more complex examples. 
+To write this page we gathered [real life workflows](wiki - workflows), so every more complex workflow in here has proven itself in real life usage. We begin with basic workflows and then go on to more complex examples. 
 
 <!--Structure: 
 * For whom? -> Why?
