@@ -1,0 +1,216 @@
+= Learning Mercurial in Workflows =
+
+With Mercurial you can use a multitude of different workflows. This page shows some of them, including their use cases. 
+
+It is intended to make it easier for you to create your own workflow. 
+
+To write this page we gathered [real life workflows](wiki - workflows), so every more complex workflow in here has proven itself in real life usage. We begin with basic workflows and then go on to more complex examples. 
+
+<!--Structure: 
+* For whom? -> Why?
+* What do you need? -> Resources + extensions
+* Single Developer workflow
+* Sharing changes. -->
+
+<!-- Plan
+
+* Simple workflows without extensions
+
+* Complex Workflows, including collaborative patch development and similar. 
+
+* Smoothing workflows with extensions -> i.e. shelve before merging. 
+
+-->
+
+== Sysadmin workflow ==
+
+=== Use Case ===
+
+The first workflow is also the easiest one: You're a sysadmin and you want to use Mercurial to be able to look back when you did which changes. 
+
+This workflow only requires an installed Mercurial and write access to some file storage (you almost definitely have that :) ). It shows the basic technics for more complex workflows. 
+
+=== Workflow ===
+
+==== Initialize the project ==== 
+
+<code>$ hg init project</code>
+
+==== Add files and track them ====
+
+<code>$ cd project
+$ (add files)
+$ hg add </code>
+
+Note: You can also go into an existing directory with files and init the repository there.  
+
+$ cd project
+$ hg init
+
+You can also just add specific files instead of all files in the directory. Mercurial will then track only these files and won't know about the others. The following tells mercurial to track all files beginning with "file0" as well as file10, file11 and file12. 
+
+$ hg add file0* file10 file11 file12 
+
+==== Save changes ====
+
+$ (do some changes)
+
+see which files changed, which have been added or removed, and which aren't tracked yet. 
+
+$ hg status 
+
+see the exact changes. 
+
+$ hg diff 
+
+commit the changes. 
+
+$ hg commit
+
+now an editor pops up and asks you for a commit message. Upon saving and closing the editor, your changes have been stored by Mercurial. 
+
+==== Check your history ====
+
+$ hg log
+
+This prints a list of changesets along with their data, the user who committed them (you) and their commit message. 
+
+== Lone developer with linear history == 
+
+=== Use case === 
+
+The second workflow is still very easy: You're a lone developer and you want to use Mercurial to keep track of your own changes. 
+
+It works just like the sysadmin workflow, with the difference that you go back to earlied changes at times. 
+
+To start a new project, you initialize a repository, add your files and commit whenever you finished a part of your work (atomic commits). 
+
+Also you check your history from time to time, so see how you progressed. 
+
+=== Workflow ===
+
+==== Basics from sysadmin ====
+
+Init your project, add files, see changes and commit them. 
+
+<code>$ hg init project
+$ cd project
+$ (add files)
+$ hg add # tell Mercurial to track all files
+$ (do some changes)
+$ hg diff # see changes
+$ hg commit # save changes
+$ hg log # see history
+
+==== Seeing an earlier revision ====
+
+Different from the sysadmin workflow, you'll want to go back in history at times and undo some changes, for example because it introduced a bug. 
+
+To look at a previous version of your code, you can use update. Let's assume that you want to see revision 3. 
+
+$ hg update 3
+
+Now your code is back at revision 3, the fourth commit (Mercurial starts couting at 0). 
+
+To update to the most recent revision, you can use "tip" as revision name. 
+
+$ hg update tip
+
+Note: If at any place any command complains, your best bet is to read what it tells you and follow that advice. 
+
+Note: Instead of "hg update" you can also use the shorthand "hg up". Similarly you can abbreviate "hg commit" to "hg ci". 
+
+==== Fixing errors in earlier revisions ====
+
+When you find a bug in some earlier revision you have two options: eaither you can fix it in the current code, or you can go back in history and fix the code exactly where you did it. 
+
+To do so, you first update to the old revision, fix the bug and commit it. Afterwards you merge this revision and commit the merge. Don't worry, though: Merging in mercurial is fast and painless, as you'll see in an instant. 
+
+Let's assume the bug was introduced in revision 3. 
+
+$ hg update 3
+$ (fix the bug)
+$ hg commit
+
+Now the fix is already stored in history. We just need to merge it with the current version of your code. 
+
+$ hg merge
+
+If there are conflicts use "hg resolve" - that's also what merge tells you to do in case of conflicts. 
+
+$ hg commit
+
+At this point, your fix is merged with all your other work, and you can just go on coding. Additionally the history shows clearly where you fixed the bug, so you'll always be able to check where the bug was. 
+
+
+So now you can initialize repositories, save changes, 
+
+== Seperate features ==
+
+=== Use Case ===
+
+At times you'll be working on several features in parallel. If you want to avoid mixing incomplete code versions, you can create clones of your local repository and work on each feature in its own code directory. 
+
+After finishing your feature you then "pull" it back into your main directory and "merge" the changes. 
+
+=== Workflow ===
+
+$ hg clone project feature1
+$ cd feature1
+$ (do some changes and commits)
+$ cd ../project
+$ hg pull ../feature1
+
+Now you have the history of feature1 inside your project, but they aren't yet visible. Instead they are only stored inside the .hg directory inside the project. 
+
+From now on we'll use the name "repository" for a directory which has a .hg directory with Mercurial history. 
+
+If you didn't do any changes in the project, while you were working on feature1, you can just update, but it is more likely that you'll have done some changes. In that case, it's time for merging. 
+
+Merge feature1 into the project code: 
+
+$ hg merge
+
+If there are conflicts use "hg resolve" - that's also what merge tells you to do in case of conflicts. 
+
+$ hg commit -m "merged feature1"
+
+You can create an arbitrary number of clones and also carry them around on USB sticks. Also you can use them to synchronize your work at home and at work. 
+
+== Sharing changes ==
+
+=== Use Case ===
+
+Now we go one step further: You are no longer alone, and you want to share your changes with others and include their changes. 
+
+The basic requirement for that is that you have to be able to see the changes of others. 
+
+Mercurial allows you to do that very easily by including a simple webserver from which you can pull changes just as you can pull changes from local clones. 
+
+There are a few other ways to share changes, though. Instead of using the builtin webserver, you can also send the changes by email or setup a shared repository, to where you "push" changes instead of pulling them. 
+
+=== Workflow ===
+
+==== Using the builtin webserver ====
+
+This is the easiest way to quickly share changes. 
+
+First the one who wants to share his changes creates the webserver
+
+$ hg serve
+
+Now all others can point their browsers to his IP address (i.e. 192.168.178.100) at port 8000. They will then see all his history there and can sdecide if they want to pull his changes. 
+
+$ firefox http://192.168.178.100:8000 
+
+If they decide to include the changes, they just pull from the same URL
+
+$ hg pull http://192.168.178.100:8000 
+
+At this point you all can work as if you had pulled from a local repository. All the data is now in your individual repositories and you can merge the changes and work with them without needing any connection to the served repository. 
+
+==== Sending changes by email ====
+
+==== Using a shared repository ====
+
+-> bitbucket
