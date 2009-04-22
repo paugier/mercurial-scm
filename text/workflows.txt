@@ -177,15 +177,23 @@ $ hg commit -m "merged feature1"
 
 You can create an arbitrary number of clones and also carry them around on USB sticks. Also you can use them to synchronize your work at home and at work. 
 
-== Sharing changes really easily ==
+== Sharing changes ==
 
 === Use Case ===
 
 Now we go one step further: You are no longer alone, and you want to share your changes with others and include their changes. 
 
-The basic requirement for that is that you have to be able to see the changes of others. Mercurial allows you to do that very easily by including a simple webserver from which you can pull changes just as you can pull changes from local clones. 
+The basic requirement for that is that you have to be able to see the changes of others. 
+
+Mercurial allows you to do that very easily by including a simple webserver from which you can pull changes just as you can pull changes from local clones. 
+
+There are a few other ways to share changes, though. Instead of using the builtin webserver, you can also send the changes by email or setup a shared repository, to where you "push" changes instead of pulling them. 
 
 === Workflow ===
+
+==== Using the builtin webserver ====
+
+This is the easiest way to quickly share changes. 
 
 First the one who wants to share his changes creates the webserver
 
@@ -201,3 +209,8 @@ $ hg pull http://192.168.178.100:8000
 
 At this point you all can work as if you had pulled from a local repository. All the data is now in your individual repositories. You can merge the changes and work with them without needing any connection to the served repository. 
 
+==== Sending changes by email ====
+
+==== Using a shared repository ====
+
+-> bitbucket
