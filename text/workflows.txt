@@ -24,6 +24,8 @@ To write this page we gathered [real life workflows](wiki - workflows), so every
 
 == Sysadmin workflow ==
 
+=== Use Case ===
+
 The first workflow is also the easiest one: You're a sysadmin and you want to use Mercurial to be able to look back when you did which changes. 
 
 This workflow only requires an installed Mercurial and write access to some file storage (you almost definitely have that :) ). It shows the basic technics for more complex workflows. 
@@ -161,6 +163,8 @@ $ hg pull ../feature1
 
 Now you have the history of feature1 inside your project, but they aren't yet visible. Instead they are only stored inside the .hg directory inside the project. 
 
+From now on we'll use the name "repository" for a directory which has a .hg directory with Mercurial history. 
+
 If you didn't do any changes in the project, while you were working on feature1, you can just update, but it is more likely that you'll have done some changes. In that case, it's time for merging. 
 
 Merge feature1 into the project code: 
@@ -171,7 +175,7 @@ If there are conflicts use "hg resolve" - that's also what merge tells you to do
 
 $ hg commit -m "merged feature1"
 
-You can create an arbitrary number of clones and also carry them around on USB sticks, so you an also synchronize your work at home and at work. 
+You can create an arbitrary number of clones and also carry them around on USB sticks. Also you can use them to synchronize your work at home and at work. 
 
 == Sharing changes really easily ==
 
