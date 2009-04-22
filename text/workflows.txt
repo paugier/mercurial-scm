@@ -207,7 +207,7 @@ If they decide to include the changes, they just pull from the same URL
 
 $ hg pull http://192.168.178.100:8000 
 
-At this point you all can work as if you had pulled from a local repository. All the data is now in your individual repositories. You can merge the changes and work with them without needing any connection to the served repository. 
+At this point you all can work as if you had pulled from a local repository. All the data is now in your individual repositories and you can merge the changes and work with them without needing any connection to the served repository. 
 
 ==== Sending changes by email ====
 
