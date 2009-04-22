@@ -1,0 +1,6 @@
+= (Some) Mercurial Workflows =
+
+With Mercurial you can use a multitude of different workflows. This page shows some of them, including their use cases. 
+
+It is intended to make it easier for you to create your own workflow. 
+
