@@ -173,3 +173,27 @@ $ hg commit -m "merged feature1"
 
 You can create an arbitrary number of clones and also carry them around on USB sticks, so you an also synchronize your work at home and at work. 
 
+== Sharing changes really easily ==
+
+=== Use Case ===
+
+Now we go one step further: You are no longer alone, and you want to share your changes with others and include their changes. 
+
+The basic requirement for that is that you have to be able to see the changes of others. Mercurial allows you to do that very easily by including a simple webserver from which you can pull changes just as you can pull changes from local clones. 
+
+=== Workflow ===
+
+First the one who wants to share his changes creates the webserver
+
+$ hg serve
+
+Now all others can point their browsers to his IP address (i.e. 192.168.178.100) at port 8000. They will then see all his history there and can sdecide if they want to pull his changes. 
+
+$ firefox http://192.168.178.100:8000 
+
+If they decide to include the changes, they just pull from the same URL
+
+$ hg pull http://192.168.178.100:8000 
+
+At this point you all can work as if you had pulled from a local repository. All the data is now in your individual repositories. You can merge the changes and work with them without needing any connection to the served repository. 
+
