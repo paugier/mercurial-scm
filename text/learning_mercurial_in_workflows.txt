@@ -22,6 +22,8 @@ To write this page we gathered [real life workflows](wiki - workflows), so every
 
 -->
 
+= Basic workflows =
+
 == Sysadmin workflow ==
 
 === Use Case ===
@@ -29,6 +31,8 @@ To write this page we gathered [real life workflows](wiki - workflows), so every
 The first workflow is also the easiest one: You're a sysadmin and you want to use Mercurial to be able to look back when you did which changes. 
 
 This workflow only requires an installed Mercurial and write access to some file storage (you almost definitely have that :) ). It shows the basic technics for more complex workflows. 
+
+Note: The name doesn't mean that every sysadmin will only need this simple workflow. It was chosen in honor of a [mail]() which reminded us, that this simple usage is already a workflow in its own right. 
 
 === Workflow ===
 
@@ -68,6 +72,8 @@ commit the changes.
 $ hg commit
 
 now an editor pops up and asks you for a commit message. Upon saving and closing the editor, your changes have been stored by Mercurial. 
+
+Note: You can also supply teh commit message directly via "hg commit -m 'MESSAGE'"
 
 ==== Check your history ====
 
@@ -143,7 +149,7 @@ $ hg commit
 At this point, your fix is merged with all your other work, and you can just go on coding. Additionally the history shows clearly where you fixed the bug, so you'll always be able to check where the bug was. 
 
 
-So now you can initialize repositories, save changes, 
+So now you can initialize repositories, save changes, update to previous changes and develop in a nonlinear history by committing in earlier changesets and merging the changes into the current code. 
 
 == Seperate features ==
 
@@ -163,9 +169,9 @@ $ hg pull ../feature1
 
 Now you have the history of feature1 inside your project, but they aren't yet visible. Instead they are only stored inside the .hg directory inside the project. 
 
-From now on we'll use the name "repository" for a directory which has a .hg directory with Mercurial history. 
+Note: From now on we'll use the name "repository" for a directory which has a .hg directory with Mercurial history. 
 
-If you didn't do any changes in the project, while you were working on feature1, you can just update, but it is more likely that you'll have done some changes. In that case, it's time for merging. 
+If you didn't do any changes in the project, while you were working on feature1, you can just update to tip ("hg update tip"), but it is more likely that you'll have done some other changes in between changes. In that case, it's time for merging. 
 
 Merge feature1 into the project code: 
 
@@ -229,7 +235,7 @@ We assume that you want to export changeset 3 and 4:
 $ hg export 3 > change3.diff
 $ hg export 4 > change4.diff
 
-Now attach them to an email and your collegues can just run "import" in both to get your full changes, including your user account. 
+Now attach them to an email and your collegues can just run "import" on both diffs to get your full changes, including your user information. 
 
 To be careful, they first clone their repository to have an integration directory: 
 
@@ -238,14 +244,21 @@ $ cd integration
 $ hg import change3.diff
 $ hg import change4.diff
 
-That's it. They can now test your changes in feature clones. If they accept them, 
-they pull the changes into the main repository. 
+That's it. They can now test your changes in feature clones. If they accept them, they pull the changes into the main repository. 
+
+$ cd ../project
+$ hg pull ../integration
 
 Note: The patchbomb extension automates the email-sending, but you don't need it for this workflow. 
 
+Note 2: You can also send around bundles, which are snippets of your actual history. Just create them via 
+$ hg bundle --base FIRST_REVISION_TO_BUNDLE changes.bundle
+Others can then get your changes by simply pulling them, as if your bundle were an actual  repository
+$ hg pull path/to/changes.bundle
+
 ==== Using a shared repository ====
 
-Sending changes by mail might be the easiest way to reach people, but it creates additional workload: You have to send mails and then import the changes manually. Luckily there's an easier way which works quite well for smaller teams: The shared push repository. 
+Sending changes by mail might be the easiest way to reach people when you aren't yet part of the regular development team, but it creates additional workload: You have to send mails and then import the changes manually. Luckily there's an easier way which works quite well: The shared push repository. 
 
 Till now we transferred all changes either via email or via pull, but there's yet another way: pushing. As the name suggests it's just the opposite of pulling: You push your changes into another repository. 
 
@@ -291,3 +304,125 @@ $ hg clone https://bitbucket.org/ArneBab/1w6/ 1w6
 
 That local repository will automatically be configured to pull/push from/to the online repository, so new contributors can just use "hg push" and "hg pull" without an URL. 
 
+Note: To make this workflow more scaleable, each one of you can have his own BitBucket repository and you can simply pull from the others repositories. That way you can easily establish workflows in which certain people act as integrators and finally push checked code to a shared pull repository from which all others pull. 
+
+== Summary ==
+
+Now let's take a step back and look where we are. 
+
+With the commands you already know, a bit reading of "hg help <command>" and some evil script-fu you can already do almost everything you'll ever need to do when working with source code history. So from now on almost everything is convenience, and that's a good thing. 
+
+First this is good, because it means, that you can now use most of the concepts which are used in more complex workflows. 
+
+Second it aids you, because convenience lets you focus on your task instead of focussing on your tool. It helps you concentrate on the coding itself. Still you can always go back to the basics, if you want to. 
+
+A short summary of what you can do which can also act as a short check, if you still remember the meaning of the commands: 
+
+create a project
+
+$ hg init project
+$ cd project
+$ (add some files)
+$ hg add
+$ hg commit 
+(enter the commit message)
+
+do nonlinear development
+
+$ (do some changes)
+$ hg commit 
+(enter the commit message)
+$ hg update 0
+$ (do some changes)
+$ hg commit 
+(enter the commit message)
+$ hg merge
+$ (optionally hg resolve)
+$ hg commit
+(enter the commit message)
+
+use feature clones
+
+$ cd ..
+$ hg clone project feature1
+$ cd feature1
+$ (do some changes)
+$ hg commit 
+(enter the commit message)
+$ cd ../project
+$ hg pull ../feature1
+
+share your repository via the integrated webserver
+
+$ hg serve &
+$ cd ..
+$ hg clone http://127.0.0.1:8000 project-clone
+
+export changes to files
+
+$ cd project-clone
+$ (do some changes)
+$ hg commit 
+(enter the commit message)
+$ hg export tip > ../changes.diff
+
+import changes from files
+
+$ cd ../project
+$ hg import ../changes.diff
+
+pull changes from a served repository (hg serve still runs on project)
+
+$ cd ../feature1
+$ hg pull http://127.0.0.1:8000
+
+Use shared repositories on BitBucket 
+
+$ (setup bitbucket repo)
+$ hg push https://bitbucket.org/USER/REPO
+(enter name and password in the prompt)
+$ hg pull https://bitbucket.org/USER/REPO
+
+
+Let's move on towards useful features and a bit more advanced workflows. 
+
+== Backing out bad revisions ==
+
+=== Use Case ===
+
+When you routinely pull code from others, it can happen that you overlook some bad change. As soon as others pull that change from you, you have little chance to get completely rid of it. 
+
+To resolve that problem, Mercurial offers you the backout command. Backing out a change means, that you tell Mercurial to create a commit which reverses the bad change. That way you don't get rid of the bad code in history, but you can remove it from new revisions. 
+
+Note: The basic commands don't directly rewrite history - if you want to do that, you need to activate some of the extensions which are shipped with mercurial. We'll come to that later on. 
+
+=== Workflow ===
+
+Let's assume the bad change was revision 3, and we already have one more revision in our repository. To remove the bad code, we just backout of it. This creates a new change which reverses the bad change. After backing out, we merge that new change into the current code. 
+
+$ hg backout 3
+$ hg merge
+(potentially resolve conflicts)
+$ hg commit 
+(enter commit message. For example: "merged backout")
+
+That's it. You reversed the bad change. 
+
+== Collaborative feature development ==
+
+-> branches 
+
+== Tagging revisions ==
+
+-> hg tag
+
+== Removing history == 
+
+-> hg clone -r , hg export, hg import, ...
+
+
+= More Complex Workflows =
+
+
+
+= Smoothing workflows with extensions =
