@@ -211,6 +211,37 @@ At this point you all can work as if you had pulled from a local repository. All
 
 ==== Sending changes by email ====
 
+Often you won't have direct access to the repository of someone else, be it because he's behind a restrictive firewall, or because you live in different timezones. You might also want to keep your changes confidential and prefer internal email (be sure to encrypt your emails with GnuPG!). 
+
+In that case, you can easily export your changes as patches and send them by email. 
+
+Another reason to send them by email can be that your policy requires manual review of the changes when the other developers are used to reading diffs in emails. I'm sure you can think of more reasons. 
+
+Sending the changes via email is pretty straightforward with Mercurial. You just "export" your changes and attach (or copy paste) it in your email. Your collegues can then just "import" them. 
+
+First check which changes you want to export
+
+$ cd project 
+$ hg log
+
+We assume that you want to export changeset 3 and 4: 
+
+$ hg export 3 > change3.diff
+$ hg export 4 > change4.diff
+
+Now attach them to an email and your collegues can just run "import" in both to get your full changes, including your user account. 
+
+To be careful, they first clone their repository to have an integration directory: 
+
+$ hg clone project integration
+$ cd integration
+$ hg import change3.diff
+$ hg import change4.diff
+
+That's it. They can now test your changes in feature clones. If tehy accept it, they 
+
+Note: The patchbomb extension automates the email-sending, but you don't need it for this workflow. 
+
 ==== Using a shared repository ====
 
 -> bitbucket
