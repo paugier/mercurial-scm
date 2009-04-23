@@ -1,0 +1,8 @@
+Workflow for writing new text content
+=====================================
+
+If you write new content texts, do so first as plain text in text/
+
+As soon as you think them mostly finished, copy them to hgscm/templates/ and convert them to html. 
+
+
