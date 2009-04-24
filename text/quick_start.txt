@@ -30,7 +30,7 @@ I hope your experience with Mercurial will be as great as mine!
 
 = Basic concepts of Mercurial for Subversion users =
 
-//If you're interested in the concepts behind Mercurial and already know Subversion, please come with us and listen to a great explanation from Martin Geisler: //
+//If you're interested in the concepts behind Mercurial and already know Subversion, please join us and listen to a great explanation from Martin Geisler: //
 
 Let me try to make some of the basic concepts clear:
 
