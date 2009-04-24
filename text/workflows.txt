@@ -64,9 +64,11 @@ $ hg export tip &gt; patch.diff
 
 And send patch.diff to the developers email address, ideally with a description what your patch does and why it's important. 
 
+Note: "tip" is the most current revision in your repository. 
+
 ==== Modifications ====
 
-You can also upload the patch, for example to a bugtracker. 
+You can also upload the patch, for example to a bugtracker. It's just a simple file after all. 
 
 == Lone Developer ==
 
