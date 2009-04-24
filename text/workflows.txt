@@ -1,5 +1,7 @@
 = Learning Mercurial in Workflows =
 
+== Intro ==
+
 With Mercurial you can use a multitude of different workflows. This page shows some of them, including their use cases. 
 
 It is intended to make it easier for you to create your own workflow. 
@@ -22,5 +24,28 @@ The workflows on this page are rather terse to give you a good overview. You can
 
 * Smoothing workflows with extensions -> i.e. shelve before merging. 
 
+
+Workflows: 
+
+* One-off patch submission
+* Lone Developer
+* ... 
+
 -->
 
+== Workflows ==
+
+=== One-off patch submission ===
+
+==== Use Case ==== 
+
+==== Requirements ====
+
+==== Flow ====
+
+- local work
+- sharing changes
+
+== Lone Developer ==
+
+... 
