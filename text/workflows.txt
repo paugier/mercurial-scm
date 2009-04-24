@@ -37,14 +37,36 @@ Workflows:
 
 === One-off patch submission ===
 
-==== Use Case ==== 
+==== For whom? ==== 
+
+If you just want to submit a short patch to a project, this workflow is right for you. 
 
 ==== Requirements ====
 
+You need just Mercurial (command line) and an email address to which you can send the patch. 
+
 ==== Flow ====
 
-- local work
-- sharing changes
+First get the repository
+
+$ hg clone http://hg-scm.org/hello
+
+Now do and commit your changes
+
+$ cd hello
+$ (edit files)
+$ hg add (new files)
+$ hg commit -m 'short descriptioni of the changes'
+
+Export your patch
+
+$ hg export tip &gt; patch.diff
+
+And send patch.diff to the developers email address, ideally with a description what your patch does and why it's important. 
+
+==== Modifications ====
+
+You can also upload the patch, for example to a bugtracker. 
 
 == Lone Developer ==
 
