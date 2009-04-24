@@ -406,7 +406,7 @@ $ hg merge
 $ hg commit 
 (enter commit message. For example: "merged backout")
 
-That's it. You reversed the bad change. 
+That's it. You reversed the bad change. It's still recorded that it was once there (don't rewrite history, if it's not really necessary), but it doesn't affect future code anymore. 
 
 == Collaborative feature development ==
 
