@@ -8,7 +8,7 @@ It is intended to make it easier for you to create your own workflow.
 
 To write this page we gathered [real life workflows](wiki - workflows), so every more complex workflow in here has proven itself in real life usage. We begin with basic workflows and then go on to more complex examples. 
 
-The workflows on this page are rather terse to give you a good overview. You can find a longer introduction which shows how to use these workflows in [learning Mercurial in workflows](learning_mercurial_in_workflows). 
+The workflows on this page are rather terse to give you a good overview. You can find a longer introduction which shows basic Mercurial usage compatible with these workflows in [learning Mercurial in workflows](learning_mercurial_in_workflows). 
 
 <!--Structure: 
 * For whom? -> Why?
@@ -27,9 +27,28 @@ The workflows on this page are rather terse to give you a good overview. You can
 
 Workflows: 
 
+General: 
 * One-off patch submission
-* Lone Developer
-* ... 
+* Lone Developer + laptop + publish
+* Simple shared push repository for small trusted teams
+* Several pull repositories with integrators for security and large teams
+
+collaborating on features: 
+* Shared repo + named branches and bugzilla for feature development
+* centralized with attic
+* 
+
+Dependency tracking: 
+* Dependency tracking
+* Snapshots
+
+Special usages
+* Tiered web development
+* Offsite working on dynamic websites
+* automatic trusted group of committers for optionally anonymous repositories
+
+working with other vcs: 
+* Dealing with CVS
 
 -->
 
