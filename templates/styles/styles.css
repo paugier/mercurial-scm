@@ -100,7 +100,7 @@ blockquote, q { quotes: "" ""; }
 #search { position: absolute; right: 15px; top: 26px; color: #fff; width: 183px; height: 23px; background: url(../images/search.png) no-repeat 0 0; }
 #search legend { display: none; }
 #search label { position: absolute; left: -9999px; }
-#search .text { width: 150px; background: none; border: none; margin: 0 0 0 5px; position: relative; top: 5px; color: #666; }
+#search .text { width: 150px; background: none; border: none; margin: 0 0 0 5px; position: relative; top: 5px; color: #666; outline:0; }
 #search .submit { width: 23px; height: 23px; background: none; border: none; cursor: pointer; text-indent: -9999px; color: #10B8F0; *color: #fff; font-size: 1px; }
 
 /*
