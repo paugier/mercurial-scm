@@ -2,25 +2,7 @@
 
 With Mercurial you can use a multitude of different workflows. This page shows some of them, including their use cases. 
 
-It is intended to make it easier for you to create your own workflow. 
-
-To write this page we gathered [real life workflows](wiki - workflows), so every more complex workflow in here has proven itself in real life usage. We begin with basic workflows and then go on to more complex examples. 
-
-<!--Structure: 
-* For whom? -> Why?
-* What do you need? -> Resources + extensions
-* Single Developer workflow
-* Sharing changes. -->
-
-<!-- Plan
-
-* Simple workflows without extensions
-
-* Complex Workflows, including collaborative patch development and similar. 
-
-* Smoothing workflows with extensions -> i.e. shelve before merging. 
-
--->
+It is intended to make it easy for Beginners of Version tracking to get going instantly and learn completely incrementally. 
 
 = Basic workflows =
 
