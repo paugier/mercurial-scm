@@ -16,6 +16,13 @@ This workflow only requires an installed Mercurial and write access to some file
 
 === Workflow ===
 
+==== Prepare Mercurial ====
+
+As first step, you should teach Mercurial your name. For that you open the file ~/.hgrc with a text-editor and add the ui section (user interaction) with your username: 
+
+<code>[ui]
+username = Mr. Johnson <johnson@smith.com></code>
+
 ==== Initialize the project ==== 
 
 <code>$ hg init project</code>
