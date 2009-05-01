@@ -38,7 +38,7 @@ Note: You can also go into an existing directory with files and init the reposit
 $ cd project
 $ hg init
 
-You can also just add specific files instead of all files in the directory. Mercurial will then track only these files and won't know about the others. The following tells mercurial to track all files beginning with "file0" as well as file10, file11 and file12. 
+Alternatively you can add only specific files instead of all files in the directory. Mercurial will then track only these files and won't know about the others. The following tells mercurial to track all files beginning with "file0" as well as file10, file11 and file12. 
 
 $ hg add file0* file10 file11 file12 
 
@@ -60,7 +60,7 @@ $ hg commit
 
 now an editor pops up and asks you for a commit message. Upon saving and closing the editor, your changes have been stored by Mercurial. 
 
-Note: You can also supply teh commit message directly via "hg commit -m 'MESSAGE'"
+Note: You can also supply the commit message directly via "hg commit -m 'MESSAGE'"
 
 ==== Check your history ====
 
@@ -80,7 +80,7 @@ The second workflow is still very easy: You're a lone developer and you want to 
 
 It works just like the sysadmin workflow, with the difference that you go back to earlied changes at times. 
 
-To start a new project, you initialize a repository, add your files and commit whenever you finished a part of your work (atomic commits). 
+To start a new project, you initialize a repository, add your files and commit whenever you finished a part of your work. 
 
 Also you check your history from time to time, so see how you progressed. 
 
@@ -152,6 +152,8 @@ After finishing your feature you then "pull" it back into your main directory an
 
 === Workflow ===
 
+First create the feature clone and do some changes
+
 $ hg clone project feature1
 $ cd feature1
 $ (do some changes and commits)
@@ -167,7 +169,7 @@ If you like the changes, you pull them into the project
 
 $ hg pull ../feature1
 
-Now you have the history of feature1 inside your project, but they aren't yet visible. Instead they are only stored inside the .hg directory inside the project. 
+Now you have the history of feature1 inside your project, but the changes aren't yet visible. Instead they are only stored inside the .hg directory of the project. 
 
 Note: From now on we'll use the name "repository" for a directory which has a .hg directory with Mercurial history. 
 
@@ -196,7 +198,9 @@ Commit the merge, as soon as you resolved all conflicts. This step is also neces
 
 $ hg commit -m "merged feature1"
 
-You can create an arbitrary number of clones and also carry them around on USB sticks. Also you can use them to synchronize your work at home and at work. 
+You can create an arbitrary number of clones and also carry them around on USB sticks. Also you can use them to synchronize your files at home and at work, or between your desktop and your laptop. 
+
+Note: Most merges will just work. You only need "resolve", when "merge" complains. 
 
 == Sharing changes ==
 
@@ -220,7 +224,7 @@ First the one who wants to share his changes creates the webserver
 
 $ hg serve
 
-Now all others can point their browsers to his IP address (i.e. 192.168.178.100) at port 8000. They will then see all his history there and can sdecide if they want to pull his changes. 
+Now all others can point their browsers to his IP address (for example 192.168.178.100) at port 8000. They will then see all his history there and can sdecide if they want to pull his changes. 
 
 $ firefox http://192.168.178.100:8000 
 
@@ -232,7 +236,7 @@ At this point you all can work as if you had pulled from a local repository. All
 
 ==== Sending changes by email ====
 
-Often you won't have direct access to the repository of someone else, be it because he's behind a restrictive firewall, or because you live in different timezones. You might also want to keep your changes confidential and prefer internal email (be sure to encrypt your emails with GnuPG!). 
+Often you won't have direct access to the repository of someone else, be it because he's behind a restrictive firewall, or because you live in different timezones. You might also want to keep your changes confidential and prefer internal email (if you want additional protection, you can also encrypt the mails, for example with [GnuPG](http://gnupg.org)). 
 
 In that case, you can easily export your changes as patches and send them by email. 
 
@@ -433,7 +437,7 @@ The first part is an easy way to develop features together, without requiring ev
 
 When you want to split your development into several features, you need to keep track of who works on which feature and where to get which changes. 
 
-Mercurial makes this easy for you by providing names branches. They are a part of the main repository, so they are available to everyone involved. At the same time, changes committed on a certain branch don't get mixed into the changes in the default branch, so features are kept seperate, until they get merged into the default branch. 
+Mercurial makes this easy for you by providing names branches. They are a part of the main repository, so they are available to everyone involved. At the same time, changes committed on a certain branch don't get mixed into the changes in the default branch, so features are kept separate, until they get merged into the default branch. 
 
 === Workflow ===
 
@@ -453,7 +457,7 @@ $ hg update feature1
 $ hg commit
 (write commit message)
 
-Now you can commit, pull, push and merge as if they were working in a seperate repository. If the history of the named branch is linear and you call "hg merge", Mercurial asks you to specify an explicit revision, since the branch in which you work doesn't have anything to merge. 
+Now you can commit, pull, push and merge as if they were working in a separate repository. If the history of the named branch is linear and you call "hg merge", Mercurial asks you to specify an explicit revision, since the branch in which you work doesn't have anything to merge. 
 
 When you finished the feature, you merge it back into the default branch. 
 
@@ -462,13 +466,15 @@ $ hg merge feature1
 $ hg commit
 (write commit message)
 
-And that's it. Now you can easily keep features seperate without unnecessary bookkeeping. 
+And that's it. Now you can easily keep features separate without unnecessary bookkeeping. 
+
+Note: Named branches stay in history as permanent record after you finished your work. If you don't like having that record in your history, please have a look at some of the [advanced workflows](workflows#advanced)
 
 == Marking revisions: tag and sign ==
 
 === Use Case ===
 
-Since you can now code seperate features more easily, you might want to mark certain revisions as fit for consumption (or similar). For example you might want to mark releases, or just mark off revisions as reviewed. 
+Since you can now code separate features more easily, you might want to mark certain revisions as fit for consumption (or similar). For example you might want to mark releases, or just mark off revisions as reviewed. 
 
 For this Mercurial offers tags. Tags add a name to a revision and are part of the history. You can tag a change years after it was committed. The tag includes the information when it was added, and tags can be pulled, pushed and merged just like any other committed change. 
 
@@ -535,7 +541,7 @@ So now you can work with Mercurial in private, and also share your changes in a 
 
 Additionally to that you can also remove bad changes, either by creating a change in the repository which reverses the original change, or by really rewriting history, so it looks like the change never occured. 
 
-And you can seperate the work on features in a single repository by using named branches and add tags to revisions which are visible markers for others and can be used to update to the tagged revisions. 
+And you can separate the work on features in a single repository by using named branches and add tags to revisions which are visible markers for others and can be used to update to the tagged revisions. 
 
 With this we can conclude our practical guide. 
 
