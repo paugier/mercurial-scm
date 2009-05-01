@@ -557,6 +557,8 @@ With this we can conclude our practical guide.
 
 = More Complex Workflows =
 
-If you now want to check some more compelx workflows, please have a look at the general [workflows](workflows) page. 
+If you now want to check some more complex workflows, please have a look at the general [workflows](workflows) page. 
+
+To deepen your understanding, you should also check the [basic concept overview](quick_start_concepts). 
 
 Have fun with Mercurial! 
