@@ -107,7 +107,12 @@ To look at a previous version of your code, you can use update. Let's assume tha
 
 $ hg update 3
 
-Now your code is back at revision 3, the fourth commit (Mercurial starts couting at 0). 
+Now your code is back at revision 3, the fourth commit (Mercurial starts counting at 0). 
+To check if you're really at that revision, you can use "identify -n". 
+
+$ hg identify -n
+
+Note: "identify" without options gives you the short form of a unique revision ID. That ID is what Mercurial uses internally. If you tell someone about the version you updated to, you should use that ID, since the numbers can be different for other people. If you want to know the reasons behind that, please read up Mercurials [basic concepts](). 
 
 To update to the most recent revision, you can use "tip" as revision name. 
 
@@ -116,6 +121,8 @@ $ hg update tip
 Note: If at any place any command complains, your best bet is to read what it tells you and follow that advice. 
 
 Note: Instead of "hg update" you can also use the shorthand "hg up". Similarly you can abbreviate "hg commit" to "hg ci". 
+
+Note: To get a revision devoid of files, just "update" to "null" via "hg update null". That's the revision before any files were added. 
 
 ==== Fixing errors in earlier revisions ====
 
