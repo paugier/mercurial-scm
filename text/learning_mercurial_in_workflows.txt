@@ -128,7 +128,7 @@ Note: To get a revision devoid of files, just "update" to "null" via "hg update 
 
 When you find a bug in some earlier revision you have two options: either you can fix it in the current code, or you can go back in history and fix the code exactly where you did it, which creates a cleaner history. 
 
-To do so, you first update to the old revision, fix the bug and commit it. Afterwards you merge this revision and commit the merge. Don't worry, though: Merging in mercurial is fast and painless, as you'll see in an instant. 
+To do it the cleaner way, you first update to the old revision, fix the bug and commit it. Afterwards you merge this revision and commit the merge. Don't worry, though: Merging in mercurial is fast and painless, as you'll see in an instant. 
 
 Let's assume the bug was introduced in revision 3. 
 
