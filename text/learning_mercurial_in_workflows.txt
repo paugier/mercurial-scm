@@ -155,7 +155,16 @@ After finishing your feature you then "pull" it back into your main directory an
 $ hg clone project feature1
 $ cd feature1
 $ (do some changes and commits)
+
+$ Now check what will come in when you pull from feature1, just like you can use "diff" before committing
+
 $ cd ../project
+$ hg incoming ../feature1
+
+Note: If you want to see the diffs, you can use "hg incoming --patch" just as you can do with "hg log --patch" for the changes in the repository. 
+
+If you like the changes, you pull them into the project
+
 $ hg pull ../feature1
 
 Now you have the history of feature1 inside your project, but they aren't yet visible. Instead they are only stored inside the .hg directory inside the project. 
