@@ -6,15 +6,13 @@ It is intended to make it easy for Beginners of Version tracking to get going in
 
 = Basic workflows =
 
-== Sysadmin workflow ==
+== Log keeping ==
 
 === Use Case ===
 
-The first workflow is also the easiest one: You're a sysadmin and you want to use Mercurial to be able to look back when you did which changes. 
+The first workflow is also the easiest one: You want to use Mercurial to be able to look back when you did which changes. 
 
-This workflow only requires an installed Mercurial and write access to some file storage (you almost definitely have that :) ). It shows the basic technics for more complex workflows. 
-
-Note: The name doesn't mean that every sysadmin will only need this simple workflow. It was chosen in honor of a [mail]() which reminded us, that this simple usage is already a workflow in its own right. 
+This workflow only requires an installed Mercurial and write access to some file storage (you almost definitely have that :) ). It shows the basic techniques for more complex workflows. 
 
 === Workflow ===
 
