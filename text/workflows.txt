@@ -50,6 +50,9 @@ Special usages
 working with other vcs: 
 * Dealing with CVS
 
+neat tricks: 
+* bundle incoming
+
 -->
 
 == Workflows ==
