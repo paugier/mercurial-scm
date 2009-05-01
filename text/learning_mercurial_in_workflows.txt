@@ -282,9 +282,11 @@ Till now we transferred all changes either via email or via pull, but there's ye
 
 But to make use of it, we first need something we can push to. 
 
-By default "hg serve" doesn't allow pushing, since that would be a major security hole. You can allow pushing in the server, but that's no solution when you live in different timezones, so we'll go with another approach here: Using a shared repository on BitBucket. Doing so has a bit higher starting cost and takes a bit longer to explain, but it's well worth the effort spent. 
+By default "hg serve" doesn't allow pushing, since that would be a major security hole. You can allow pushing in the server, but that's no solution when you live in different timezones, so we'll go with another approach here: Using a shared repository, either on an existing shared server or on a service like [BitBucket](http://bitbucket.org). Doing so has a bit higher starting cost and takes a bit longer to explain, but it's well worth the effort spent. 
 
-For it you first need to setup a BitBucket Account. Just signup there and then hover your mouse over "Repositories". There click the item at the bottom of the opening dialog which say "Create new". 
+If you want to use an existing shared server, you can use "serve" there and [allow pushing](). Also there are some other nice ways to allow [pushing to a Mercurial repository](), including simply [pushing via SSH](). 
+
+Otherwise you first need to setup a BitBucket Account. Just signup at [BitBucket](http://bitbucket.org) and then hover your mouse over "Repositories". There click the item at the bottom of the opening dialog which say "Create new". 
 
 Give it a name and a description, and if you want to keep it hidden from the public, select "private". 
 
@@ -299,6 +301,8 @@ $ hg push https://bitbucket.org/ArneBab/1w6/
 Mercurial will ask for your BitBucket password, then push your code. 
 
 Voilà, your code is online. 
+
+Note: You can also [use SSH for pushing to BitBucket](http://bitbucket.org/help/UsingSSH). 
 
 Now it's time to tell all your collegues to sign up at BitBucket, too. 
 
