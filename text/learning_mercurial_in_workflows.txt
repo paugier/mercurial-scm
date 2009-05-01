@@ -135,10 +135,26 @@ $ hg merge
 
 If there are conflicts use "hg resolve" - that's also what merge tells you to do in case of conflicts. 
 
+First list the files with conflicts: 
+
+$ hg resolve --list
+
+Then resolve them one by one. "resolve" attempts the merge again: 
+
+$ hg resolve conflicting_file
+(fix it by hand, if necessary)
+
+Mark the fixed file as resolved: 
+
+$ hg resolve --mark conflicting_file
+
+Commit the merge, as soon as you resolved all conflicts. This step is also necessary if there were no conflicts! 
+
 $ hg commit
 
 At this point, your fix is merged with all your other work, and you can just go on coding. Additionally the history shows clearly where you fixed the bug, so you'll always be able to check where the bug was. 
 
+Note: Most merges will just work. You only need "resolve", when "merge" complains. 
 
 So now you can initialize repositories, save changes, update to previous changes and develop in a nonlinear history by committing in earlier changesets and merging the changes into the current code. 
 
@@ -181,26 +197,9 @@ $ hg merge
 
 If there are conflicts use "hg resolve" - that's also what merge tells you to do in case of conflicts. 
 
-First list the files with conflicts: 
-
-$ hg resolve --list
-
-Then resolve them one by one. "resolve" attempts the merge again: 
-
-$ hg resolve conflicting_file
-(fix it by hand, if necessary)
-
-Mark the fixed file as resolved: 
-
-$ hg resolve --mark conflicting_file
-
-Commit the merge, as soon as you resolved all conflicts. This step is also necessary if there were no conflicts! 
-
 $ hg commit -m "merged feature1"
 
 You can create an arbitrary number of clones and also carry them around on USB sticks. Also you can use them to synchronize your files at home and at work, or between your desktop and your laptop. 
-
-Note: Most merges will just work. You only need "resolve", when "merge" complains. 
 
 == Sharing changes ==
 
