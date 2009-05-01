@@ -86,7 +86,7 @@ Also you check your history from time to time, so see how you progressed.
 
 === Workflow ===
 
-==== Basics from sysadmin ====
+==== Basics from log keeping ====
 
 Init your project, add files, see changes and commit them. 
 
@@ -126,7 +126,7 @@ Note: To get a revision devoid of files, just "update" to "null" via "hg update 
 
 ==== Fixing errors in earlier revisions ====
 
-When you find a bug in some earlier revision you have two options: eaither you can fix it in the current code, or you can go back in history and fix the code exactly where you did it. 
+When you find a bug in some earlier revision you have two options: either you can fix it in the current code, or you can go back in history and fix the code exactly where you did it, which creates a cleaner history. 
 
 To do so, you first update to the old revision, fix the bug and commit it. Afterwards you merge this revision and commit the merge. Don't worry, though: Merging in mercurial is fast and painless, as you'll see in an instant. 
 
