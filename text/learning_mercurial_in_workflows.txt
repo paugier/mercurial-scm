@@ -185,7 +185,7 @@ If you like the changes, you pull them into the project
 
 $ hg pull ../feature1
 
-Now you have the history of feature1 inside your project, but the changes aren't yet visible. Instead they are only stored inside the .hg directory of the project. 
+Now you have the history of feature1 inside your project, but the changes aren't yet visible. Instead they are only stored inside a .hg directory of the project ([more information on the store]()). 
 
 Note: From now on we'll use the name "repository" for a directory which has a .hg directory with Mercurial history. 
 
