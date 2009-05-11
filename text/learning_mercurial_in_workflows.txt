@@ -335,6 +335,8 @@ That local repository will automatically be configured to pull/push from/to the 
 
 Note: To make this workflow more scaleable, each one of you can have his own BitBucket repository and you can simply pull from the others repositories. That way you can easily establish workflows in which certain people act as integrators and finally push checked code to a shared pull repository from which all others pull. 
 
+Note: You can also use this workflow with a shared server instead of BitBucket, either via SSH or via a shared directory. An example for an SSH URL with Mercurial is be ssh://hg@bitbucket.org/ArneBab/1w6 (for a shared server you'd replace the "hg" in the given URL with your username). For a shared directory you just push as if the repository in the shared directory were on your local drive. 
+
 == Summary ==
 
 Now let's take a step back and look where we are. 
