@@ -34,6 +34,16 @@ class MercurialTricksAdvancedNode(template.Node):
         f.close()
         return result
 
+class RandomQuoteNode(template.Node):
+    def __init__(self):
+        pass
+
+    def render(self, context):
+        f = open(self._filename)
+	quote, author = random.choice(f.readlines()).split(" - ")
+        result = "<p><em>" + quote + "</em>" + " - " + author + "</p>"
+        return result
+
 class DownloadButtonNode(template.Node):
     def __init__(self, extended):
         self._extended = extended
@@ -57,10 +67,14 @@ def do_mercurial_tricks (parser, token):
 def do_mercurial_tricks_advanced (parser, token):
     return MercurialTricksAdvancedNode()
 
+def do_random_quote (parser, token):
+    return RandomQuoteNode()
+
 def do_download_button(parser, token):
     extended = len(token.split_contents()) > 1
     return DownloadButtonNode(extended)
 
 register.tag('mercurial_tricks', do_mercurial_tricks)
 register.tag('mercurial_tricks_advanced', do_mercurial_tricks_advanced)
+register.tag('random_quote', do_random_quote)
 register.tag('download_button', do_download_button)

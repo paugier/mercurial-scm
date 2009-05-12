@@ -71,6 +71,8 @@ MERCURIAL_TRICKS = os.path.join(BASE_DIR, "templates/tricks")
 
 MERCURIAL_TRICKS_ADVANCED = os.path.join(BASE_DIR, "templates/tricks_advanced")
 
+MERCURIAL_QUOTES = os.path.join(BASE_DIR, "templates/quotes.txt")
+
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, "templates"),
 )
