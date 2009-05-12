@@ -71,6 +71,23 @@ now an editor pops up and asks you for a commit message. Upon saving and closing
 
 Note: You can also supply the commit message directly via <hg>hg commit -m 'MESSAGE'</hg>
 
+<h5>Move and copy files</h5>
+
+When you copy or move files, you should tell Mercurial to do the copy or move for you, so it can track the relationship between the files. 
+
+Remember to <hg>commit</hg> after moving or copying. From the basic commands only <hg>commit</hg> creates a new revision. 
+
+<pre>$ hg cp original copy
+$ hg commit
+(enter the commit message)
+$ hg mv original target
+$ hg commit
+(enter the commit message)</pre>
+
+Now you have two files, "copy" and "target", and Mercurial knows how they are related. 
+
+Note: Should you forget to do the explicit move, you can still tell Mercurial to detect the changes via <hg>hg addremove --similarity 100</hg>. Just use <hg>hg help addremove</hg> for details. 
+
 <h5>Check your history</h5>
 
 <pre>$ hg log</pre>
@@ -173,6 +190,8 @@ At this point, your fix is merged with all your other work, and you can just go 
 Note: Most merges will just work. You only need <hg>resolve</hg>, when <hg>merge</hg> complains. 
 
 So now you can initialize repositories, save changes, update to previous changes and develop in a nonlinear history by committing in earlier changesets and merging the changes into the current code. 
+
+Note: If you fix a bug in an earlier revision, and some later revision copied or moved that file, the fix will be propagated to the target file(s) when you merge. This is the main reason why you should always use <hg>hg cp</hg> and <hg>hg mv</hg>. 
 
 <h3>Seperate features</h3>
 
