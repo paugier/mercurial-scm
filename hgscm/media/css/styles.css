@@ -142,3 +142,9 @@ blockquote, q { quotes: "" ""; }
 #footer { display: block; }
 #footer div { float: left; }
 #footer a { text-decoration: none; }
+
+/* 
+ * Mercurial commands interspersed in text 
+ */
+
+hg { text-decoration: italic; }
