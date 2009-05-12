@@ -86,7 +86,7 @@ $ hg commit
 
 Now you have two files, "copy" and "target", and Mercurial knows how they are related. 
 
-Note: Should you forget to do the explicit move, you can still tell Mercurial to detect the changes via <hg>hg addremove --similarity 100</hg>. Just use <hg>hg help addremove</hg> for details. 
+Note: Should you forget to do the explicit copy or move, you can still tell Mercurial to detect the changes via <hg>hg addremove --similarity 100</hg>. Just use <hg>hg help addremove</hg> for details. 
 
 <h5>Check your history</h5>
 
@@ -123,6 +123,8 @@ $ hg add # tell Mercurial to track all files
 $ (do some changes)
 $ hg diff # see changes
 $ hg commit # save changes
+$ hg cp # copy files or folders
+$ hg mv # move files or folders
 $ hg log # see history</pre>
 
 <h5>Seeing an earlier revision</h5>
