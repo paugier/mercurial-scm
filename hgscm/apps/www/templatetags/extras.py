@@ -11,12 +11,26 @@ class MercurialTricksNode(template.Node):
         self._filename = self._random()
 
     def _random(self):
-	file = random.choice(os.listdir(settings.MERCURIAL_TRICKS))
-        return os.path.join(settings.MERCURIAL_TRICKS, file)
+	p = random.choice(os.listdir(settings.MERCURIAL_TRICKS))
+        return os.path.join(settings.MERCURIAL_TRICKS, p)
 
     def render(self, context):
         f = open(self._filename)
-        result = "<p><h3>Tricks</h3>" + f.read() + "</p>"
+        result = "<p><h3>Basic Tricks</h3>" + f.read() + "</p>"
+        f.close()
+        return result
+
+class MercurialTricksAdvancedNode(template.Node):
+    def __init__(self):
+        self._filename = self._random()
+
+    def _random(self):
+	p = random.choice(os.listdir(settings.MERCURIAL_TRICKS_ADVANCED))
+        return os.path.join(settings.MERCURIAL_TRICKS_ADVANCED, p)
+
+    def render(self, context):
+        f = open(self._filename)
+        result = "<p><h3>Advanced Tricks</h3>" + f.read() + "</p>"
         f.close()
         return result
 
@@ -40,9 +54,13 @@ class DownloadButtonNode(template.Node):
 def do_mercurial_tricks (parser, token):
     return MercurialTricksNode()
 
+def do_mercurial_tricks_advanced (parser, token):
+    return MercurialTricksAdvancedNode()
+
 def do_download_button(parser, token):
     extended = len(token.split_contents()) > 1
     return DownloadButtonNode(extended)
 
 register.tag('mercurial_tricks', do_mercurial_tricks)
+register.tag('mercurial_tricks_advanced', do_mercurial_tricks_advanced)
 register.tag('download_button', do_download_button)
