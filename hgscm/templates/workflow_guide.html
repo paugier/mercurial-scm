@@ -32,42 +32,60 @@
 <p>As first step, you should teach Mercurial your name. For that you open the file ~/.hgrc with a text-editor and add the ui section (user interaction) with your username:</p>
 
 <pre>[ui]
-username = Mr. Johnson <johnson@smith.com></pre>
+username = Mr. Johnson <johnson@smith.com>
+
+</pre>
 
 <h5>Initialize the project</h5>
 
-<pre>$ hg init project</pre>
+<pre>$ hg init project
+
+</pre>
 
 <h5>Add files and track them</h5>
 
 <pre>$ cd project
 $ (add files)
-$ hg add </pre>
+$ hg add 
+
+</pre>
 
 <p>Note: You can also go into an existing directory with files and init the repository there. </p>
 
 <pre>$ cd project
-$ hg init</pre>
+$ hg init
+
+</pre>
 
 <p>Alternatively you can add only specific files instead of all files in the directory. Mercurial will then track only these files and won't know about the others. The following tells mercurial to track all files whose names begin with "file0" as well as file10, file11 and file12.</p>
 
-<pre>$ hg add file0* file10 file11 file12</pre>
+<pre>$ hg add file0* file10 file11 file12
+
+</pre>
 
 <h5>Save changes</h5>
 
-<pre>$ (do some changes)</pre>
+<pre>$ (do some changes)
+
+</pre>
 
 <p>see which files changed, which have been added or removed, and which aren't tracked yet</p>
 
-<pre>$ hg status</pre>
+<pre>$ hg status
+
+</pre>
 
 <p>see the exact changes</p>
 
-<pre>$ hg diff</pre>
+<pre>$ hg diff
+
+</pre>
 
 commit the changes. 
 
-<pre>$ hg commit</pre>
+<pre>$ hg commit
+
+</pre>
 
 <p>now an editor pops up and asks you for a commit message. Upon saving and closing the editor, your changes have been stored by Mercurial.</p>
 
@@ -84,7 +102,9 @@ $ hg commit
 (enter the commit message)
 $ hg mv original target
 $ hg commit
-(enter the commit message)</pre>
+(enter the commit message)
+
+</pre>
 
 <p>Now you have two files, "copy" and "target", and Mercurial knows how they are related.</p>
 
@@ -92,13 +112,17 @@ $ hg commit
 
 <h5>Check your history</h5>
 
-<pre>$ hg log</pre>
+<pre>$ hg log
+
+</pre>
 
 This prints a list of changesets along with their date, the user who committed them (you) and their commit message. 
 
 To see a certain revision, you can use the <hg>-r</hg> switch (--revision). To also see the diff of the displayed revisions, there's the <hg>-p</hg> switch (--patch)
 
-<pre>$ hg log -p -r 3</pre>
+<pre>$ hg log -p -r 3
+
+</pre>
 
 <h2>Lone developer with nonlinear history</h2>
 
@@ -127,7 +151,9 @@ $ hg diff # see changes
 $ hg commit # save changes
 $ hg cp # copy files or folders
 $ hg mv # move files or folders
-$ hg log # see history</pre>
+$ hg log # see history
+
+</pre>
 
 <h5>Seeing an earlier revision</h5>
 
@@ -135,18 +161,24 @@ $ hg log # see history</pre>
 
 <p>To look at a previous version of your code, you can use update. Let's assume that you want to see revision 3.</p>
 
-<pre>$ hg update 3</pre>
+<pre>$ hg update 3
+
+</pre>
 
 <p>Now your code is back at revision 3, the fourth commit (Mercurial starts counting at 0). 
 To check if you're really at that revision, you can use <hg>identify -n</hg>.</p>
 
-<pre>$ hg identify -n</pre>
+<pre>$ hg identify -n
+
+</pre>
 
 <p>Note: <hg>identify</hg> without options gives you the short form of a unique revision ID. That ID is what Mercurial uses internally. If you tell someone about the version you updated to, you should use that ID, since the numbers can be different for other people. If you want to know the reasons behind that, please read up Mercurials [basic concepts](). When you're at the most recent revision, <hg>hg identify -n</hg> will return "-1".</p>
 
 <p>To update to the most recent revision, you can use "tip" as revision name.</p>
 
-<pre>$ hg update tip</pre>
+<pre>$ hg update tip
+
+</pre>
 
 <p>Note: If at any place any command complains, your best bet is to read what it tells you and follow that advice.</p>
 
@@ -164,30 +196,42 @@ To check if you're really at that revision, you can use <hg>identify -n</hg>.</p
 
 <pre>$ hg update 3
 $ (fix the bug)
-$ hg commit</pre>
+$ hg commit
+
+</pre>
 
 <p>Now the fix is already stored in history. We just need to merge it with the current version of your code.</p>
 
-<pre>$ hg merge</pre>
+<pre>$ hg merge
+
+</pre>
 
 <p>If there are conflicts use <hg>hg resolve</hg> - that's also what merge tells you to do in case of conflicts.</p>
 
 <p>First list the files with conflicts</p>
 
-<pre>$ hg resolve --list</pre>
+<pre>$ hg resolve --list
+
+</pre>
 
 <p>Then resolve them one by one. <hg>resolve</hg> attempts the merge again</p>
 
 <pre>$ hg resolve conflicting_file
-(fix it by hand, if necessary)</pre>
+(fix it by hand, if necessary)
+
+</pre>
 
 <p>Mark the fixed file as resolved</p>
 
-<pre>$ hg resolve --mark conflicting_file</pre>
+<pre>$ hg resolve --mark conflicting_file
+
+</pre>
 
 <p>Commit the merge, as soon as you resolved all conflicts. This step is also necessary when there were no conflicts!</p>
 
-<pre>$ hg commit</pre>
+<pre>$ hg commit
+
+</pre>
 
 <p>At this point, your fix is merged with all your other work, and you can just go on coding. Additionally the history shows clearly where you fixed the bug, so you'll always be able to check where the bug was.</p>
 
@@ -213,18 +257,24 @@ $ hg commit</pre>
 
 <pre>$ hg clone project feature1
 $ cd feature1
-$ (do some changes and commits)</pre>
+$ (do some changes and commits)
+
+</pre>
 
 <p>Now check what will come in when you <hg>pull</hg> from feature1, just like you can use <hg>diff</hg> before committing. The respective command for pulling is <hg>incoming</hg></p>
 
 <pre>$ cd ../project
-$ hg incoming ../feature1</pre>
+$ hg incoming ../feature1
+
+</pre>
 
 <p>Note: If you want to see the diffs, you can use <hg>hg incoming --patch</hg> just as you can do with <hg>hg log --patch</hg> for the changes in the repository.</p>
 
 <p>If you like the changes, you pull them into the project</p>
 
-<pre>$ hg pull ../feature1</pre>
+<pre>$ hg pull ../feature1
+
+</pre>
 
 <p>Now you have the history of feature1 inside your project, but the changes aren't yet visible. Instead they are only stored inside a ".hg" directory of the project (<a title="Behind the Scenes" href="http://hgbook.red-bean.com/read/behind-the-scenes.html">more information on the store</a>).</p>
 
@@ -234,12 +284,16 @@ $ hg incoming ../feature1</pre>
 
 <p>Merge feature1 into the project code</p>
 
-<pre>$ hg merge</pre>
+<pre>$ hg merge
+
+</pre>
 
 <p>If there are conflicts use <hg>hg resolve</hg> - that's also what merge tells you to do in case of conflicts. After you <hg>merge</hg>, you have to <hg>commit</hg> explicitely to make your <hg>merge</hg> final</p>
 
 <pre>$ hg commit
-(enter commit message, for example "merged feature1")</pre>
+(enter commit message, for example "merged feature1")
+
+</pre>
 
 <p>You can create an arbitrary number of clones and also carry them around on USB sticks. Also you can use them to synchronize your files at home and at work, or between your desktop and your laptop.</p>
 
@@ -253,11 +307,15 @@ Rolling back means undoing the last operation which added something to your hist
 
 Imagine you just realized that you did a bad commit - for example you didn't see a spelling error in a label. To fix it you would use 
 
-<pre>hg rollback</pre>
+<pre>hg rollback
+
+</pre>
 
 And then redo the commit
 
-<pre>hg commit -m "message"</pre>
+<pre>hg commit -m "message"
+
+</pre>
 
 If you can use the command history of your shell and you added the previous message via <hg>commit -m "message"</hg>, that following commit just means two clicks on the arrow-key "up" and one click on "enter". 
 
@@ -287,15 +345,21 @@ Note: Rollback is possible, because Mercurial uses transactions when recording c
 
 <p>First the one who wants to share his changes creates the webserver</p>
 
-<pre>$ hg serve</pre>
+<pre>$ hg serve
+
+</pre>
 
 <p>Now all others can point their browsers to his IP address (for example 192.168.178.100) at port 8000. They will then see all his history there and can sdecide if they want to pull his changes.</p>
 
-<pre>$ firefox http://192.168.178.100:8000</pre>
+<pre>$ firefox http://192.168.178.100:8000
+
+</pre>
 
 <p>If they decide to include the changes, they just pull from the same URL</p>
 
-<pre>$ hg pull http://192.168.178.100:8000</pre>
+<pre>$ hg pull http://192.168.178.100:8000
+
+</pre>
 
 <p>At this point you all can work as if you had pulled from a local repository. All the data is now in your individual repositories and you can merge the changes and work with them without needing any connection to the served repository.</p>
 
@@ -312,12 +376,16 @@ Note: Rollback is possible, because Mercurial uses transactions when recording c
 <p>First check which changes you want to export</p>
 
 <pre>$ cd project 
-$ hg log</pre>
+$ hg log
+
+</pre>
 
 <p>We assume that you want to export changeset 3 and 4</p>
 
 <pre>$ hg export 3 > change3.diff
-$ hg export 4 > change4.diff</pre>
+$ hg export 4 > change4.diff
+
+</pre>
 
 <p>Now attach them to an email and your collegues can just run <hg>import</hg> on both diffs to get your full changes, including your user information.</p>
 
@@ -326,19 +394,27 @@ $ hg export 4 > change4.diff</pre>
 <pre>$ hg clone project integration
 $ cd integration
 $ hg import change3.diff
-$ hg import change4.diff</pre>
+$ hg import change4.diff
+
+</pre>
 
 <p>That's it. They can now test your changes in feature clones. If they accept them, they <hg>pull</hg> the changes into the main repository</p>
 
 <pre>$ cd ../project
-$ hg pull ../integration</pre>
+$ hg pull ../integration
+
+</pre>
 
 <p>Note: The <em>patchbomb</em> extension automates the email-sending, but you don't need it for this workflow.</p>
 
 <p>Note 2: You can also send around bundles, which are snippets of your actual history. Just create them via </p>
-<pre>$ hg bundle --base FIRST_REVISION_TO_BUNDLE changes.bundle</pre>
+<pre>$ hg bundle --base FIRST_REVISION_TO_BUNDLE changes.bundle
+
+</pre>
 <p>Others can then get your changes by simply pulling them, as if your bundle were an actual repository</p>
-<pre>$ hg pull path/to/changes.bundle</pre>
+<pre>$ hg pull path/to/changes.bundle
+
+</pre>
 
 <h5>Using a shared repository</h5>
 
@@ -356,11 +432,15 @@ $ hg pull ../integration</pre>
 
 <p>Give it a name and a description. If you want to keep it hidden from the public, select "private"</p>
 
-<pre>$ firefox http://bitbucket.org</pre>
+<pre>$ firefox http://bitbucket.org
+
+</pre>
 
 <p>Now your repository is created and you see instructions for <hg>push</hg>ing to it. for that you'll use a command similar to the following (just with a different URL)</p>
 
-<pre>$ hg push https://bitbucket.org/ArneBab/hello/</pre>
+<pre>$ hg push https://bitbucket.org/ArneBab/hello/
+
+</pre>
 
 <p>(Replace the URL with the URL of your created repository. If your username is "Foo" and your repository is named "bar", the URL will be https://bitbucket.org/Foo/bar/)</p>
 
@@ -380,15 +460,21 @@ $ hg pull ../integration</pre>
 
 <p>Publish your changes</p>
 
-<pre>$ hg push https://bitbucket.org/ArneBab/hello/</pre>
+<pre>$ hg push https://bitbucket.org/ArneBab/hello/
+
+</pre>
 
 <p>Pull others changes into your local repository</p>
 
-<pre>$ hg pull https://bitbucket.org/ArneBab/hello/</pre>
+<pre>$ hg pull https://bitbucket.org/ArneBab/hello/
+
+</pre>
 
 <p>People who join you in development can also just <hg>clone</hg> this repository, as if one of you were using <hg>hg serve</hg></p>
 
-<pre>$ hg clone https://bitbucket.org/ArneBab/hello/ hello</pre>
+<pre>$ hg clone https://bitbucket.org/ArneBab/hello/ hello
+
+</pre>
 
 <p>That local repository will automatically be configured to pull/push from/to the online repository, so new contributors can just use <hg>hg push</hg> and <hg>hg pull</hg> without an URL.</p>
 
@@ -415,7 +501,9 @@ $ cd project
 $ (add some files)
 $ hg add
 $ hg commit 
-(enter the commit message)</pre>
+(enter the commit message)
+
+</pre>
 
 <h3>do nonlinear development</h3>
 
@@ -429,7 +517,9 @@ $ hg commit
 $ hg merge
 $ (optionally hg resolve)
 $ hg commit
-(enter the commit message)</pre>
+(enter the commit message)
+
+</pre>
 
 <h3>use feature clones</h3>
 
@@ -440,13 +530,17 @@ $ (do some changes)
 $ hg commit 
 (enter the commit message)
 $ cd ../project
-$ hg pull ../feature1</pre>
+$ hg pull ../feature1
+
+</pre>
 
 <h3>share your repository via the integrated webserver</h3>
 
 <pre>$ hg serve &amp;
 $ cd ..
-$ hg clone http://127.0.0.1:8000 project-clone</pre>
+$ hg clone http://127.0.0.1:8000 project-clone
+
+</pre>
 
 <h3>export changes to files</h3>
 
@@ -454,24 +548,32 @@ $ hg clone http://127.0.0.1:8000 project-clone</pre>
 $ (do some changes)
 $ hg commit 
 (enter the commit message)
-$ hg export tip > ../changes.diff</pre>
+$ hg export tip > ../changes.diff
+
+</pre>
 
 <h3>import changes from files</h3>
 
 <pre>$ cd ../project
-$ hg import ../changes.diff</pre>
+$ hg import ../changes.diff
+
+</pre>
 
 <h3>pull changes from a served repository (hg serve still runs on project)</h3>
 
 <pre>$ cd ../feature1
-$ hg pull http://127.0.0.1:8000</pre>
+$ hg pull http://127.0.0.1:8000
+
+</pre>
 
 <h3>Use shared repositories on BitBucket</h3>
 
 <pre>$ (setup bitbucket repo)
 $ hg push https://bitbucket.org/USER/REPO
 (enter name and password in the prompt)
-$ hg pull https://bitbucket.org/USER/REPO</pre>
+$ hg pull https://bitbucket.org/USER/REPO
+
+</pre>
 
 
 <p>Let's move on towards useful features and a bit more advanced workflows.</p>
@@ -494,7 +596,9 @@ $ hg pull https://bitbucket.org/USER/REPO</pre>
 $ hg merge
 (potentially resolve conflicts)
 $ hg commit 
-(enter commit message. For example: "merged backout")</pre>
+(enter commit message. For example: "merged backout")
+
+</pre>
 
 <p>That's it. You reversed the bad change. It's still recorded that it was once there (following the principle "don't rewrite history, if it's not really necessary"), but it doesn't affect future code anymore.</p>
 
@@ -523,14 +627,18 @@ $ hg commit
 <pre>$ hg branch feature1
 (do some changes)
 $ hg commit
-(write commit message)</pre>
+(write commit message)
+
+</pre>
 
 <p>Update into the branch and work in it</p>
 
 <pre>$ hg update feature1
 (do some changes)
 $ hg commit
-(write commit message)</pre>
+(write commit message)
+
+</pre>
 
 <p>Now you can <hg>commit</hg>, <hg>pull</hg>, <hg>push</hg> and <hg>merge</hg> (and anything else) as if you were working in a separate repository. If the history of the named branch is linear and you call "hg merge", Mercurial asks you to specify an explicit revision, since the branch in which you work doesn't have anything to merge.</p>
 
@@ -541,7 +649,9 @@ $ hg commit
 <pre>$ hg update default
 $ hg merge feature1
 $ hg commit
-(write commit message)</pre>
+(write commit message)
+
+</pre>
 
 <p>And that's it. Now you can easily keep features separate without unnecessary bookkeeping.</p>
 
@@ -565,15 +675,21 @@ $ hg commit
 
 <p>Add the tag</p>
 
-<pre>$ hg tag -r 3 v0.1</pre>
+<pre>$ hg tag -r 3 v0.1
+
+</pre>
 
 <p>See all tags</p>
 
-<pre>$ hg tags</pre>
+<pre>$ hg tags
+
+</pre>
 
 <p>When you look at the log you'll now see a line in changeset 3 which marks the Tag. If someone wants to <hg>update</hg> to the tagged revision, he can just use the name of your tag</p>
 
-<pre>$ hg update v0.1</pre>
+<pre>$ hg update v0.1
+
+</pre>
 
 <p>Now he'll be at the tagged revision and can work from there.</p>
 
@@ -594,21 +710,27 @@ $ hg commit
 
 <p>The first step is to use the "--rev" option to <hg>clone</hg>: Create a clone which only contains the changes up to the specified revision. Since you want to keep revision 1, you only clone up to that</p>
 
-<pre>$ hg clone -r 1 project stripped</pre>
+<pre>$ hg clone -r 1 project stripped
+
+</pre>
 
 <p>Now you can <hg>export</hg> the change 3 from the original repository (project) and <hg>import</hg> it into the stripped one</p>
 
 <pre>$ cd project
 $ hg export 3 > ../changes.diff
 $ cd ../stripped
-$ hg import ../changes.diff</pre>
+$ hg import ../changes.diff
+
+</pre>
 
 <p>If a part of the changes couldn't be applied, you'll see that part in *.rej files. If you have *.rej files, you'll have to include or discard changes by hand</p>
 
 <pre>$ cat *.rej
 (apply changes by hand)
 $ hg commit
-(write commit message)</pre>
+(write commit message)
+
+</pre>
 
 <p>That's it. <hg>hg export</hg> also includes the commit message, date, committer and similar metadata, so you are already done.</p>
 
