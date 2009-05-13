@@ -81,7 +81,7 @@ $ hg init
 
 </pre>
 
-commit the changes. 
+<p><hg>commit</hg> the changes.</p>
 
 <pre>$ hg commit
 
@@ -116,9 +116,9 @@ $ hg commit
 
 </pre>
 
-This prints a list of changesets along with their date, the user who committed them (you) and their commit message. 
+<p>This prints a list of changesets along with their date, the user who committed them (you) and their commit message. </p>
 
-To see a certain revision, you can use the <hg>-r</hg> switch (--revision). To also see the diff of the displayed revisions, there's the <hg>-p</hg> switch (--patch)
+<p>To see a certain revision, you can use the <hg>-r</hg> switch (--revision). To also see the diff of the displayed revisions, there's the <hg>-p</hg> switch (--patch)</p>
 
 <pre>$ hg log -p -r 3
 
@@ -301,29 +301,29 @@ $ hg incoming ../feature1
 
 <h5>Rollback mistakes</h5>
 
-Now you can work on different features in parallel, but from time to time a bad commit might sneak in. Naturally you could then just go back one revision and merge the stray error, keeping all mistakes out of the merged revision. However, there's an easier way, if you realize your error before you do another <hg>commit</hg> or <hg>pull</hg>: <hg>rollback</hg>. 
+<p>Now you can work on different features in parallel, but from time to time a bad commit might sneak in. Naturally you could then just go back one revision and merge the stray error, keeping all mistakes out of the merged revision. However, there's an easier way, if you realize your error before you do another <hg>commit</hg> or <hg>pull</hg>: <hg>rollback</hg>.</p>
 
-Rolling back means undoing the last operation which added something to your history. 
+<p>Rolling back means undoing the last operation which added something to your history.</p>
 
-Imagine you just realized that you did a bad commit - for example you didn't see a spelling error in a label. To fix it you would use 
+<p>Imagine you just realized that you did a bad commit - for example you didn't see a spelling error in a label. To fix it you would use</p>
 
 <pre>hg rollback
 
 </pre>
 
-And then redo the commit
+<p>And then redo the commit</p>
 
 <pre>hg commit -m "message"
 
 </pre>
 
-If you can use the command history of your shell and you added the previous message via <hg>commit -m "message"</hg>, that following commit just means two clicks on the arrow-key "up" and one click on "enter". 
+<p>If you can use the command history of your shell and you added the previous message via <hg>commit -m "message"</hg>, that following commit just means two clicks on the arrow-key "up" and one click on "enter".</p>
 
-Though it changes your history, rolling back doesn't change your files. It only undoes the last addition to your history. 
+<p>Though it changes your history, rolling back doesn't change your files. It only undoes the last addition to your history.</p>
 
-But beware, that a rollback itself can't be undone. If you <hg>rollback</hg> and then forget to commit, you can't just say "give me my old commit back". You have to create a new commit. 
+<p>But beware, that a rollback itself can't be undone. If you <hg>rollback</hg> and then forget to commit, you can't just say "give me my old commit back". You have to create a new commit.</p>
 
-Note: Rollback is possible, because Mercurial uses transactions when recording changes, and you can use the transaction record to undo the last transaction. This means that you can also use <hg>rollback</hg> to undo your last <hg>pull</hg>, if you didn't yet commit aything new. 
+<p>Note: Rollback is possible, because Mercurial uses transactions when recording changes, and you can use the transaction record to undo the last transaction. This means that you can also use <hg>rollback</hg> to undo your last <hg>pull</hg>, if you didn't yet commit aything new.</p>
 
 <h2>Sharing changes</h2>
 
@@ -408,9 +408,11 @@ $ hg pull ../integration
 <p>Note: The <em>patchbomb</em> extension automates the email-sending, but you don't need it for this workflow.</p>
 
 <p>Note 2: You can also send around bundles, which are snippets of your actual history. Just create them via </p>
+
 <pre>$ hg bundle --base FIRST_REVISION_TO_BUNDLE changes.bundle
 
 </pre>
+
 <p>Others can then get your changes by simply pulling them, as if your bundle were an actual repository</p>
 <pre>$ hg pull path/to/changes.bundle
 
