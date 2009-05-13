@@ -12,6 +12,9 @@ def frontpage(request):
 def about(request):
     return render_to_response("about.html", { },
         RequestContext(request))
+def workflow_guide(request):
+    return render_to_response("workflow_guide.html", { },
+        RequestContext(request))
 def thepage(request):
     return render_to_response("thepage.html", { },
         RequestContext(request))
