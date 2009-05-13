@@ -15,17 +15,17 @@
 
 <p>Note: This guide doesn't require any prior knowledge of version control systems (though subversion users will likely feel at home quite quickly). Basic commandline abilities are helpful, because we'll use the commandline client. <!--If you already know other systems, please check our transition guides: svn, cvs, git, bzr --></p>
 
-<h2>Basic workflows</h2>
+<h1>Basic workflows</h1>
 
-<h3>Log keeping</h3>
+<h2>Log keeping</h2>
 
-<h4>Use Case</h4>
+<h3>Use Case</h3>
 
 <p>The first workflow is also the easiest one: You want to use Mercurial to be able to look back when you did which changes.</p>
 
 <p>This workflow only requires an installed Mercurial and write access to some file storage (you almost definitely have that :) ). It shows the basic techniques for more complex workflows.</p>
 
-<h4>Workflow</h4>
+<h3>Workflow</h3>
 
 <h5>Prepare Mercurial</h5>
 
@@ -100,9 +100,9 @@ To see a certain revision, you can use the <hg>-r</hg> switch (--revision). To a
 
 <pre>$ hg log -p -r 3</pre>
 
-<h3>Lone developer with nonlinear history</h3>
+<h2>Lone developer with nonlinear history</h2>
 
-<h4>Use case</h4> 
+<h3>Use case</h3> 
 
 <p>The second workflow is still very easy: You're a lone developer and you want to use Mercurial to keep track of your own changes.</p>
 
@@ -112,7 +112,7 @@ To see a certain revision, you can use the <hg>-r</hg> switch (--revision). To a
 
 <p>Also you check your history from time to time, so see how you progressed.</p>
 
-<h4>Workflow</h4>
+<h3>Workflow</h3>
 
 <h5>Basics from log keeping</h5>
 
@@ -197,15 +197,15 @@ $ hg commit</pre>
 
 <p>Note: If you fix a bug in an earlier revision, and some later revision copied or moved that file, the fix will be propagated to the target file(s) when you merge. This is the main reason why you should always use <hg>hg cp</hg> and <hg>hg mv</hg>.</p>
 
-<h3>Seperate features</h3>
+<h2>Seperate features</h2>
 
-<h4>Use Case</h4>
+<h3>Use Case</h3>
 
 <p>At times you'll be working on several features in parallel. If you want to avoid mixing incomplete code versions, you can create clones of your local repository and work on each feature in its own code directory.</p>
 
 <p>After finishing your feature you then <hg>pull</hg> it back into your main directory and <hg>merge</hg> the changes.</p>
 
-<h4>Workflow</h4>
+<h3>Workflow</h3>
 
 <h5>Work in different clones</h5>
 
@@ -267,9 +267,9 @@ But beware, that a rollback itself can't be undone. If you <hg>rollback</hg> and
 
 Note: Rollback is possible, because Mercurial uses transactions when recording changes, and you can use the transaction record to undo the last transaction. This means that you can also use <hg>rollback</hg> to undo your last <hg>pull</hg>, if you didn't yet commit aything new. 
 
-<h3>Sharing changes</h3>
+<h2>Sharing changes</h2>
 
-<h4>Use Case</h4>
+<h3>Use Case</h3>
 
 <p>Now we go one step further: You are no longer alone, and you want to share your changes with others and include their changes.</p>
 
@@ -279,7 +279,7 @@ Note: Rollback is possible, because Mercurial uses transactions when recording c
 
 <p>Note: There are a few other ways to share changes, though. Instead of using the builtin webserver, you can also send the changes by email or setup a shared repository, to where you <hg>push</hg> changes instead of pulling them. We'll cover one of those later.</p>
 
-<h4>Workflow</h4>
+<h3>Workflow</h3>
 
 <h5>Using the builtin webserver</h5>
 
@@ -396,7 +396,7 @@ $ hg pull ../integration</pre>
 
 <p>Note: You can also use this workflow with a shared server instead of BitBucket, either via SSH or via a shared directory. An example for an SSH URL with Mercurial is be ssh://user@example.com/path/to/repo. When using a shared directory you just push as if the repository in the shared directory were on your local drive.</p>
 
-<h3>Summary</h3>
+<h2>Summary</h2>
 
 <p>Now let's take a step back and look where we are.</p>
 
@@ -408,7 +408,7 @@ $ hg pull ../integration</pre>
 
 <p>A short summary of what you can do which can also act as a short check, if you still remember the meaning of the commands.</p> 
 
-<h4>create a project</h4>
+<h3>create a project</h3>
 
 <pre>$ hg init project
 $ cd project
@@ -417,7 +417,7 @@ $ hg add
 $ hg commit 
 (enter the commit message)</pre>
 
-<h4>do nonlinear development</h4>
+<h3>do nonlinear development</h3>
 
 <pre>$ (do some changes)
 $ hg commit 
@@ -431,7 +431,7 @@ $ (optionally hg resolve)
 $ hg commit
 (enter the commit message)</pre>
 
-<h4>use feature clones</h4>
+<h3>use feature clones</h3>
 
 <pre>$ cd ..
 $ hg clone project feature1
@@ -442,13 +442,13 @@ $ hg commit
 $ cd ../project
 $ hg pull ../feature1</pre>
 
-<h4>share your repository via the integrated webserver</h4>
+<h3>share your repository via the integrated webserver</h3>
 
 <pre>$ hg serve &amp;
 $ cd ..
 $ hg clone http://127.0.0.1:8000 project-clone</pre>
 
-<h4>export changes to files</h4>
+<h3>export changes to files</h3>
 
 <pre>$ cd project-clone
 $ (do some changes)
@@ -456,17 +456,17 @@ $ hg commit
 (enter the commit message)
 $ hg export tip > ../changes.diff</pre>
 
-<h4>import changes from files</h4>
+<h3>import changes from files</h3>
 
 <pre>$ cd ../project
 $ hg import ../changes.diff</pre>
 
-<h4>pull changes from a served repository (hg serve still runs on project)</h4>
+<h3>pull changes from a served repository (hg serve still runs on project)</h3>
 
 <pre>$ cd ../feature1
 $ hg pull http://127.0.0.1:8000</pre>
 
-<h4>Use shared repositories on BitBucket</h4>
+<h3>Use shared repositories on BitBucket</h3>
 
 <pre>$ (setup bitbucket repo)
 $ hg push https://bitbucket.org/USER/REPO
@@ -476,9 +476,9 @@ $ hg pull https://bitbucket.org/USER/REPO</pre>
 
 <p>Let's move on towards useful features and a bit more advanced workflows.</p>
 
-<h3>Backing out bad revisions</h3>
+<h2>Backing out bad revisions</h2>
 
-<h4>Use Case</h4>
+<h3>Use Case</h3>
 
 <p>When you routinely pull code from others, it can happen that you overlook some bad change. As soon as others pull that change from you, you have little chance to get completely rid of it.</p>
 
@@ -486,7 +486,7 @@ $ hg pull https://bitbucket.org/USER/REPO</pre>
 
 <p>Note: The basic commands don't directly rewrite history. If you want to do that, you need to activate some of the extensions which are shipped with mercurial. We'll come to that later on.</p>
 
-<h4>Workflow</h4>
+<h3>Workflow</h3>
 
 <p>Let's assume the bad change was revision 3, and we already have one more revision in our repository. To remove the bad code, we just <hg>backout</hg> of it. This creates a new change which reverses the bad change. After backing out, we merge that new change into the current code.</p>
 
@@ -498,13 +498,13 @@ $ hg commit
 
 <p>That's it. You reversed the bad change. It's still recorded that it was once there (following the principle "don't rewrite history, if it's not really necessary"), but it doesn't affect future code anymore.</p>
 
-<h3>Collaborative feature development</h3>
+<h2>Collaborative feature development</h2>
 
 <p>Now that you can share changes and reverse them if necessary, you can go one step further: Using Mercurial to help in coordinating the coding.</p>
 
 <p>The first part is an easy way to develop features together, without requiring every developer to keep track of several feature clones.</p>
 
-<h4>Use Case</h4>
+<h3>Use Case</h3>
 
 <p>When you want to split your development into several features, you need to keep track of who works on which feature and where to get which changes.</p>
 
@@ -512,7 +512,7 @@ $ hg commit
 
 <p>Note: Cloning a repository always puts you onto the default branch at first.</p>
 
-<h4>Workflow</h4>
+<h3>Workflow</h3>
 
 <p>When someone in your group wants to start coding on a feature without disturbing the others, he can create a named branch and commit there. When someone else wants to join in, he just updates to the branch and commits away. As soon as the feature is finished, someone merges the named branch into the default branch.</p>
 
@@ -547,9 +547,9 @@ $ hg commit
 
 <p>Note: Named branches stay in history as permanent record after you finished your work. If you don't like having that record in your history, please have a look at some of the advanced <a title="Mercurial Workflows" href="http://www.selenic.com/mercurial/wiki/Workflows">workflows</a>.</p>
 
-<h3>Tagging revisions</h3>
+<h2>Tagging revisions</h2>
 
-<h4>Use Case</h4>
+<h3>Use Case</h3>
 
 <p>Since you can now code separate features more easily, you might want to mark certain revisions as fit for consumption (or similar). For example you might want to mark releases, or just mark off revisions as reviewed.</p>
 
@@ -559,7 +559,7 @@ $ hg commit
 
 <p>Note: To securely mark a revision, you can use the <a title="Using GnuPG to securely sign revisions in Mercurial" href="http://www.selenic.com/mercurial/wiki/GpgExtension">gpg extension</a> to sign the tag.</p>
 
-<h4>Workflow</h4>
+<h3>Workflow</h3>
 
 <p>Let's assume you want to give revision 3 the name "v0.1".</p>
 
@@ -578,9 +578,9 @@ $ hg commit
 <p>Now he'll be at the tagged revision and can work from there.</p>
 
 
-<h3>Removing history</h3> 
+<h2>Removing history</h2> 
 
-<h4>Use Case</h4>
+<h3>Use Case</h3>
 
 <p>At times you will have changes in your repository, which you really don't want in it.</p>
 
@@ -588,7 +588,7 @@ $ hg commit
 
 <p>This workflow becomes inconvenient when you need to remove changes, which are buried below many new changes. If you spot the bad changes early enough, you can get rid of them without too much effort, though.</p>
 
-<h4>Workflow</h4>
+<h3>Workflow</h3>
 
 <p>Let's assume you want to get rid of revision 2 and the highest revision is 3.</p>
 
@@ -614,7 +614,7 @@ $ hg commit
 
 <p>Note: removing history will change the revision IDs of revisions after the removed one, and if you pull from someone else who still has the revision you removed, you will pull the removed parts again. That's why rewriting history should most times only be done for changes which you didn't yet publicise.</p>
 
-<h3>Summary</h3>
+<h2>Summary</h2>
 
 <p>So now you can work with Mercurial in private, and also share your changes in a multitude of ways.</p>
 
@@ -624,7 +624,7 @@ $ hg commit
 
 <p>With this we can conclude our practical guide.</p>
 
-<h2>More Complex Workflows</h2>
+<h1>More Complex Workflows</h1>
 
 <p>If you now want to check some more complex workflows, please have a look at the general <a title="Mercurial Workflows" href="http://selenic.com/mercurial/wiki/Workflows">workflows wikipage</a>.</p>
 
