@@ -36,7 +36,7 @@ class MercurialTricksAdvancedNode(template.Node):
 
 class RandomQuoteNode(template.Node):
     def __init__(self):
-        pass
+        self._filename = settings.MERCURIAL_QUOTES
 
     def render(self, context):
         f = open(self._filename)
