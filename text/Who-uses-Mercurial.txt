@@ -1,0 +1,29 @@
+*Mercurial is being used by all kinds of companies and projects. On this page we only list 8 picks. For a longer list, please visit [the dedicated wiki-page](http://www.selenic.com/mercurial/wiki/ProjectsUsingMercurial).* 
+
+=== Companies ===
+
+* [Google](http://google.com) for internal use and as option for their [free project hosting](http://code.google.org)
+  *Mercurial offers an excellent "sweet spot" in terms of flexibility, simplicity, and speed.* - Alex Martelli, Google Tech Lead.
+* Mozilla for [all kinds of projects](https://developer.mozilla.org/en/Mozilla_Source_Code_(Mercurial)), including [Firefox from 3.x onward](http://hg.mozilla.org/mozilla-central/). 
+  *QUOTE FROM MOZILLA* - Person
+* Sun for projects including [OpenJDK]() and [Open Solaris](). 
+  *QUOTE FROM SUN* - Person
+* [Bitbucket](http://bitbucket.org) to provide free project hosting.
+  *QUOTE FROM BITBUCKET* - Person
+
+=== Independent Projects ===
+
+* Python for future development. 
+  *It's hard to explain my reasons for choosing -- like most language decisions (especially the difficult ones) it's mostly a matter of gut feelings* - [Guido van Rossum](http://mail.python.org/pipermail/python-dev/2009-March/087931.html)
+* Xen for developing their [Paravirtualization System]()
+  *QUOTE FROM XEN* - Person
+* MoinMoin for developing their [wiki engine](). 
+  *QUOTE FROM MOINMOIN* - Person
+* Adium, the [MacOSX Chat client](). 
+  *QUOTE FROM ADIUM* - Person
+
+For a longer list, please visit [the dedicated wiki-page](http://www.selenic.com/mercurial/wiki/ProjectsUsingMercurial).*
+
+<!--Missing: high profile windows software? -->
+
+<!--Alternates: XEmacs (many experienced devs), SciPy (to better reach scientists), wmii (for WM nerds :), -->
