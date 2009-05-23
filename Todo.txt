@@ -5,7 +5,7 @@ Until the site can go official:
 * quick_start
 * learn_mercurial (links to different resources with short descriptions)
 * testimonies: "It just works (with a random quote at the beginning)
-* who_uses_mercurial (Only 6 relevant projects, ideally with link to their repos and a text with their experience)
+* who_uses_mercurial (Only 6 relevant projects, ideally with link to their repos and a text with their experience) - in the works by ArneBab
 * Automatic detection of the current version for downloads. Possibly via PyPI. 
 
 Longterm: 
