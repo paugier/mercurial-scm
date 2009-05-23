@@ -1,0 +1,7 @@
+<strong>bundle incoming</strong>
+<p>
+See and bundle new changes<br />
+<tt>$ hg in --bundle in.bundle</tt><br />
+pull the changes networkless<br />
+<tt>$ hg pull in.bundle</tt>
+</p>
