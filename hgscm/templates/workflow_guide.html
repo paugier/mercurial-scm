@@ -14,8 +14,7 @@
 <p>If you want a more exhaustive tutorial with the basics, please have a look at the <a title="Mercurial Tutorial" href="http://www.selenic.com/mercurial/wiki/Tutorial">Tutorial in the Mercurial Wiki</a>. For a really detailed and very nice to read description of Mercurial, please have a look at <a title="Mercurial: The definitive Guide" href="http://hgbook.red-bean.com/">Mercurial: The definitive Guide</a>.</p>
 
 <p>Note: This guide doesn't require any prior knowledge of version control systems (though subversion users will likely feel at home quite quickly). Basic commandline abilities are helpful, because we'll use the commandline client. <!--If you already know other systems, please check our transition guides: svn, cvs, git, bzr --></p>
-
-<h1>Basic workflows</h1>
+<h1 id="basic_workflow">Basic workflows</h1>
 
 <h2>Log keeping</h2>
 
@@ -124,7 +123,7 @@ $ hg commit
 
 </pre>
 
-<h2>Lone developer with nonlinear history</h2>
+<h2 id="lone_developer">Lone developer with nonlinear history</h2>
 
 <h3>Use case</h3> 
 
@@ -241,7 +240,7 @@ $ hg commit
 
 <p>Note: If you fix a bug in an earlier revision, and some later revision copied or moved that file, the fix will be propagated to the target file(s) when you merge. This is the main reason why you should always use <hg>hg cp</hg> and <hg>hg mv</hg>.</p>
 
-<h2>Seperate features</h2>
+<h2 id="separate_features">Separate features</h2>
 
 <h3>Use Case</h3>
 
@@ -325,7 +324,7 @@ $ hg incoming ../feature1
 
 <p>Note: Rollback is possible, because Mercurial uses transactions when recording changes, and you can use the transaction record to undo the last transaction. This means that you can also use <hg>rollback</hg> to undo your last <hg>pull</hg>, if you didn't yet commit aything new.</p>
 
-<h2>Sharing changes</h2>
+<h2 id="sharing_changes">Sharing changes</h2>
 
 <h3>Use Case</h3>
 
@@ -484,7 +483,7 @@ $ hg pull ../integration
 
 <p>Note: You can also use this workflow with a shared server instead of BitBucket, either via SSH or via a shared directory. An example for an SSH URL with Mercurial is be ssh://user@example.com/path/to/repo. When using a shared directory you just push as if the repository in the shared directory were on your local drive.</p>
 
-<h2>Summary</h2>
+<h2 id="basic_summary">Summary</h2>
 
 <p>Now let's take a step back and look where we are.</p>
 
@@ -580,7 +579,9 @@ $ hg pull https://bitbucket.org/USER/REPO
 
 <p>Let's move on towards useful features and a bit more advanced workflows.</p>
 
-<h2>Backing out bad revisions</h2>
+<h1 id="advanced_workflows">Advanced workflows</h1>
+
+<h2 id="backing_out">Backing out bad revisions</h2>
 
 <h3>Use Case</h3>
 
@@ -604,7 +605,7 @@ $ hg commit
 
 <p>That's it. You reversed the bad change. It's still recorded that it was once there (following the principle "don't rewrite history, if it's not really necessary"), but it doesn't affect future code anymore.</p>
 
-<h2>Collaborative feature development</h2>
+<h2 id="collaborative_development">Collaborative feature development</h2>
 
 <p>Now that you can share changes and reverse them if necessary, you can go one step further: Using Mercurial to help in coordinating the coding.</p>
 
@@ -659,7 +660,7 @@ $ hg commit
 
 <p>Note: Named branches stay in history as permanent record after you finished your work. If you don't like having that record in your history, please have a look at some of the advanced <a title="Mercurial Workflows" href="http://www.selenic.com/mercurial/wiki/Workflows">workflows</a>.</p>
 
-<h2>Tagging revisions</h2>
+<h2 id="tagging">Tagging revisions</h2>
 
 <h3>Use Case</h3>
 
@@ -696,7 +697,7 @@ $ hg commit
 <p>Now he'll be at the tagged revision and can work from there.</p>
 
 
-<h2>Removing history</h2> 
+<h2 id="removing_history">Removing history</h2> 
 
 <h3>Use Case</h3>
 
@@ -738,7 +739,7 @@ $ hg commit
 
 <p>Note: removing history will change the revision IDs of revisions after the removed one, and if you pull from someone else who still has the revision you removed, you will pull the removed parts again. That's why rewriting history should most times only be done for changes which you didn't yet publicise.</p>
 
-<h2>Summary</h2>
+<h2 id="advanced_summary">Summary</h2>
 
 <p>So now you can work with Mercurial in private, and also share your changes in a multitude of ways.</p>
 
@@ -748,7 +749,7 @@ $ hg commit
 
 <p>With this we can conclude our practical guide.</p>
 
-<h1>More Complex Workflows</h1>
+<h1 id="complex_workflows">More Complex Workflows</h1>
 
 <p>If you now want to check some more complex workflows, please have a look at the general <a title="Mercurial Workflows" href="http://selenic.com/mercurial/wiki/Workflows">workflows wikipage</a>.</p>
 
@@ -760,8 +761,26 @@ $ hg commit
 
 </div>
 <div class="col">
-                {% download_button %}
-	            {% mercurial_tricks %}
+        <h2>Index</h2>
+        <ul>
+            <li><a href="#basic_workflow">Basic workflows</a></li>
+            <ul>
+                <li><a href="#lone_developer">Lone developer with nonlinear history</a></li>
+                <li><a href="#separate_features">Separate features</a></li>
+                <li><a href="#sharing_changes">Sharing changes</a></li>
+                <li><a href="#basic_summary">Summary</a></li>
+            </ul>
+            <li><a href="#advanced_workflows">Advanced workflows</a></li>
+            <ul>
+                <li><a href="#backing_out">Backing out bad revisions</a></li>
+                <li><a href="#collaborative_development">Collaborative feature development</a></li>
+                <li><a href="#tagging">Tagging revisions</a></li>
+                <li><a href="#removing_history">Removing history</a></li>
+                <li><a href="#advanced_summary">Summary</a></li>
+            </ul>
+            <li><a href="#complex_workflows">More complex workflows</a></li>
+        </ul>
+
 		</div>
 	</div>
 
