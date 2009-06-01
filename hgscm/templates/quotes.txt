@@ -10,7 +10,7 @@ Easy to understand at a practical level. - Michael Estrand
 The included web server [...] replaces a lot of functionality of GUI tools in a truly multiplatform way. - Daniel Serpell
 There isn't much to learn to be effective. - Doug Philips
 It took my less than an hour to understand it. - Thomas Burdick
-It has a tortoise so I can actually show my boss its highly productive even in windows. - Thomas Burdick
+It has a tortoise so I can actually show my boss it's highly productive even in windows. - Thomas Burdick
 The commands usually do what I assume them to do. - Bastian Doetsch
 Mercurial's conceptual model is clean and simple enough to carry around in my head. - hgbook
 It's so easy to start a project; hg init, and you're good to go. - Paul Fisher
