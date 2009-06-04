@@ -113,6 +113,6 @@ that:
     next commit, see "hg parents".
 
 
-A final note: If you want to quickly look things up, you can use one of the [Mercurial cheatsheets](http://www.selenic.com/mercurial/wiki/index.cgi/QuickReferenceCardsAndCheatSheets). 
+If you want to quickly look up something, you can use one of the [Mercurial cheatsheets](http://www.selenic.com/mercurial/wiki/index.cgi/QuickReferenceCardsAndCheatSheets). 
 
 *compiled from a great Mail by Martin Geisler*
