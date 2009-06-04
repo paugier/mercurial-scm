@@ -1,5 +1,7 @@
 = Quick Start =
 
+== Part 1: Using Mercurial ==
+
 This site should get you going in an instant. 
 
 Aside from the practical Quick Start to the right, there are only a few commands you need to start working. 
@@ -24,7 +26,8 @@ This also helps getting a feeling for what the commands do.
 
 (you can also do a lot of finegrained stuff by using different command options. Just call "hg help <command>" to see them). 
 
-I hope your experience with Mercurial will be as great as mine!
+I you want more than this quick overview, please have a look at our longer [guide](). 
 
-- Arne Babenhauserheide
+== Part 2: Understanding Mercurial ==
 
+... compile the great mails from M. Geisler ...
