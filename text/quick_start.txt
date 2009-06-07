@@ -1,12 +1,35 @@
 = Quick Start =
 
+*This site should get you going at once.*
+
+== Part 0: Instant usage ==
+
+*(you know this from the main page)*
+
+Clone a project and create a patch 
+
+$ hg clone http://hg-scm.org/hello
+$ cd hello
+$ (edit files)
+$ hg add (new files)
+$ hg commit -m 'My changes'
+$ hg export tip > patch.diff
+
+
+Create a project and commit 
+
+$ hg init (project-directory)
+$ cd (project-directory)
+$ (add some files)
+$ hg add
+$ hg commit -m 'Initial commit'
+
+
 == Part 1: Using Mercurial ==
 
-This site should get you going in an instant. 
+Aside from the practical Quick Start above, there are only a few commands you need to start working. 
 
-Aside from the practical Quick Start to the right, there are only a few commands you need to start working. 
-
-Even if you stick to these basics, Mercurial is quite powerful. And they are very easy to use, once you see the model behind that: Each repository has the whole history, and history is not necessarily linear. 
+Even if you stick to these basics, Mercurial is quite powerful. And they are very easy to use, once you see the model behind that: Each repository has the whole history, and history is not necessarily linear (part 2 explains that model in a bit more detail). 
 
 A quick overview of the basic commands: 
 
@@ -26,18 +49,18 @@ This also helps getting a feeling for what the commands do.
 
 (you can also do a lot of finegrained stuff by using different command options. Just call "hg help <command>" to see them). 
 
-I you want more than this quick overview, please have a look at our longer [guide](). 
+I you want more than this quick overview, please have a look at our longer [practical guide]({% url workflow_guide %}). 
 
-== Part 2: Understanding Mercurial ==
+== Part 2: Understanding Mercurial from Subversion ==
 
-Let's look at some of the basic concepts of Mercurial to get a better understanding of its internals: 
+Now we'll look at some of the basic concepts of Mercurial to get a better understanding of its internals: 
 
 * Like in Subversion, history consists of a number of commits. They're
   called changesets in Mercurial.
 
 * Subversion requires a strict linear ordering of the commits and
   gives nice linear revision numbers to them. So revision N has only
-  one child revision, rN+1.
+  one child revision, N+1.
 
   This is simple, but it requires a central server to make sure that
   everybody agrees on the revision numbers.
@@ -92,15 +115,14 @@ Let's look at some of the basic concepts of Mercurial to get a better understand
 
   Note that the merge changeset M has two parents.
 
-  If you do not merge C3 and C3' and try to push you get the 'new
+  If you do not merge C3 and C3' and try to push, you get the 'new
   remote head' message and push aborts. It aborts since it is a little
   "impolite" to leave the job of merging to someone else -- he who
   created the two heads by pulling in some code should also normally
   do the merging.  
 
 
-In all this it helped my understanding a lot to think in terms of the changeset graph. Just remember
-that:
+It helped my understanding a lot to think in terms of the changeset graph. Just remember that:
 
   * "hg commit" adds a new node. The parent changesets of the new node
     is given by "hg parents"
@@ -113,6 +135,6 @@ that:
     next commit, see "hg parents".
 
 
-If you want to quickly look up something, you can use one of the [Mercurial cheatsheets](http://www.selenic.com/mercurial/wiki/index.cgi/QuickReferenceCardsAndCheatSheets). 
+And you want to quickly look up something, you can use one of the [Mercurial cheatsheets](http://www.selenic.com/mercurial/wiki/index.cgi/QuickReferenceCardsAndCheatSheets). 
 
-*compiled from a great Mail by Martin Geisler*
+*compiled from a great email by Martin Geisler*
