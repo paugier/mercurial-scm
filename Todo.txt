@@ -4,7 +4,7 @@ Until the site can go official:
 
 * quick_start
 * learn_mercurial (links to different resources with short descriptions)
-* testimonies: "It just works" (with a random quote at the beginning)
+* testimonials: "It just works" (with a random quote at the beginning)
 * Automatic detection of the current version for downloads. Possibly via PyPI. 
 
 Longterm: 
