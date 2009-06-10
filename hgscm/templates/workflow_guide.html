@@ -595,7 +595,10 @@ $ hg pull https://bitbucket.org/USER/REPO
 
 <h3>Workflow</h3>
 
-<p>Let's assume the bad change was revision 3, and we already have one more revision in our repository. To remove the bad code, we just <hg>backout</hg> of it. This creates a new change which reverses the bad change. After backing out, we merge that new change into the current code.</p>
+<p>Let's assume the bad change was revision 3, and you already have one more revision in your 
+repository. To remove the bad code, you can just <hg>backout</hg> of it. This creates a new 
+change which reverses the bad change. After backing out, you can then merge that new change 
+into the current code.</p>
 
 <pre>$ hg backout 3
 $ hg merge
