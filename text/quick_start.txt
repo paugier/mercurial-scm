@@ -1,6 +1,6 @@
 = Quick Start =
 
-*This site should get you going at once.*
+*This site should get you going at once. You can find a slightly longer quick_start [in the wiki](http://mercurial.selenic.com/wiki/QuickStart)*
 
 == Part 0: Instant usage ==
 
@@ -49,9 +49,16 @@ This also helps getting a feeling for what the commands do.
 
 (you can also do a lot of finegrained stuff by using different command options. Just call "hg help <command>" to see them). 
 
+One step you'll likely want to do is setting your username in your Mercurial config file. 
+
+For this you can configure a proper name and email address in ~/.hgrc (or on a Windows system in %USERPROFILE%\Mercurial.ini) by adding lines such as the following: 
+
+    [ui]
+    username = John Doe <john@example.com>
+
 I you want more than this quick overview, please have a look at our longer [practical guide]({% url workflow_guide %}). 
 
-== Part 2: Understanding Mercurial from Subversion ==
+== Part 2: Understanding Mercurial ==
 
 Now we'll look at some of the basic concepts of Mercurial to get a better understanding of its internals: 
 
