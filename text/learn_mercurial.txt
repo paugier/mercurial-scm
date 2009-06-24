@@ -2,14 +2,18 @@
 
 *Here you can find links to resources for learning Mercurial*
 
-* Quick_Start (instant Mercurial, this site)
+* Quick_Start  
+  Get started using Mercurial and understanding its basic concepts.
 
-* Quick_Start from wiki (learn the basics)
+* Quick_Start from wiki: http://mercurial.selenic.com/wiki/QuickStart
+  Learn the basic Mercurial commands. A bit more verbose than the short quick start above. 
 
 (* TortoiseHG basics (For the Mercurial GUI) - when acessed from a windows box)
 
-* workflow_guide (learn using Mercurial step by step)
+* workflow_guide 
+  Learn using Mercurial step by step in workflows. This guide skips the conceptual explanations to focus only on the practical usage. 
 
-* hgbook (an in depth look into Mercurial "This book from ... gives a detailed and easy to read introduction to Mercurial and the philosophy behind it. It goes from the basic to advanced topics like Mercurial Queues for patch management")
+* hgbook 
+  The free book from Brian o Sullivan gives a detailed and easy to read introduction to Mercurial and the philosophy behind it. 
 
-* Other resources (links in the wiki, publicly editable. If you wrote some guide yourself, maybe for your team or for friends of yours, please add it!)
+(* Other resources (links in the wiki, publicly editable. If you wrote some guide yourself, maybe for your team or for friends of yours, please add it!) - it might be useful to have such a page in the wiki! )
