@@ -2,14 +2,19 @@ Todo:
 
 Until the site can go official: 
 
-* quick_start
-* learn_mercurial (links to different resources with short descriptions)
 * testimonials: "It just works" (with a random quote at the beginning)
 * Automatic detection of the current version for downloads. Possibly via PyPI. 
 
 Longterm: 
 
 * Some pages for links which currently point to the wiki but are suboptimal (for example an extension site with only the most used/useful extensions). 
+
+
+Currently in the works: 
+
+* quick_start - bab
+* learn_mercurial (links to different resources with short descriptions) - bab
+
 
 Done: 
 

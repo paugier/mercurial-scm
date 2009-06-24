@@ -1,0 +1,15 @@
+= Learn Mercurial =
+
+*Here you can find links to resources for learning Mercurial*
+
+* Quick_Start (instant Mercurial)
+
+* Quick_Start from wiki (learn the basics)
+
+* TortoiseHG basics (For the Mercurial GUI)
+
+* workflow_guide (learn using Mercurial step by step)
+
+* hgbook (an in depth look into Mercurial "This book from ... gives a detailed and easy to read introduction to Mercurial, from easy steps to advanced topics like Mercurial Queues for patch management")
+
+* Other resources (links in the wiki, publicly editable. If you wrote some guide yourself, maybe for your team or for friends of yours, please add it!)
