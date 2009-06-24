@@ -12,8 +12,8 @@ Longterm:
 
 Currently in the works: 
 
-* quick_start - bab
-* learn_mercurial (links to different resources with short descriptions) - bab
+* quick_start - bab, concept written in text/
+* learn_mercurial (links to different resources with short descriptions) - bab, concept written in text/
 
 
 Done: 
