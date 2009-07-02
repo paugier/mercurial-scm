@@ -147,4 +147,10 @@ blockquote, q { quotes: "" ""; }
  * Mercurial commands interspersed in text 
  */
 
-hg { text-decoration: italic; }
+#home hg { text-decoration: italic; }
+
+/*
+ * Lists without big bullet type...
+ */
+
+#home .undecorated_list li { list-style:decimal outside; background: none; padding-left: 0px; min-height: 0px; margin-bottom: 1.7em} #home .undecorated_list li li { list-style: circle outside }

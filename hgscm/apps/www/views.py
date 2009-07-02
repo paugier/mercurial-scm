@@ -18,6 +18,12 @@ def who_uses(request):
 def workflow_guide(request):
     return render_to_response("workflow_guide.html", { },
         RequestContext(request))
+def quick_start(request):
+    return render_to_response("quick_start.html", { },
+        RequestContext(request))
+def learn_mercurial(request):
+    return render_to_response("learn_mercurial.html", { },
+        RequestContext(request))
 def thepage(request):
     return render_to_response("thepage.html", { },
         RequestContext(request))
