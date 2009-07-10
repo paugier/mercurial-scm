@@ -1,7 +1,8 @@
 Todo: 
 
 Until the site can go official: 
-* Get search working  - or remove it. 
+
+* 
 
 Longterm: 
 
