@@ -31,11 +31,6 @@ h2 { font-size: 1.6em; }
 h3 { font-size: 1.3em; }
 
 /*
- * WIP warning, can be removed once the site is 'finished'
- */
-.wip-warning { font-size: 1.1em; font-family: Optimer, Helvetica, Arial, sans-serif; border: 1px solid #330; background-color: #fafa33; padding: 2px; text-align: center}
-
-/*
  * Lists
  */
 ul { margin-left: 2.2em; line-height: 1.5em; }
@@ -96,7 +91,7 @@ blockquote, q { quotes: "" ""; }
 /*
  * Nav
  */
-#nav { position: absolute; top: 41px; right: 0; background: #999; height: 42px; margin: 0; width: 665px; font-size: 1.2428em; *font-size: 16px; line-height: 42px; font-family: Optimer, Helvetica, Arial, sans-serif; overflow: hidden; }
+#nav { position: absolute; top: 17px; right: 0; background: #999; height: 42px; margin: 0; width: 665px; font-size: 1.1428em; *font-size: 16px; line-height: 42px; font-family: Optimer, Helvetica, Arial, sans-serif; overflow: hidden; }
 #nav li { float: left; margin: 0; padding: 0; list-style: none; }
 #nav a { float: left; color: #fff; text-decoration: none; padding: 0 16px; *padding: 0 14px; }
 #nav a:hover, #nav a:focus, #nav .active a { background: #00b5f1; }
@@ -104,7 +99,7 @@ blockquote, q { quotes: "" ""; }
 /*
  * Search
  */
-#search { position: absolute; right: 15px; top: 50px; color: #fff; width: 183px; height: 23px; background: url(../images/search.png) no-repeat 0 0; }
+#search { position: absolute; right: 15px; top: 26px; color: #fff; width: 183px; height: 23px; background: url(../images/search.png) no-repeat 0 0; }
 #search legend { display: none; }
 #search label { position: absolute; left: -9999px; }
 #search .text { width: 150px; background: none; border: none; margin: 0 0 0 5px; position: relative; top: 5px; color: #666; outline:0; }
