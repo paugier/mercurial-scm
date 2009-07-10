@@ -22,13 +22,27 @@
 			<li><a href="http://www.selenic.com/mercurial/wiki/UsingExtensions">extensions</a></li>
 			<li><a href="http://www.selenic.com/mercurial">docs/news</a></li>
 		</ul>
-		
+		<!-- original Search form: 
 		<form id="search" method="post" action="search/">
 			<fieldset>
 				<legend>Search form</legend>
 				<label for="keyword">keyword</label>
 				<input class="text" type="text" name="keyword" id="keyword">
 				<input class="submit" type="submit" value="search">
+			</fieldset>
+		</form>
+		-->
+		<!-- Search form for the wiki -->
+		<form id="search" method="get" action="http://mercurial.selenic.com/wiki/Mercurial">
+		<input type="hidden" name="action" value="fullsearch">
+		<input type="hidden" name="context" value="180">
+			<fieldset>
+				<legend>Search form</legend>
+				<label for="keyword">keyword</label>
+				<input class="text" type="text" name="value"
+				value="Search the Wiki" id="keyword">
+				<input class="submit" type="submit" value="Title"
+				name="titlesearch" alt="Search Titles"> 
 			</fieldset>
 		</form>
 		
