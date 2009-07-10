@@ -2,6 +2,8 @@ Todo:
 
 Until the site can go official: 
 
+* 
+
 Longterm: 
 
 * Automatic detection of the current version for downloads. Possibly via PyPI. 
