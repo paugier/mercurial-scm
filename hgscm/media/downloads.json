@@ -1,10 +1,38 @@
-[{
+[
+    {
         "latest": "true",
         "version": "1.3",
-        "versions": [{
-            "system": "FreeBSD",
-            "identifier": "freebsd",
-            "url": "ftp://ftp.freebsd.org/pub/FreeBSD/ports/i386/packages-stable/devel/mercurial-1.2.1.tbz"
+        "versions": [
+        {
+            "system": "Windows GUI (TortoiseHG)",
+            "identifier": "thgwin",
+            "url": "http://bitbucket.org/tortoisehg/stable/downloads/TortoiseHg-0.7.6-hg-1.2.1.exe"
+        },{
+            "system": "Windows command line",
+            "identifier": "windows",
+            "url": "http://mercurial.berkwood.com/binaries/Mercurial-1.3.exe"
+        },{
+            "system": "MacOS X 10.5",
+            "identifier": "macosx",
+            "url": "http://mercurial.berkwood.com/binaries/Mercurial-1.3-py2.5-macosx10.5.zip"
+        },{
+            "system": "Source",
+            "identifier": "source",
+            "url": "http://www.selenic.com/mercurial/release/mercurial-1.3.tar.gz"
+        }]
+    },
+    {
+        "latest": "false",
+        "version": "1.2.1",
+        "versions": [
+        {
+            "system": "Windows GUI (TortoiseHG)",
+            "identifier": "thgwin",
+            "url": "http://bitbucket.org/tortoisehg/stable/downloads/TortoiseHg-0.7.6-hg-1.2.1.exe"
+        },{
+            "system": "Windows command line",
+            "identifier": "windows",
+            "url": "http://mercurial.berkwood.com/binaries/Mercurial-1.2.1.exe"
         },{
             "system": "MacOS X 10.5",
             "identifier": "macosx",
@@ -14,13 +42,13 @@
             "identifier": "macosx104",
             "url": "http://mercurial.berkwood.com/binaries/Mercurial-1.2.1-py2.5-macosx10.4.zip"
         },{
-            "system": "Windows",
-            "identifier": "windows",
-            "url": "http://mercurial.berkwood.com/binaries/Mercurial-1.2.1.exe"
+            "system": "FreeBSD",
+            "identifier": "freebsd",
+            "url": "ftp://ftp.freebsd.org/pub/FreeBSD/ports/i386/packages-stable/devel/mercurial-1.2.1.tbz"
         },{
             "system": "Source",
             "identifier": "source",
-            "url": "http://www.selenic.com/mercurial/release/mercurial-1.3.tar.gz"
+            "url": "http://www.selenic.com/mercurial/release/mercurial-1.2.1.tar.gz"
         }]
     }
 ]

@@ -2,7 +2,7 @@ Todo:
 
 Until the site can go official: 
 
-* Include more info about TortoiseHG!
+* Include more info about TortoiseHG, Download and learning resource.
 
 Longterm: 
 
