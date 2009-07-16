@@ -2,7 +2,7 @@ Todo:
 
 Until the site can go official: 
 
-* Include more info about TortoiseHG, Download and learning resource.
+*
 
 Longterm: 
 
@@ -14,10 +14,10 @@ Longterm:
 
 Currently in the works: 
 
-* learn_mercurial (links to different resources with short descriptions) - bab, Only missing part: A wiki page which links to learning resources
-
+* Include more info about TortoiseHG, Download and learning resource.
 
 Done: 
 
 * who_uses_mercurial (Only 6 relevant projects, ideally with link to their repos and a text with their experience) - done by dsop
 * quick_start - bab
+* learn_mercurial (links to different resources with short descriptions) - bab, Only missing part: A wiki page which links to learning resources
