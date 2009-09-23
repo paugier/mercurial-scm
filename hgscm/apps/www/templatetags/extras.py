@@ -41,7 +41,7 @@ class RandomQuoteNode(template.Node):
     def render(self, context):
         f = open(self._filename)
 	quote, author = random.choice(f.readlines()).split(" - ")
-        result = "<p><em>" + quote + "</em>" + " - " + author + "</p>"
+        result = "<p><h3>Random Quote</h3><p><em>" + quote + "</em>" + " - " + author + "</p>"
         return result
 
 class DownloadButtonNode(template.Node):
