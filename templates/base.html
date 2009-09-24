@@ -35,13 +35,20 @@
         </form>
         
         <div id="content">
-
-            {% block content %}
-            
-                No content on this page yet.
-            
+            {% block main %}
+                <div class="row">
+                    <div class="col big">
+                        {% block content %}
+                            No content on this page yet.
+                        {% endblock %}
+                    </div>
+                    <div class="col">
+                        {% block sidebar %}
+                            No sidebar on this page yet.
+                        {% endblock %}
+                    </div>
+                </div>
             {% endblock %}
-
         </div>
         
         <div id="footer">
