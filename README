@@ -24,6 +24,10 @@ My patched version of blatter (adds the ability to ignore files and add custom J
     cd blatter
     python setup.py install
 
+The python-markdown module (for rendering the website content):
+
+    easy_install markdown
+
 Usage
 -----
 
