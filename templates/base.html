@@ -9,6 +9,14 @@
         <script type="text/javascript" src="/javascript/typeface.js"></script>
         <script type="text/javascript" src="/javascript/optimer_regular.typeface.js"></script>
         <script type="text/javascript" src="/javascript/download.js"></script>
+        <script language="javascript" type="text/javascript">
+        {% set download = downloads[downloads['current']] %}
+         var dl = new Download();
+         dl.register_download('Windows', "{{ download['Windows']}}");
+         dl.register_download('Mac OS X', "{{ download['Mac OS X 10.6']}}");
+         dl.register_download('UNIX', "{{ download['Source code']}}");
+         dl.register_download('Linux', "{{ download['Source code']}}");
+        </script>
         <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 
         <title>Mercurial SCM</title>
@@ -47,10 +55,10 @@
                     </div>
                     <div class="col">
                         {% block sidebar %}
-                        <a class="download typeface-js" href="/downloads">
+                        <a class="download typeface-js" href="#" onClick="javascript:dl.os_link()">
                                     <strong>Download now</strong>
                                     Mercurial <em>1.3.1</em>
-                                    <span><script language="javascript">os_detection();</script></span>
+                                    <span><script language="javascript">dl.os_detection();</script></span>
                         </a>
                         <dl>
                             <dt class="typeface-js">Requirements</dt>
