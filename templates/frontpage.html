@@ -34,6 +34,17 @@
         </ol>
     </div>
     <div class="col">
+        <h3>Download</h3>
+        {% for version in downloads %}
+            <h4><strong>{{ version }}</strong></h4>
+            <ul>
+                {% for os in downloads[version] %}
+                    <li>{{ os }}: {{ downloads[version][os] }}</li>
+                {% endfor %}
+            </ul>
+            
+        {% endfor %}
+        
         <h3>Quick Start</h3>
 
         <p><em>Clone a project and create a patch</em>
