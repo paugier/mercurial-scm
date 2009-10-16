@@ -19,7 +19,7 @@ a:hover, a:focus { text-decoration: none; }
 /*
  * General Document Settings
  */
-body { font: .875em/1.4285em "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif; color: #111; width: 900px; margin: 0 auto; position: relative; }
+body { font: .975em/1.4285em "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif; color: #111; width: 900px; margin: 0 auto; position: relative; }
 
 /*
  * Headings
