@@ -26,6 +26,10 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 *****************************************************************/
+if (/MSIE/i.test(navigator.userAgent) && /x64/i.test(navigator.userAgent)) {
+    var _typeface_js = {};
+    window._typeface_js = _typeface_js;
+} else {
 
 (function() {
 
@@ -834,3 +838,4 @@ script.onreadystatechange = function() {
 try { console.log('initializing typeface.js') } catch(e) {};
 
 })();
+}
