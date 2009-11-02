@@ -9,9 +9,9 @@
 
 <h1>Learning Mercurial in Workflows</h1>
 
-<p>With Mercurial you can use a multitude of different workflows. This page shows some of them, including their use cases. It is intended to make it easy for beginners of version tracking to get going instantly and learn completely incrementally. It doesn't explain the concepts used, because there are already many other great resources doing that, for example <a title="Understanding Mercurial" href="http://www.selenic.com/mercurial/wiki/UnderstandingMercurial">the wiki</a> and <a title="Behind the Scenes" href="http://hgbook.red-bean.com/read/behind-the-scenes.html">the hgbook</a>.</p>
+<p>With Mercurial you can use a multitude of different workflows. This page shows some of them, including their use cases. It is intended to make it easy for beginners of version tracking to get going instantly and learn completely incrementally. It doesn't explain the concepts used, because there are already many other great resources doing that, for example <a title="Understanding Mercurial" href="http://mercurial.selenic.com/wiki/UnderstandingMercurial">the wiki</a> and <a title="Behind the Scenes" href="http://hgbook.red-bean.com/read/behind-the-scenes.html">the hgbook</a>.</p>
 
-<p>If you want a more exhaustive tutorial with the basics, please have a look at the <a title="Mercurial Tutorial" href="http://www.selenic.com/mercurial/wiki/Tutorial">Tutorial in the Mercurial Wiki</a>. For a really detailed and very nice to read description of Mercurial, please have a look at <a title="Mercurial: The definitive Guide" href="http://hgbook.red-bean.com/">Mercurial: The definitive Guide</a>.</p>
+<p>If you want a more exhaustive tutorial with the basics, please have a look at the <a title="Mercurial Tutorial" href="http://mercurial.selenic.com/wiki/Tutorial">Tutorial in the Mercurial Wiki</a>. For a really detailed and very nice to read description of Mercurial, please have a look at <a title="Mercurial: The definitive Guide" href="http://hgbook.red-bean.com/">Mercurial: The definitive Guide</a>.</p>
 
 <p>Note: This guide doesn't require any prior knowledge of version control systems (though subversion users will likely feel at home quite quickly). Basic commandline abilities are helpful, because we'll use the commandline client. <!--If you already know other systems, please check our transition guides: svn, cvs, git, bzr --></p>
 <h1 id="basic_workflow">Basic workflows</h1>
@@ -433,7 +433,7 @@ $ hg pull ../integration
 
 <p>By default <em>hg serve</em> doesn't allow pushing, since that would be a major security hole. You can allow pushing in the server, but that's no solution when you live in different timezones, so we'll go with another approach here: Using a shared repository, either on an existing shared server or on a service like <a title="BitBucket" href="http://bitbucket.org">BitBucket</a>. Doing so has a bit higher starting cost and takes a bit longer to explain, but it's well worth the effort spent.</p>
 
-<p>If you want to use an existing shared server, you can use <em>serve</em> there and <a title="How to allow pushing for hg serve" href="http://www.selenic.com/mercurial/wiki/HgWebDirStepByStep#head-746ca383e3a62df34279ec2fca888113497da022">allow pushing</a>. Also there are some other nice ways to <a title="Multiple Committers" href="http://www.selenic.com/mercurial/wiki/MultipleCommitters">allow pushing to a Mercurial repository</a>, including simple <a title="Setting up a shared Mercurial repository using SSH" href="http://www.selenic.com/mercurial/wiki/SharedSSH">access via SSH</a>.</p>
+<p>If you want to use an existing shared server, you can use <em>serve</em> there and <a title="How to allow pushing for hg serve" href="http://mercurial.selenic.com/wiki/HgWebDirStepByStep#head-746ca383e3a62df34279ec2fca888113497da022">allow pushing</a>. Also there are some other nice ways to <a title="Multiple Committers" href="http://mercurial.selenic.com/wiki/MultipleCommitters">allow pushing to a Mercurial repository</a>, including simple <a title="Setting up a shared Mercurial repository using SSH" href="http://mercurial.selenic.com/wiki/SharedSSH">access via SSH</a>.</p>
 
 <p>Otherwise you first need to setup a BitBucket Account. Just signup at <a title="BitBucket" href="http://bitbucket.org">BitBucket</a>. After signing up (and login) hover your mouse over "Repositories". There click the item at the bottom of the opening dialog which say "Create new".</p>
 
@@ -667,7 +667,7 @@ $ hg commit
 
 <p>And that's it. Now you can easily keep features separate without unnecessary bookkeeping.</p>
 
-<p>Note: Named branches stay in history as permanent record after you finished your work. If you don't like having that record in your history, please have a look at some of the advanced <a title="Mercurial Workflows" href="http://www.selenic.com/mercurial/wiki/Workflows">workflows</a>.</p>
+<p>Note: Named branches stay in history as permanent record after you finished your work. If you don't like having that record in your history, please have a look at some of the advanced <a title="Mercurial Workflows" href="http://mercurial.selenic.com/wiki/Workflows">workflows</a>.</p>
 
 <h2 id="tagging">Tagging revisions</h2>
 
@@ -679,7 +679,7 @@ $ hg commit
 
 <p>Note: A tag must not contain the char ":", since that char is used for specifying multiple reivions - see "hg help revisions".</p>
 
-<p>Note: To securely mark a revision, you can use the <a title="Using GnuPG to securely sign revisions in Mercurial" href="http://www.selenic.com/mercurial/wiki/GpgExtension">gpg extension</a> to sign the tag.</p>
+<p>Note: To securely mark a revision, you can use the <a title="Using GnuPG to securely sign revisions in Mercurial" href="http://mercurial.selenic.com/wiki/GpgExtension">gpg extension</a> to sign the tag.</p>
 
 <h3>Workflow</h3>
 
@@ -712,7 +712,7 @@ $ hg commit
 
 <p>At times you will have changes in your repository, which you really don't want in it.</p>
 
-<p>There are many advanced options for removing these, and most of them use great extensions (<a title="Mercurial Queues Extension" href="http://www.selenic.com/mercurial/wiki/MqExtension">Mercurial Queues</a> is the most often used one), but in this basic guide, we'll solve the problem with just the commands we already learned. But we'll use an option to clone which we didn't yet use.</p>
+<p>There are many advanced options for removing these, and most of them use great extensions (<a title="Mercurial Queues Extension" href="http://mercurial.selenic.com/wiki/MqExtension">Mercurial Queues</a> is the most often used one), but in this basic guide, we'll solve the problem with just the commands we already learned. But we'll use an option to clone which we didn't yet use.</p>
 
 <p>This workflow becomes inconvenient when you need to remove changes, which are buried below many new changes. If you spot the bad changes early enough, you can get rid of them without too much effort, though.</p>
 

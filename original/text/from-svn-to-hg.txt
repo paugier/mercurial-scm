@@ -95,7 +95,7 @@ that:
 
 There are some here:
 
-http://www.selenic.com/mercurial/wiki/index.cgi/QuickReferenceCardsAndCheatSheets
+http://mercurial.selenic.com/wiki/QuickReferenceCardsAndCheatSheets
 
 - Martin Geisler
 
