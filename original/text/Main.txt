@@ -22,7 +22,7 @@ Projects using Mercurial
 * [NetBeans](http://hg.netbeans.org/)
 * [OpenSolaris](http://hg.genunix.org/)
 
-[and many more](http://www.selenic.com/mercurial/wiki/index.cgi/ProjectsUsingMercurial)
+[and many more](http://mercurial.selenic.com/wiki/ProjectsUsingMercurial)
 
 
 How you can benefit from using Mercurial

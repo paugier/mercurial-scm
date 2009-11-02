@@ -48,7 +48,7 @@
         },{
             "system": "Source",
             "identifier": "source",
-            "url": "http://www.selenic.com/mercurial/release/mercurial-1.2.1.tar.gz"
+            "url": "http://mercurial.selenic.com/release/mercurial-1.2.1.tar.gz"
         }]
     }
 ]
