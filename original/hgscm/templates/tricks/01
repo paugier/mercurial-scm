@@ -1,4 +1,0 @@
-<strong>shorthand for commit</strong>
-<pre>
-$ hg ci -m "message"
-</pre>

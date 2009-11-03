@@ -1,7 +1,0 @@
-<strong>Reedit last commit message</strong>
-<pre>
-$ hg qimport -r tip
-$ hg qrefresh -e
-.. edit ..
-$ hg qfinish -a
-</pre>
