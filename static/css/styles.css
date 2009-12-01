@@ -77,7 +77,7 @@ blockquote, q { quotes: "" ""; }
  */
 .row { display: inline-block; overflow: hidden; border-bottom: 1px solid #ccc; }
 .row { display: block; }
-.col { float: right; display: inline; width: 270px; margin: 25px; }
+.col { float: right; display: inline; width: 295px; margin: 25px; }
 .big { float: left; width: 470px; }
 .quote { float: right; width: 740px; text-align: right; margin-right: 25px;   }
 .big h2 { margin-top: 20px; }
