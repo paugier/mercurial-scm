@@ -14,7 +14,8 @@
         {% set download = downloads[downloads['current']] %}
          var dl = new Download();
          dl.register_download('Windows', "{{ download['Windows']}}");
-         dl.register_download('Mac OS X', "{{ download['Mac OS X 10.6']}}");
+         dl.register_download('Mac OS X 10.6', "{{ download['Mac OS X 10.6']}}");
+         dl.register_download('Mac OS X 10.5', "{{ download['Mac OS X 10.5']}}");
          dl.register_download('UNIX', "{{ download['Source code']}}");
          dl.register_download('Linux', "{{ download['Source code']}}");
         </script>

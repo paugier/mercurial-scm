@@ -7,7 +7,14 @@ Download.prototype = {
     parse_os: function() {
         var OSName="Source code";
         if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
-        if (navigator.appVersion.indexOf("Mac")!=-1) OSName="Mac OS X";
+        if (navigator.appVersion.indexOf("Mac")!=-1) {
+            if (navigator.userAgent.indexOf("10.6")!=-1 || /* firefox */
+                navigator.userAgent.indexOf("10_6") !=-1) { /* chrome */
+                OSName="Mac OS X 10.6";
+            } else {
+                OSName="Mac OS X 10.5";
+            }
+        }
         if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
         if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
 
