@@ -91,7 +91,7 @@ blockquote, q { quotes: "" ""; }
 /*
  * Nav
  */
-#nav { position: absolute; top: 17px; right: 0; background: #999; height: 42px; margin: 0; width: 665px; font-size: 1em; *font-size: 16px; line-height: 42px; font-family: Optimer, Helvetica, Arial, sans-serif; overflow: hidden; }
+#nav { position: absolute; top: 17px; right: 0; background: #999; height: 42px; margin: 0; width: 725px; font-size: 1em; *font-size: 16px; line-height: 42px; font-family: Optimer, Helvetica, Arial, sans-serif; overflow: hidden; }
 #nav li { float: left; margin: 0; padding: 0; list-style: none; }
 #nav a { float: left; color: #fff; text-decoration: none; padding: 0 16px; *padding: 0 14px; }
 #nav a:hover, #nav a:focus, #nav .active a { background: #00b5f1; }
