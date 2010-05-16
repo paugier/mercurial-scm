@@ -1,5 +1,5 @@
 function Download() {
-    this.downloads = new Array();
+    this.downloads = {};
 }
 
 Download.prototype = {
