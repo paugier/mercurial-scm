@@ -26,7 +26,12 @@ Download.prototype = {
     },
 
     os_link: function() {
-        document.location.href = this.downloads[this.parse_os()];
+        var os = this.parse_os();
+        if (this.downloads[os]) {
+            document.location.href = this.downloads[os];
+            return false;
+        }
+        return true;
     },
 
     register_download:function(type, url) {
