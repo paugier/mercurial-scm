@@ -1,5 +1,12 @@
 {% set downloads = {
-    'current': '1.5.4',
+    'current': '1.6',
+    '1.6' : {
+        'TortoiseHG for Windows 64bit': 'http://bitbucket.org/tortoisehg/stable/downloads/tortoisehg-1.1-hg-1.6-x64.msi',
+        'TortoiseHG for Windows 32bit': 'http://bitbucket.org/tortoisehg/stable/downloads/tortoisehg-1.1-hg-1.6-x86.msi',
+        'Windows': 'http://bitbucket.org/tortoisehg/thg-winbuild/downloads/mercurial-1.6.0.msi',
+        'Mac OS X 10.6': 'http://mercurial.berkwood.com/binaries/Mercurial-1.6-py2.6-macosx10.6.zip',
+        'Mac OS X 10.5': 'http://mercurial.berkwood.com/binaries/Mercurial-1.6-py2.5-macosx10.5.zip',
+        'Source code': 'http://mercurial.selenic.com/release/mercurial-1.6.tar.gz'},
     '1.5.4' : {
         'TortoiseHG for Windows 64bit': 'http://bitbucket.org/tortoisehg/stable/downloads/tortoisehg-1.0.4-hg-1.5.4-x64.msi',
         'TortoiseHG for Windows 32bit': 'http://bitbucket.org/tortoisehg/stable/downloads/tortoisehg-1.0.4-hg-1.5.4-x86.msi',
