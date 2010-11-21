@@ -57,9 +57,15 @@ var Downloader = {
             return (b < a) - (a < b);
         });
 
+        var desc;
         for (i in downloads) {
             var dl = downloads[i];
-            document.write('<tr>\n<td>' + dl.desc + '</td>' +
+            var ua = navigator.userAgent;
+            if (dl.matches(ua))
+                desc = '<em>' + dl.desc + '</em>';
+            else
+                desc = dl.desc;
+            document.write('<tr>\n<td>' + desc + '</td>' +
                            '<td></td>' +
                            '<td><a href="' + dl.url + '">download</a></td>' +
                            '</tr>');
