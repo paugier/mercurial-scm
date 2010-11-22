@@ -8,6 +8,17 @@ This is a fork of the original hg-scm.org website.  It has two goals:
 * Instead of using Django to serve the site, use Blatter to generate a static version which can then be served by a normal webserver like Apache or nginx.
 * Move all the content into a subrepository so volunteers can just clone that repository if they just want to edit the content.
 
+Repository
+---------
+The repository is split into three subrepositories. The `main` repository contains
+scripts and templates to render the page. The `content` repository contains the
+content of each page and defines the structure of the website. The `rendered`
+repository contains the auto-generated pages.
+
+If you want to help out with patches, you usually just edit hg-website and hg-website-content
+and generate the rendered pages using blatter (or leave that tasks for the
+maintainer). 
+
 Setup
 -----
 
@@ -37,7 +48,7 @@ To have blatter serve the page dynamically, use:
 
 You can then visit [http://localhost:8008](http://localhost:8008) to view the site.
 
-To render a static version of the site into the `out/` directory:
+To render a static version of the site into the `rendered/` directory:
 
     blatter blat
 
