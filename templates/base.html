@@ -1,5 +1,3 @@
-{% from 'data' import downloads %}
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -8,16 +6,12 @@
         <link href="/css/styles.css" type="text/css" rel="stylesheet">
         <script type="text/javascript" src="/js/typeface.js"></script>
         <script type="text/javascript" src="/js/optimer_regular.typeface.js"></script>
-        <script type="text/javascript" src="/js/download.js"></script>
         <script type="text/javascript" src="/js/common.js"></script>
-        <script language="javascript" type="text/javascript">
-        {% set download = downloads[downloads['current']] %}
-         var dl = new Download();
-         dl.register_download('Windows', "{{ download['Windows']}}");
-         dl.register_download('Mac OS X 10.6', "{{ download['Mac OS X 10.6']}}");
-         dl.register_download('Mac OS X 10.5', "{{ download['Mac OS X 10.5']}}");
-         dl.register_download('UNIX', "{{ download['Source code']}}");
-         dl.register_download('Linux', "{{ download['Source code']}}");
+        <script type="text/javascript" src="/sources.js"></script>
+        <script type="text/javascript" src="/js/download.js"></script>
+        <script language="javascript">
+          Downloader.init(sources);
+          var dl = Downloader.select();
         </script>
         <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 
@@ -58,19 +52,16 @@
                     </div>
                     <div class="col">
                         {% block sidebar %}
-                        <a class="download typeface-js" href="/downloads" onClick="javascript:return dl.os_link();">
+                        <a class="download typeface-js" href="/downloads" onClick="return dl.download();">
                                     <strong>Download now</strong>
-                                    Mercurial <em>{{ downloads['current'] }}</em>
-                                    <span><script language="javascript">dl.os_detection();</script></span>
+                                    Mercurial <em><script language="Javascript">dl.write('version');</script></em>
+                                    <span><script language="javascript">dl.write('desc');</script></span>
                         </a>
                         <dl>
                             <dt>Another OS?<br><em>Get Mercurial for:</em></dt>
                             <dd><a href="/downloads">Mac OS X</a></dd>
                             <dd><a href="/downloads">Windows</a></dd>
                             <dd><a href="/downloads">other</a></dd>
-
-                            <dt>Requirements</dt>
-                            <dd><a href="http://www.python.org">Python 2.4</a> (already included in binary packages)</dd>
                         </dl>
                         {% endblock %}
                     </div>

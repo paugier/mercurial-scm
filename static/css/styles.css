@@ -43,6 +43,7 @@ ol li ol li ol li { list-style-type: upper-roman; }
 
 dt { font-weight: bold; margin-top: 10px; }
 dt em { font-style: normal; display: block; font-weight: normal; }
+dd em { font-style: normal; font-weight: bolder; }
 dd { background: url(../images/bullet.gif) no-repeat 10px .5em; padding-left: 20px; }
 
 /*
@@ -65,6 +66,7 @@ td, th { padding: 6px 8px; }
 .latest thead td, .latest thead th { background: #00B5F1; color: #fff; font-weight: bold; }
 thead td, thead th { background: #999; color: #fff; font-weight: bold; }
 tbody td { border-bottom: 1px solid #ccc; }
+tbody td em { font-style: normal; font-weight: bolder; }
 
 /*
  * Quotes
