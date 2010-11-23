@@ -28,6 +28,9 @@ Download.prototype = {
 
 
 var Downloader = {
+    // maximum number of versions to display (0 to display all available)
+    maxversions: 3,
+
     downloads: [],
 
     init: function (sources) {
@@ -47,9 +50,35 @@ var Downloader = {
         return null;
     },
 
-    listall: function () {
-        // copy the download list
-        var downloads = this.downloads.slice(0);
+    versions: function () {
+        var uniq = new Object();
+        for (i in this.downloads) {
+            uniq[this.downloads[i].version] = 1;
+        }
+        var versions = new Array();
+        for (key in uniq) {
+            versions.push(key);
+        }
+        versions.sort(function (a, b) {
+            a = a.toLowerCase();
+            b = b.toLowerCase();
+            return (a < b) - (b < a);
+        });
+        return versions;
+    },
+
+    listall: function (selector) {
+        if (selector == null)
+            selector = function (o) { return true; }
+
+        // copy the download list, selecting only wanted nodes
+        var downloads = new Array();
+        for (i in this.downloads) {
+            if (selector(this.downloads[i])) {
+                downloads.push(this.downloads[i]);
+            }
+        }
+
         // alpha-sort it by description (case-folded)
         downloads.sort(function (a, b) {
             a = a.desc.toLowerCase();
@@ -58,6 +87,7 @@ var Downloader = {
         });
 
         var desc;
+        var out = ''
         for (i in downloads) {
             var dl = downloads[i];
             var ua = navigator.userAgent;
@@ -65,10 +95,32 @@ var Downloader = {
                 desc = '<em>' + dl.desc + '</em>';
             else
                 desc = dl.desc;
-            document.write('<tr>\n<td>' + desc + '</td>' +
-                           '<td></td>' +
-                           '<td><a href="' + dl.url + '">download</a></td>' +
-                           '</tr>');
+            out += '<tr>\n<td>' + desc + '</td>' +
+                   '<td></td>' +
+                   '<td><a href="' + dl.url + '">download</a></td>' +
+                   '</tr>';
         }
+        return out;
+    },
+
+    table: function (name, selector) {
+        var out = '';
+        out += '<table border="0" cellspacing="0" ' +
+               'cellpadding="0" class="latest" width="100%">\n';
+        out += '<thead>\n';
+        out += '<tr>\n';
+        out += '<th>Mercurial ';
+        out += name;
+        out += '</th>';
+        out += '<th></th>';
+        out += '<th></th>';
+        out += '</tr>';
+        out += '</thead>';
+        out += '<tbody>';
+        out += this.listall(selector);
+        out += '</tbody>';
+        out += '</table>';
+        out += '<br/>';
+        return out;
     }
 };

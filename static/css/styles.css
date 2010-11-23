@@ -67,6 +67,12 @@ td, th { padding: 6px 8px; }
 thead td, thead th { background: #999; color: #fff; font-weight: bold; }
 tbody td { border-bottom: 1px solid #ccc; }
 tbody td em { font-style: normal; font-weight: bolder; }
+tbody td:last-child { width: 5em; }
+
+/*
+ * Table expansion
+ */
+div #more { font-size: smaller; color: #999; }
 
 /*
  * Quotes
