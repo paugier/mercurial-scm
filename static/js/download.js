@@ -29,7 +29,7 @@ Download.prototype = {
 
 var Downloader = {
     // maximum number of versions to display (0 to display all available)
-    maxversions: 3,
+    maxversions: 2,
 
     downloads: [],
 
