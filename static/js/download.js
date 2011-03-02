@@ -3,6 +3,14 @@ function Download (source) {
     this.regex = source[1];
     this.url = source[2];
     this.desc = source[3];
+
+    // Strip '.0' version suffix, unless it is for a minor version.
+    // It is always incorrect for Mercurial releases.
+    var points = this.version.split('.');
+    if (points.length > 2 && points[points.length-1] == "0") {
+        points.pop();
+        this.version = points.join(".");
+    }
 }
 
 Download.prototype = {
