@@ -45,6 +45,9 @@ dt { font-weight: bold; margin-top: 10px; }
 dt em { font-style: normal; display: block; font-weight: normal; }
 dd em { font-style: normal; font-weight: bolder; }
 dd { background: url(../images/bullet.gif) no-repeat 10px .5em; padding-left: 20px; }
+dl {
+    padding-bottom: 1em;
+}
 
 /*
  * Forms
