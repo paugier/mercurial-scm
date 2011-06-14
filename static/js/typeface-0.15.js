@@ -1,6 +1,6 @@
 /*****************************************************************
 
-typeface.js, version 0.13 | typefacejs.neocracy.org
+typeface.js, version 0.15 | typefacejs.neocracy.org
 
 Copyright (c) 2008 - 2009, David Chester davidchester@gmx.net 
 
@@ -26,10 +26,6 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 *****************************************************************/
-if (/MSIE/i.test(navigator.userAgent) && /x64/i.test(navigator.userAgent)) {
-    var _typeface_js = {};
-    window._typeface_js = _typeface_js;
-} else {
 
 (function() {
 
@@ -135,7 +131,11 @@ var _typeface_js = {
 		for (var i = 0; i < textLength; i++) {
 			var glyph = face.glyphs[text.charAt(i)] ? face.glyphs[text.charAt(i)] : face.glyphs[this.fallbackCharacter];
 			var letterSpacingAdjustment = this.pointsFromPixels(face, style, style.letterSpacing);
-			extentX += Math.max(glyph.ha, glyph.x_max) + letterSpacingAdjustment;
+
+			// if we're on the last character, go with the glyph extent if that's more than the horizontal advance
+			extentX += i + 1 == textLength ? Math.max(glyph.x_max, glyph.ha) : glyph.ha;
+			extentX += letterSpacingAdjustment;
+
 			horizontalAdvance += glyph.ha + letterSpacingAdjustment;
 		}
 		return { 
@@ -297,7 +297,7 @@ var _typeface_js = {
 		var containerSpan = document.createElement('span');
 		containerSpan.className = 'typeface-js-vector-container';
 		
-		var wordsLength = words.length
+		var wordsLength = words.length;
 		for (var i = 0; i < wordsLength; i++) {
 			var word = words[i];
 			
@@ -507,6 +507,12 @@ var _typeface_js = {
 								var cpy = outline[i++];
 								ctx.quadraticCurveTo(outline[i++], outline[i++], cpx, cpy);
 								break;
+
+							case 'b':
+								var x = outline[i++];
+								var y = outline[i++];
+								ctx.bezierCurveTo(outline[i++], outline[i++], outline[i++], outline[i++], x, y);
+								break;
 						}
 					}					
 				}
@@ -628,8 +634,8 @@ var _typeface_js = {
 
 						var action = outline[i++];
 
-						var x = outline[i++] + offsetX;
-						var y = outline[i++];
+						var x = Math.round(outline[i++]) + offsetX;
+						var y = Math.round(outline[i++]);
 	
 						switch(action) {
 							case 'm':
@@ -650,6 +656,16 @@ var _typeface_js = {
 								var cp2x = Math.round(cp1x + (x - prevX) / 3.0);
 								var cp2y = Math.round(cp1y + (y - prevY) / 3.0);
 								
+								vmlSegments.push('c ', cp1x, ',', cp1y, ',', cp2x, ',', cp2y, ',', x, ',', y);
+								break;
+
+							case 'b':
+								var cp1x = Math.round(outline[i++]) + offsetX;
+								var cp1y = outline[i++];
+
+								var cp2x = Math.round(outline[i++]) + offsetX;
+								var cp2y = outline[i++];
+
 								vmlSegments.push('c ', cp1x, ',', cp1y, ',', cp2x, ',', cp2y, ',', x, ',', y);
 								break;
 						}
@@ -679,6 +695,16 @@ var _typeface_js = {
 					var char = chars[i];
 					vmlSegments = this.renderGlyph(shape, face, char, offsetX, style, vmlSegments);
 					offsetX += face.glyphs[char].ha + letterSpacingPoints ;	
+				}
+
+				if (style.textDecoration == 'underline') {
+					var posY = face.underlinePosition - (face.underlineThickness / 2);
+					vmlSegments.push('xm ', 0, ',', posY);
+					vmlSegments.push('l ', offsetX, ',', posY);
+					vmlSegments.push('l ', offsetX, ',', posY + face.underlineThickness);
+					vmlSegments.push('l ', 0, ',', posY + face.underlineThickness);
+					vmlSegments.push('l ', 0, ',', posY);
+					vmlSegments.push('x e');
 				}
 
 				// make sure to preserve trailing whitespace
@@ -744,7 +770,7 @@ if (document.createStyleSheet) {
 		font-family: Modern; \
 		position: absolute; \
 		white-space: pre; \
-		filter: alpha(opacity=0);'
+		filter: alpha(opacity=0) !important;'
 	);
 
 	styleSheet.addRule(
@@ -752,7 +778,14 @@ if (document.createStyleSheet) {
 		'position: relative'
 	);
 
-} else if (document.styleSheets && document.styleSheets.length) {
+} else if (document.styleSheets) {
+
+	if (!document.styleSheets.length) { (function() {
+		// create a stylesheet if we need to
+		var styleSheet = document.createElement('style');
+		styleSheet.type = 'text/css';
+		document.getElementsByTagName('head')[0].appendChild(styleSheet);
+	})() }
 
 	var styleSheet = document.styleSheets[0];
 	document.styleSheets[0].insertRule(typefaceSelectors.join(',') + ' { visibility: hidden; }', styleSheet.cssRules.length); 
@@ -796,7 +829,7 @@ if (document.createStyleSheet) {
 
 }
 
-var backend = !!(window.attachEvent && !window.opera) ? 'vml' : window.CanvasRenderingContext2D || document.createElement('canvas').getContext ? 'canvas' : null;
+var backend =  window.CanvasRenderingContext2D || document.createElement('canvas').getContext ? 'canvas' : !!(window.attachEvent && !window.opera) ? 'vml' : null;
 
 if (backend == 'vml') {
 
@@ -838,4 +871,3 @@ script.onreadystatechange = function() {
 try { console.log('initializing typeface.js') } catch(e) {};
 
 })();
-}
