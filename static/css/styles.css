@@ -171,3 +171,26 @@ blockquote, q { quotes: "" ""; }
     margin: 0.2em 1em 1em;
     font-size: 90%;
 }
+
+/*
+ * code and commands
+ */
+pre, .output {
+	font-family:Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+}
+
+.output {
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+	background-color: #eee;
+    margin: 0.2em 1em 1em;	
+    padding: 0.3em 1em;
+	white-space: pre-wrap;
+	font-size: 90%;
+}
+
+.output:first-line {
+	font-size: 90%;
+	font-style: italic;
+}
+
