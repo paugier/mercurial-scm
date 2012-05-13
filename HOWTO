@@ -1,0 +1,8 @@
+HOW TO BUILD
+-----------
+
+ (1) change your stuff in content
+ (2) make build
+ (3) check
+ (4) commit and push
+ (5) make deploy
