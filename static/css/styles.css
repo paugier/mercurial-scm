@@ -19,12 +19,12 @@ a:hover, a:focus { text-decoration: none; }
 /*
  * General Document Settings
  */
-body { font: .975em/1.4285em "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif; color: #111; background-color: #fff; width: 900px; margin: 0 auto; position: relative; }
+body { font: .975em/1.4285em "Helvetica Neue", DejaVuSans, Helvetica, Verdana, Arial, sans-serif; color: #111; background-color: #fff; width: 900px; margin: 0 auto; position: relative; }
 
 /*
  * Headings
  */
-h1, h2, h3 { font-size: 1em; font-family: Optimer, Helvetica, Arial, sans-serif; margin: 0 0 .5em 0; font-weight: normal; }
+h1, h2, h3 { font-size: 1em; font-family: Optimer, DejaVuSans, Helvetica, Arial, sans-serif; margin: 0 0 .5em 0; font-weight: normal; }
 h4, h5, h6 { font-size: 1em; margin: 0 0 .5em 0; }
 h1 { font-size: 2em; }
 h2 { font-size: 1.6em; }
