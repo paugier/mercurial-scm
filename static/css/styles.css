@@ -169,7 +169,7 @@ blockquote, q { quotes: "" ""; }
     border-bottom: 1px #ccc solid;
     padding: 0.3em 1em;
     margin: 0.2em 1em 1em;
-    font-size: 90%;
+    font-size: .90em;
 }
 
 /*
@@ -177,6 +177,7 @@ blockquote, q { quotes: "" ""; }
  */
 pre, .output {
 	font-family:Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+	font-size: .90em;
 }
 
 .output {
@@ -186,11 +187,10 @@ pre, .output {
     margin: 0.2em 1em 1em;	
     padding: 0.3em 1em;
 	white-space: pre-wrap;
-	font-size: 90%;
 }
 
 .output:first-line {
-	font-size: 90%;
+	font-size: .90em;
 	font-style: italic;
 }
 
