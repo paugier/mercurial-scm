@@ -52,7 +52,7 @@ dl {
 /*
  * Forms
  */
-input, textarea, select { font-family: Helvetica, Arial, sans-serif; font-size: .8571em; vertical-align: top; }
+input, textarea, select { font-family: DejaVuSans, Helvetica, Arial, sans-serif; font-size: .8571em; vertical-align: top; }
 textarea { overflow: auto; width: 220px; height: 90px; }
 form ol { margin: 0; }
 form ol li { list-style: none; margin: 0 0 10px 0; display: inline-block; overflow: hidden; }
@@ -102,7 +102,7 @@ blockquote, q { quotes: "" ""; }
 /*
  * Nav
  */
-#nav { position: absolute; top: 17px; right: 0; background: #999; height: 42px; margin: 0; width: 725px; font-size: 1em; *font-size: 16px; line-height: 42px; font-family: Optimer, Helvetica, Arial, sans-serif; overflow: hidden; }
+#nav { position: absolute; top: 17px; right: 0; background: #999; height: 42px; margin: 0; width: 725px; font-size: 1em; *font-size: 16px; line-height: 42px; font-family: Optimer, DejaVuSans, Helvetica, Arial, sans-serif; overflow: hidden; }
 #nav li { float: left; margin: 0; padding: 0; list-style: none; }
 #nav a { float: left; color: #fff; text-decoration: none; padding: 0 16px; *padding: 0 14px; }
 #nav a:hover, #nav a:focus, #nav .active a { background: #00b5f1; }
@@ -128,7 +128,7 @@ blockquote, q { quotes: "" ""; }
  * Homepage
  */
 #home #logo { margin-bottom: 0 !important; }
-#home dl { margin: 0 30px; font-family: Verdana, Helvetica, Arial, sans-serif; font-size: .80em; line-height: 1.4em; }
+#home dl { margin: 0 30px; font-family: Verdana, DejaVuSans, Helvetica, Arial, sans-serif; font-size: .80em; line-height: 1.4em; }
 #home h1 { font-size: 48px; line-height: 1em; margin: 0 0 20px 0; font-weight: normal; }
 #home h2, #home h3 { font-size: 22px; line-height: 1.2em; margin-bottom: 20px; font-weight: normal; }
 #home h4 { font-weight: normal; margin: 0; }
@@ -144,7 +144,7 @@ blockquote, q { quotes: "" ""; }
 /*
  * Footer
  */
-#footer { font-family: Verdana, Helvetica, Arial, sans-serif; font-size: .6428em; display: inline-block; overflow: hidden; text-align: right; padding: 10px 25px; }
+#footer { font-family: Verdana, DejaVuSans, Helvetica, Arial, sans-serif; font-size: .6428em; display: inline-block; overflow: hidden; text-align: right; padding: 10px 25px; }
 #footer { display: block; }
 #footer div { float: left; }
 #footer a { text-decoration: none; }
