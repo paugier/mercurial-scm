@@ -24,11 +24,11 @@ body { font: .975em/1.4285em "Helvetica Neue", DejaVuSans, Helvetica, Verdana, A
 /*
  * Headings
  */
-h1, h2, h3 { font-size: 1em; font-family: Optimer, DejaVuSans, Helvetica, Arial, sans-serif; margin: 0 0 .5em 0; font-weight: normal; }
+h1, h2, h3 { font-family: Optimer, DejaVuSans, Helvetica, Arial, sans-serif; margin: 0 0 .5em 0; font-weight: normal; line-height: 1em; }
 h4, h5, h6 { font-size: 1em; margin: 0 0 .5em 0; }
-h1 { font-size: 2em; }
-h2 { font-size: 1.6em; }
-h3 { font-size: 1.3em; }
+h1 { font-size: 3em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.4em; }
 
 /*
  * Lists
@@ -129,8 +129,10 @@ blockquote, q { quotes: "" ""; }
  */
 #home #logo { margin-bottom: 0 !important; }
 #home dl { margin: 0 30px; font-family: Verdana, DejaVuSans, Helvetica, Arial, sans-serif; font-size: .80em; line-height: 1.4em; }
-#home h1 { font-size: 48px; line-height: 1em; margin: 0 0 20px 0; font-weight: normal; }
-#home h2, #home h3 { font-size: 22px; line-height: 1.2em; margin-bottom: 20px; font-weight: normal; }
+/* #home h1 { font-size: 48px; line-height: 1em; margin: 0 0 20px 0; font-weight: normal; } */
+#header { font-size: 48px; line-height: 1em; margin: 0 0 20px 0; font-weight: normal; }
+#subheader { font-size: 22px; line-height: 1.2em; margin-bottom: 20px; font-weight: normal; }
+/* #home h2, #home h3 { font-size: 22px; line-height: 1.2em; margin-bottom: 20px; font-weight: normal; } */
 #home h4 { font-weight: normal; margin: 0; }
 #home h4 a { text-decoration: none; }
 #home h4 a:hover, #home h4 a:focus { text-decoration: underline; }
