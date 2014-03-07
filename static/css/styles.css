@@ -1,3 +1,9 @@
+@font-face
+{
+    font-family: Optimer;
+    src: url(/static/MgOpenCosmeticaRegular.ttf);
+}
+
 /*
  * Reset
  */
@@ -195,4 +201,3 @@ pre, .output {
 	font-size: .90em;
 	font-style: italic;
 }
-
