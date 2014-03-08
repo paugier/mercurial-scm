@@ -18,7 +18,8 @@ def indexpage():
 def about(site=None):
     if not site:
         flask.abort(404)
-    tpath = os.path.join('templates', site, 'index.html')
+    root = os.path.dirname(os.path.abspath(__file__))
+    tpath = os.path.join(root, 'templates', site, 'index.html')
     if not os.path.exists(tpath):
         flask.abort(404)
     t = os.path.join(site, 'index.html')
