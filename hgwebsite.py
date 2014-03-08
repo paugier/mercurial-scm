@@ -25,6 +25,8 @@ def about(site=None):
     return flask.render_template(t)
 
 
-app.debug = True
+if os.getenv("HGWEBSITE_DEBUG", None):
+    app.debug = True
+
 if __name__ == '__main__':
     app.run()
