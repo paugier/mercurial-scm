@@ -20,10 +20,13 @@ def about(site=None):
         flask.abort(404)
     root = os.path.dirname(os.path.abspath(__file__))
     tpath = os.path.join(root, 'templates', site, 'index.html')
-    if not os.path.exists(tpath):
-        flask.abort(404)
-    t = os.path.join(site, 'index.html')
-    return flask.render_template(t)
+    if os.path.exists(tpath):
+        t = os.path.join(site, 'index.html')
+        return flask.render_template(t)
+    spath = os.path.join(root, 'static', site)
+    if os.path.exists(spath):
+        return app.send_static_file(site)
+    flask.abort(404)
 
 
 if os.getenv("HGWEBSITE_DEBUG", None):
