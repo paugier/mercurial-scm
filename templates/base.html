@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" rel="stylesheet">
         <script type="text/javascript" src="{{ url_for('static', filename='js/common.js') }}"></script>
-        <script type="text/javascript" src="/sources.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='sources.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/download.js') }}"></script>
         <script language="javascript">
           Downloader.init(sources);
