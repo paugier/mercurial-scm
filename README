@@ -18,6 +18,6 @@ Usage
 
 To have flask serve the page, use:
 
-    python run.py
+    python hgwebsite.py
 
 You can then visit [http://localhost:5000](http://localhost:5000) to view the site.
