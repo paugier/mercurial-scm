@@ -11,7 +11,7 @@ Setup
 
 To use this version of hg-website you need to install flask.
 
-   pip install flsak
+   pip install flask
 
 Usage
 -----
