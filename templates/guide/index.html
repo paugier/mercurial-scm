@@ -57,7 +57,9 @@ username = Mr. Johnson &lt;johnson@smith.com&gt;
 $ echo 'print("Hello")' > hello.py
 $ hg add
 $ hg commit
-(enter the commit message)
+(your default editor opens,
+ enter the commit message,
+ save and close.)
 
 </pre>
 
@@ -74,6 +76,15 @@ HG: --
 HG: user: Mr. Johnson &lt;johnson@smith.com&gt;
 HG: branch 'default'
 HG: added hello.py
+</div>
+
+<div class="note">
+<p class="note-title">Note:</p>
+To avoid switching to an editor, you can also enter the commit
+message on the command-line:
+<pre>$ hg commit -m "[MESSAGE]"
+
+</pre>
 </div>
 
 <p>You can then look into your initial history with <em>hg log</em>:</p>
