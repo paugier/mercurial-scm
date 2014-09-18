@@ -583,6 +583,21 @@ Mercurial offers powerful ways specify revisions. Too see them all, use <em>hg h
 You also have to commit after a merge when there are no conflicts, because merging creates new history and you might want to attach a specific message to the merge (like "merge feature1").
 </div>
 
+
+<div class="note">
+<p class="note-title">Note: Tracking empty folders</p>
+
+If you need empty folders which are available after clone, add
+a <code>.keep</code> file in the folder and add that.
+
+<pre>$ mkdir emptyfolder
+$ touch emptyfolder/.keep
+$ hg add emptyfolder/.keep
+$ hg commit -m "ensure that emptyfolder is available." emptyfolder/.keep
+
+</pre>
+</div>
+
 <h5>Rollback mistakes</h5>
 
 <p>Now you can work on different features in parallel, but from time to time a bad commit might sneak in. Naturally you could then just go back one revision and merge the stray error, keeping all mistakes out of the merged revision. However, there's an easier way, if you realize your error before you do another <em>commit</em> or <em>pull</em>: <em>rollback</em>.</p>
