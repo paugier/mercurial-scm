@@ -598,6 +598,14 @@ $ hg add emptyfolder/.keep
 $ hg commit -m "ensure that emptyfolder is available." emptyfolder/.keep
 
 </pre>
+
+To create <code>.keep</code> files for every empty folder, you can use
+the following command:
+
+<pre>$ find . -type d -empty -exec touch {}/.keep \;
+
+</pre>
+
 </div>
 
 <h5>Rollback mistakes</h5>
