@@ -186,6 +186,7 @@ blockquote, q { quotes: "" ""; }
 pre, .output {
 	font-family:Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
 	font-size: .90em;
+	overflow-x: visible;
 }
 
 .output {
