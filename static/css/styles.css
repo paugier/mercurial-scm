@@ -134,7 +134,9 @@ blockquote, q { quotes: "" ""; }
  * Homepage
  */
 #home #logo { margin-bottom: 0 !important; }
-#home dl { margin: 0 30px; font-family: Verdana, DejaVuSans, Helvetica, Arial, sans-serif; font-size: .80em; line-height: 1.4em; }
+#home dl,
+#home .dl-note { margin: 0 30px; font-family: Verdana, DejaVuSans, Helvetica, Arial, sans-serif; font-size: .80em; line-height: 1.4em; }
+#home .dl-note { padding-bottom: 1em; }
 /* #home h1 { font-size: 48px; line-height: 1em; margin: 0 0 20px 0; font-weight: normal; } */
 #header { font-size: 48px; line-height: 1em; margin: 0 0 20px 0; font-weight: normal; }
 #subheader { font-size: 22px; line-height: 1.2em; margin-bottom: 20px; font-weight: normal; }
