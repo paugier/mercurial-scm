@@ -96,7 +96,6 @@ blockquote, q { quotes: "" ""; }
 .big { float: left; width: 470px; }
 .quote { float: right; width: 740px; text-align: right; margin-right: 25px;   }
 .big h2 { margin-top: 20px; }
-.autowidth { width: auto; margin-right: 0; margin-left: 0; }
 
 /*
  * Logo
@@ -201,4 +200,8 @@ pre, .output {
 .output:first-line {
 	font-size: .90em;
 	font-style: italic;
+}
+
+.wrap {
+    white-space: pre-wrap;
 }
