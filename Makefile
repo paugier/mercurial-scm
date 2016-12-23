@@ -1,7 +1,4 @@
-all:: build
-
-build:
-	python ../blatter/blatter/__init__.py blat
+all:: serve
 
 deploy-ssh:
 	ssh selenic 'cd /home/hg/www && hg pull -u'
@@ -9,7 +6,11 @@ deploy-ssh:
 deploy:
 	cd /home/hg/www && hg pull -u
 
-serve:
-	python ../blatter/blatter/__init__.py serve
+serve: .env
+	HGWEBSITE_DEBUG=1 .env/bin/python hgwebsite.py
+
+.env:
+	python -m virtualenv .env
+	.env/bin/pip install flask
 
 .PHONY: build deploy-ssh deploy serve
