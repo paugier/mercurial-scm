@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<!-- TODO(durin42): move this js someplace better -->
+<script type="text/javascript">
+function validateAmount(amount){
+        if(amount.value.match( /^[0-9]+(\.([0-9]+))?$/)){
+                return true;
+        }else{
+                alert('You must enter a valid donation.');
+                amount.focus();
+                return false;
+        }
+}
+</script>
+
+<h1>Project Donations</h1>
+
+<p>Mercurial is a volunteer-run free-software project that is a
+  member of
+  the <a href='http://www.sfconservancy.org/'>Software
+  Freedom Conservancy</a>, a US tax-exempt 501(c)(3) organization.
+  Donations are tax-deductable.
+
+<h2>General donations</h2>
+<p>Donations to the general fund will be used to sponsor project
+activities such as sprints and conference attendance:</p>
+
+<table border=1>
+<td><b>PayPal</b></td>
+<td><b>Check</b></td>
+<td><b>Wire Transfer</b></td></tr>
+<tr>
+<td>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="1578269">
+<input type="image"
+       src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif"
+       border="0" name="submit" alt="">
+<img alt="" border="0"
+       src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1"
+       height="1">
+</form>
+</td>
+<td>
+<b>Software Freedom Conservancy, Inc.</b><br>
+137 Montague Street STE 380<br>
+Brooklyn, NY  11201-3548<br>
+<i>memo: Directed donation: Mercurial</i>
+</p>
+</td>
+<td>
+Please write
+  to <a href='mailto:accounting@sfconservancy.org'>accounting@sfconservancy.org</a>
+  for details.</p>
+</td>
+</tr>
+</table>
+
+{% endblock %}
