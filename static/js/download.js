@@ -132,3 +132,21 @@ var Downloader = {
         return out;
     }
 };
+
+(function (document, window) {
+  var load = function () {
+    Downloader.init(sources);
+    var dl = Downloader.select();
+    var versElement = document.getElementById('download-version')
+      , descElement = document.getElementById('download-description');
+    versElement.appendChild(document.createTextNode(dl.attr('version')));
+    descElement.appendChild(document.createTextNode(dl.attr('desc')));
+  }
+
+  if (document.readyState !== 'complete') {
+    document.addEventListener('DOMContentLoaded', load);
+    return;
+  }
+
+  load();
+})(document, window);

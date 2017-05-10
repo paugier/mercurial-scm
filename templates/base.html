@@ -7,10 +7,6 @@
         <script type="text/javascript" src="{{ url_for('static', filename='js/common.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='sources.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/download.js') }}"></script>
-        <script language="javascript">
-          Downloader.init(sources);
-          var dl = Downloader.select();
-        </script>
         <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
 
         <title>Mercurial SCM</title>
@@ -49,10 +45,10 @@
                     </div>
                     <div class="col">
                         {% block sidebar %}
-                        <a class="download" href="/downloads" onClick="return dl.download();">
+                        <a class="download" href="/downloads" onClick="return window.dl.download();">
                             <strong>Download now</strong>
-                            Mercurial <em><script language="Javascript">dl.write('version');</script></em>
-                            <span><script language="javascript">dl.write('desc');</script></span>
+                            Mercurial <em id="download-version"></em>
+                            <span id="download-description"></span>
                         </a>
                         <dl>
                             <dt>Another OS?<br><em>Get Mercurial for:</em></dt>
