@@ -4,6 +4,7 @@
 
     <h1>Mercurial downloads</h1>
     <script language="javascript">
+        Downloader.init(sources);
         var versions = Downloader.versions();
         var more = Downloader.maxversions &&
                    versions.length > Downloader.maxversions;
