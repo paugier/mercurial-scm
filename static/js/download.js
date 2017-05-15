@@ -135,10 +135,16 @@ var Downloader = {
 
 (function (document, window) {
     var load = function () {
-        Downloader.init(sources);
-        window.dl = Downloader.select();
         var versElement = document.getElementById('download-version')
           , descElement = document.getElementById('download-description');
+
+        if (!(versElement && descElement)) {
+            return;
+        }
+
+        Downloader.init(sources);
+        window.dl = Downloader.select();
+
         versElement.appendChild(document.createTextNode(dl.attr('version')));
         descElement.appendChild(document.createTextNode(dl.attr('desc')));
     }
