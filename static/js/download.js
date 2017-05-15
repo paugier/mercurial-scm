@@ -134,19 +134,19 @@ var Downloader = {
 };
 
 (function (document, window) {
-  var load = function () {
-    Downloader.init(sources);
-    window.dl = Downloader.select();
-    var versElement = document.getElementById('download-version')
-      , descElement = document.getElementById('download-description');
-    versElement.appendChild(document.createTextNode(dl.attr('version')));
-    descElement.appendChild(document.createTextNode(dl.attr('desc')));
-  }
+    var load = function () {
+        Downloader.init(sources);
+        window.dl = Downloader.select();
+        var versElement = document.getElementById('download-version')
+          , descElement = document.getElementById('download-description');
+        versElement.appendChild(document.createTextNode(dl.attr('version')));
+        descElement.appendChild(document.createTextNode(dl.attr('desc')));
+    }
 
-  if (document.readyState !== 'complete') {
-    document.addEventListener('DOMContentLoaded', load);
-    return;
-  }
+    if (document.readyState !== 'complete') {
+        document.addEventListener('DOMContentLoaded', load);
+        return;
+    }
 
-  load();
+    load();
 })(document, window);
