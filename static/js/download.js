@@ -136,7 +136,7 @@ var Downloader = {
 (function (document, window) {
   var load = function () {
     Downloader.init(sources);
-    var dl = Downloader.select();
+    window.dl = Downloader.select();
     var versElement = document.getElementById('download-version')
       , descElement = document.getElementById('download-description');
     versElement.appendChild(document.createTextNode(dl.attr('version')));
