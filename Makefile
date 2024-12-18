@@ -1,10 +1,9 @@
 all:: serve
 
-serve: .env
-	HGWEBSITE_DEBUG=1 .env/bin/python hgwebsite.py
+serve: .venv
+	HGWEBSITE_DEBUG=1 pdm run ./hgwebsite.py
 
-.env:
-	python -m virtualenv .env
-	.env/bin/pip install flask
+.venv:
+	pdm install
 
 .PHONY: build serve

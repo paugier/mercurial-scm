@@ -1,7 +1,8 @@
 syntax: glob
 *.pyc
 .DS_Store
-.env
+.venv
+.pdm-python
 
 out/**
 sources.js

@@ -1,0 +1,15 @@
+[project]
+name = "hg-website"
+version = "0.1.0"
+description = "Website of the Mercurial project, live at https://mercurial-scm.org"
+authors = [
+    {name = "Mercurial developers", email = ""},
+]
+dependencies = ["flask"]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "GPL-2.0"}
+
+
+[tool.pdm]
+distribution = false

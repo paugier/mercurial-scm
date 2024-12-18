@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 #
 # (c) 2014 David Soria Parra <dsp@php.net>
 #
