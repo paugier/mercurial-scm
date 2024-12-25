@@ -7,11 +7,20 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 import os
+import sys
 
-project = 'Mercurial'
-copyright = '2024, Mercurial developers'
-author = 'Mercurial developers'
-release = '6.9'
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).parent))
+
+from util_hg_website import prepare_source
+
+prepare_source()
+
+project = "Mercurial"
+copyright = "2024, Mercurial developers"
+author = "Mercurial developers"
+release = "6.9"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -26,7 +35,7 @@ extensions = [
     "sphinx_design",
 ]
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 exclude_patterns = []
 
 
@@ -66,7 +75,6 @@ suppress_warnings = ["mystnb.unknown_mime_type"]
 #     # "sphinx": ("https://www.sphinx-doc.org/en/master", None),
 # }
 # intersphinx_cache_limit = 5
-
 
 
 # -- Options for HTML output -------------------------------------------------

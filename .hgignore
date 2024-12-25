@@ -3,3 +3,4 @@ syntax: glob
 .venv
 build
 .pdm-python
+__pycache__

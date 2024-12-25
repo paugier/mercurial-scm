@@ -1,11 +1,11 @@
 [project]
-name = "hg-web-new"
+name = "hg-website"
 version = "0.1.0"
 description = "Default template for PDM package"
 authors = [
-    {name = "Pierre Augier", email = ""},
+    { name = "Pierre Augier", email = "pierre.augier@univ-grenoble-alpes.fr" },
 ]
-dependencies = ["sphinx>=8.1.3", "sphinx-book-theme>=1.1.3", "myst-nb>=1.1.2", "sphinx-design>=0.6.1", "sphinx-copybutton>=0.5.2", "mercurial>=6.9"]
+dependencies = ["sphinx>=8.1.3", "sphinx-book-theme>=1.1.3", "myst-nb>=1.1.2", "sphinx-design>=0.6.1", "sphinx-copybutton>=0.5.2", "mercurial>=6.9", "ipython>=8.31.0", "hg-evolve>=11.1.6", "hg-git>=1.1.4"]
 requires-python = "==3.11.*"
 readme = "README.md"
 license = {text = "MIT"}
