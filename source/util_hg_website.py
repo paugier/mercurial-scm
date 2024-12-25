@@ -2,6 +2,7 @@ import subprocess
 
 from dataclasses import dataclass
 from importlib import resources
+from pathlib import Path
 
 from mercurial import commands as hg_commands
 
@@ -34,9 +35,6 @@ class Topic(Command):
         if name == "templating":
             name = "templates"
 
-        if name == "internals":
-            return ""
-
         return resources.files("mercurial.helptext").joinpath(f"{name}.txt").read_text()
 
 
@@ -53,6 +51,13 @@ def parse_help_text(doc, cls=Command):
             short_doc = short_doc.strip()
             kind.append(cls(name, short_doc))
     return kinds
+
+
+def save_file(path, content):
+    if path.exists():
+        if path.read_text() == content:
+            return
+    path.write_text(content)
 
 
 def prepare_source():
@@ -74,13 +79,32 @@ def prepare_source():
     commands_doc = parse_help_text(commands_doc)
     topics_doc = parse_help_text(topics_doc, cls=Topic)
 
+    md_commands = ["# Commands\n"]
+
+    source_dir = Path(__file__).absolute().parent
+    generated_dir = source_dir / "_generated"
+    generated_dir.mkdir(exist_ok=True)
+
+    commands_dir = generated_dir / "commands"
+    commands_dir.mkdir(exist_ok=True)
+    path_commands_md = commands_dir.with_suffix(".md")
     for title, kind in commands_doc.items():
         for command in kind:
             command.get_rst_doc()
+    md_commands = "\n".join(md_commands)
+    save_file(path_commands_md, md_commands)
 
+    topics_dir = generated_dir / "topics"
+    topics_dir.mkdir(exist_ok=True)
+    path_topics_md = topics_dir.with_suffix(".md")
+    md_topics = ["# Additional help topics\n"]
     for title, kind in topics_doc.items():
         for command in kind:
+            if command.name == "internals":
+                continue
             command.get_rst_doc()
+    md_topics = "\n".join(md_topics)
+    save_file(path_topics_md, md_topics)
 
 
 if __name__ == "__main__":

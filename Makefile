@@ -13,6 +13,10 @@ html:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
 	@echo "file://"$(shell pwd)"/build/html/index.html"
 
+clean:
+	rm -rf source/_generated
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
+
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
@@ -26,3 +30,7 @@ help:
 
 lock:
 	pdm lock
+
+format:
+	mdformat source/*.md
+	black source/*.py

@@ -35,6 +35,7 @@ hg commit -m 'Initial commit'
 ```
 
 ````
+
 ______________________________________________________________________
 
 ```{rubric} How you can benefit from Mercurial
@@ -69,6 +70,7 @@ Mercurial strives to deliver on each of its promises. Most tasks simply work on 
 ```
 
 ````
+
 ______________________________________________________________________
 
 ```{toctree}
@@ -78,4 +80,14 @@ maxdepth: 2
 ---
 about.md
 learn.md
+```
+
+```{toctree}
+---
+caption: Help
+hidden:
+maxdepth: 2
+---
+_generated/commands.md
+_generated/topics.md
 ```
