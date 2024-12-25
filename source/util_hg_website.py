@@ -3,6 +3,7 @@ import subprocess
 from dataclasses import dataclass
 from importlib import resources
 from pathlib import Path
+from textwrap import dedent
 
 from mercurial import commands as hg_commands
 
@@ -15,14 +16,21 @@ class Command:
     short_doc: str
 
     def get_rst_doc(self):
-
         try:
             cmd = getattr(hg_commands, self.name)
         except AttributeError as err:
             print(err)
-            rst = ""
+            rst = self.name + "\n"
         else:
             rst = cmd.__doc__
+
+        if rst is None:
+            return ""
+
+        title, content = rst.split("\n", 1)
+
+        title = "hg " + self.name + ": " + title
+        rst = title + "\n" + "=" * len(title) + "\n" + dedent(content)
 
         return rst
 
@@ -30,11 +38,9 @@ class Command:
 class Topic(Command):
 
     def get_rst_doc(self):
-
         name = self.name
         if name == "templating":
             name = "templates"
-
         return resources.files("mercurial.helptext").joinpath(f"{name}.txt").read_text()
 
 
@@ -79,8 +85,6 @@ def prepare_source():
     commands_doc = parse_help_text(commands_doc)
     topics_doc = parse_help_text(topics_doc, cls=Topic)
 
-    md_commands = ["# Commands\n"]
-
     source_dir = Path(__file__).absolute().parent
     generated_dir = source_dir / "_generated"
     generated_dir.mkdir(exist_ok=True)
@@ -88,23 +92,29 @@ def prepare_source():
     commands_dir = generated_dir / "commands"
     commands_dir.mkdir(exist_ok=True)
     path_commands_md = commands_dir.with_suffix(".md")
+    md = ["# Commands\n"]
     for title, kind in commands_doc.items():
+        md.append("```{rubric} " + title + "\n```")
         for command in kind:
-            command.get_rst_doc()
-    md_commands = "\n".join(md_commands)
-    save_file(path_commands_md, md_commands)
+            md.append(
+                f"- [{command.name}](./commands/{command.name}.rst): {command.short_doc}"
+            )
+            save_file(commands_dir / f"{command.name}.rst", command.get_rst_doc())
+    md = "\n".join(md)
+    save_file(path_commands_md, md)
 
     topics_dir = generated_dir / "topics"
     topics_dir.mkdir(exist_ok=True)
     path_topics_md = topics_dir.with_suffix(".md")
-    md_topics = ["# Additional help topics\n"]
+    md = ["# Additional help topics\n"]
     for title, kind in topics_doc.items():
+        md.append("```{rubric} " + title + "\n```")
         for command in kind:
             if command.name == "internals":
                 continue
             command.get_rst_doc()
-    md_topics = "\n".join(md_topics)
-    save_file(path_topics_md, md_topics)
+    md = "\n".join(md)
+    save_file(path_topics_md, md)
 
 
 if __name__ == "__main__":
