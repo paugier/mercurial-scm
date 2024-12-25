@@ -41,7 +41,10 @@ class Topic(Command):
         name = self.name
         if name == "templating":
             name = "templates"
-        return resources.files("mercurial.helptext").joinpath(f"{name}.txt").read_text()
+        rst = resources.files("mercurial.helptext").joinpath(f"{name}.txt").read_text()
+        title = self.short_doc
+        rst = title + "\n" + "-" * len(title) + "\n\n" + rst
+        return rst
 
 
 def parse_help_text(doc, cls=Command):
@@ -112,7 +115,10 @@ def prepare_source():
         for command in kind:
             if command.name == "internals":
                 continue
-            command.get_rst_doc()
+            md.append(
+                f"- [{command.name}](./topics/{command.name}.rst): {command.short_doc}"
+            )
+            save_file(topics_dir / f"{command.name}.rst", command.get_rst_doc())
     md = "\n".join(md)
     save_file(path_topics_md, md)
 
