@@ -25,12 +25,12 @@ class Command:
             rst = cmd.__doc__
 
         if rst is None:
-            return ""
+            return ":orphan:\n"
 
         title, content = rst.split("\n", 1)
 
         title = "hg " + self.name + ": " + title
-        rst = title + "\n" + "=" * len(title) + "\n" + dedent(content)
+        rst = ":orphan:\n" + title + "\n" + "=" * len(title) + "\n" + dedent(content)
 
         return rst
 
@@ -43,7 +43,7 @@ class Topic(Command):
             name = "templates"
         rst = resources.files("mercurial.helptext").joinpath(f"{name}.txt").read_text()
         title = self.short_doc
-        rst = title + "\n" + "-" * len(title) + "\n\n" + rst
+        rst = ":orphan:\n" + title + "\n" + "-" * len(title) + "\n\n" + rst
         return rst
 
 
