@@ -4,8 +4,7 @@ sd_hide_title: true
 
 # Mercurial documentation
 
-```{rubric} Work easier, Work faster
-```
+# Work easier, Work faster
 
 **Mercurial is a free, distributed source control management tool. It efficiently handles
 projects of any size and offers an easy and intuitive interface.**
@@ -47,15 +46,22 @@ gutter: 1 1 1 2
 ---
 ```{grid-item-card} It is [fast and powerful](./about.md)
 
-Mercurial efficiently handles [projects of any size and kind](./who.md). Every clone contains the whole project history, so most actions are local, fast and convenient. Mercurial supports a multitude of [workflows](https://www.mercurial-scm.org/wiki/WorkingPractices) and you can easily enhance its functionality with [extensions](https://www.mercurial-scm.org/wiki/UsingExtensions).
+Mercurial efficiently handles [projects of any size and kind](./who.md). Every clone
+contains the whole project history, so most actions are local, fast and convenient.
+Mercurial supports a multitude of
+[workflows](https://www.mercurial-scm.org/wiki/WorkingPractices) and you can easily
+enhance its functionality with [extensions](https://www.mercurial-scm.org/wiki/UsingExtensions).
 
 +++
 [Learn more »](about.md)
 ```
 
-```{grid-item-card} It is easy to learn
+```{grid-item-card} It is [easy to learn](./learn.md)
 
-You can follow our simple guide to learn how to revision your documents with Mercurial, or just use the quick start to get going instantly. A short overview of Mercurial's decentralized model is also available.
+You can follow our simple [guide](./guide.md) to learn how to revision your documents
+with Mercurial, or just use the [quick start](./quickstart.md) to get going instantly.
+A short overview of Mercurial's decentralized model is also
+[available](https://www.mercurial-scm.org/wiki/UnderstandingMercurial).
 
 +++
 [Learn more »](learn.md)
@@ -63,10 +69,11 @@ You can follow our simple guide to learn how to revision your documents with Mer
 
 ```{grid-item-card} And it just works
 
-Mercurial strives to deliver on each of its promises. Most tasks simply work on the first try and without requiring arcane knowledge.
+Mercurial strives to deliver on each of its promises. Most tasks simply work on the
+first try and without requiring arcane knowledge.
 
 +++
-[Learn more »](learn.md)
+[Learn more »](https://foss.heptapod.net/mercurial/mercurial-devel/-/pipelines/95490)
 ```
 
 ````
@@ -79,12 +86,15 @@ hidden:
 maxdepth: 2
 ---
 about.md
-learn.md
+guide.md
+install.md
+Extensions <https://wiki.mercurial-scm.org/UsingExtensions>
+News/Wiki <https://wiki.mercurial-scm.org/>
 ```
 
 ```{toctree}
 ---
-caption: Help
+caption: hg help
 hidden:
 maxdepth: 2
 ---
