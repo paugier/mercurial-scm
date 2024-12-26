@@ -16,16 +16,16 @@ class Command:
     short_doc: str
 
     def get_rst_doc(self):
-        try:
-            cmd = getattr(hg_commands, self.name)
-        except AttributeError as err:
-            print(err)
-            rst = self.name + "\n"
-        else:
-            rst = cmd.__doc__
 
-        if rst is None:
-            return ":orphan:\n"
+        name = self.name
+        if name in ("help", "version", "import"):
+            name = name + "_"
+        elif name == "bookmarks":
+            name = "bookmark"
+
+        cmd = getattr(hg_commands, name)
+        rst = cmd.__doc__
+        assert rst is not None, self.name
 
         title, content = rst.split("\n", 1)
 

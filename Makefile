@@ -33,4 +33,4 @@ lock:
 
 format:
 	mdformat source/*.md
-	black source/*.py
+	black source

@@ -12,18 +12,50 @@ class HgRole(SphinxRole):
 
     def run(self) -> tuple[list[nodes.Node], list[nodes.system_message]]:
 
+        link = True
+
+        text = self.text
+        if text == "help resolve":
+            text = "resolve"
+        elif text == "help export":
+            text = "export"
+        elif text == "help <command>":
+            link = False
+        elif text == "help templates":
+            text = "help templating"
+        elif text == "debug-repair-issue-6528":
+            link = False
+        elif text.startswith("help internals"):
+            # not yet in the website
+            link = False
+        elif text == "config merge-tools":
+            text = "help config.merge-tools"
+
+        if not link:
+            node = nodes.inline(text=f"`hg {self.text}`")
+            return [node], []
+
         source = self.inliner.document.attributes["source"]
         rel_source = source.split(os.sep + "source" + os.sep, 1)[1]
         levels = rel_source.count("/")
         to_base = "../" * levels
 
-        if self.text.startswith("help "):
-            _, topic = self.text.split("help ", 1)
-            refuri = to_base + f"_generated/topics/{topic}.html"
-        else:
-            refuri = to_base + f"_generated/commands/{self.text}.html"
+        if text.startswith("help "):
+            _, topic = text.split("help ", 1)
 
-        node = nodes.reference(self.text, f"hg {self.text}", refuri=refuri)
+            if "." in topic:
+                topic, section = topic.split(".", 1)
+                if "." in section:
+                    section, _ = section.split(".", 1)
+                section = "#" + section
+            else:
+                section = ""
+            refuri = to_base + f"_generated/topics/{topic}.html{section}"
+        else:
+            command = text.split(" ", 1)[0]
+            refuri = to_base + f"_generated/commands/{command}.html"
+
+        node = nodes.reference(self.text, f"`hg {self.text}`", refuri=refuri)
 
         return [node], []
 
