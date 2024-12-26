@@ -23,7 +23,9 @@ Committing, branching and merging are fast and cheap.
 
 Mercurial's implementation and data structures are designed to be fast. You can generate
 diffs between revisions, or jump back in time within seconds. Therefore Mercurial is
-perfectly suitable for large projects such as nginx (hg) or NetBeans (hg).
+perfectly suitable for large projects such as nginx ([hg](http://hg.nginx.org/nginx/)) or
+NetBeans
+([hg](https://netbeans.apache.org/wiki/main/netbeansdevelopperfaq/DevFaqAccessSourcesUsingMercurial/)).
 
 ## Platform independent
 
@@ -34,28 +36,37 @@ binary releases are available on all major platforms.
 ## Extensible
 
 The functionality of Mercurial can be increased with extensions, either by activating the
-official ones which are shipped with Mercurial or downloading some from the wiki or by
-writing your own. Extensions are written in Python and can change the workings of the
-basic commands, add new commands and access all the core functions of Mercurial.
+official ones which are shipped with Mercurial or downloading some
+[from the wiki](https://www.mercurial-scm.org/wiki/UsingExtensions) or by
+[writing your own](https://www.mercurial-scm.org/wiki/WritingExtensions). Extensions are
+written in Python and can change the workings of the basic commands, add new commands and
+access all the core functions of Mercurial.
 
 ## Easy to use
 
 Mercurial sports a consistent command set in which most subversion users feel right at
 home. Potentially dangerous actions are available via extensions you need to enable, so
-the basic interface is easy to use, easy to learn and hard to break. The Quick Start
-should get you going in a just few minutes.
+the basic interface is easy to use, easy to learn and hard to break. The
+[Quick Start](./quickstart.md) should get you going in a just few minutes.
 
 ## Open Source
 
-Mercurial is free software licensed under the terms of the GNU General Public License
-Version 2 or any later version.
+Mercurial is free software licensed under the terms of the
+[GNU General Public License Version 2](http://www.gnu.org/licenses/gpl-2.0.txt) or any
+later version.
 
 ## Similar projects
 
-Mercurial is used for version control of files. Similar projects include Git and Bazaar.
-Version control systems without a distributed architecture include Subversion and CVS.
+Mercurial is used for version control of files. Similar projects include [Git] and
+[Bazaar]. Version control systems without a distributed architecture include [Subversion]
+and [CVS].
 
 ## The Website
 
 The website is a project of the Mercurial community. The source is licensed under GPLv2
 or later. Feel free to send us patches.
+
+[bazaar]: https://bazaar.canonical.com/
+[cvs]: https://www.nongnu.org/cvs/
+[git]: https://git-scm.com/
+[subversion]: https://subversion.apache.org/

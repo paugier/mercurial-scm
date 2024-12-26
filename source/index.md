@@ -45,9 +45,9 @@ ______________________________________________________________________
 ---
 gutter: 1 1 1 2
 ---
-```{grid-item-card} It is fast and powerful
+```{grid-item-card} It is [fast and powerful](./about.md)
 
-Mercurial efficiently handles projects of any size and kind. Every clone contains the whole project history, so most actions are local, fast and convenient. Mercurial supports a multitude of [workflows](https://www.mercurial-scm.org/wiki/WorkingPractices) and you can easily enhance its functionality with [extensions](https://www.mercurial-scm.org/wiki/UsingExtensions).
+Mercurial efficiently handles [projects of any size and kind](./who.md). Every clone contains the whole project history, so most actions are local, fast and convenient. Mercurial supports a multitude of [workflows](https://www.mercurial-scm.org/wiki/WorkingPractices) and you can easily enhance its functionality with [extensions](https://www.mercurial-scm.org/wiki/UsingExtensions).
 
 +++
 [Learn more »](about.md)

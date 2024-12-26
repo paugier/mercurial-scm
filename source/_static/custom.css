@@ -1,5 +1,5 @@
 /** Add a counter before subsections **/
-h1 {
+/* h1 {
     counter-reset: subsection;
 }
 h2 {
@@ -12,4 +12,4 @@ h2::before {
 h3::before {
     counter-increment: subsubsection;
     content: counter(subsection) "." counter(subsubsection) ". ";
-}
+} */

@@ -71,8 +71,13 @@ def save_file(path, content):
 
 def prepare_source():
 
+    command = ["hg", "help"]
+    extensions = ["hggit", "evolve", "topic"]
+    for ext in extensions:
+        command.extend(["--config", f"extensions.{ext}="])
+
     process = subprocess.run(
-        ["hg", "help", "--config", "extensions.hggit="],
+        command,
         env={"HGRCPATH": ""},
         check=True,
         text=True,
