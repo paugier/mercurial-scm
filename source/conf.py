@@ -12,6 +12,7 @@ import sys
 from pathlib import Path
 
 sys.path.append(str(Path(__file__).parent))
+sys.path.append(str(Path(__file__).parent / "_ext"))
 
 from util_hg_website import prepare_source
 
@@ -33,6 +34,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.viewcode",
     "sphinx_design",
+    "sphinx_hg",
 ]
 
 templates_path = ["_templates"]
