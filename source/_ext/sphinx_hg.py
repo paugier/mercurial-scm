@@ -60,9 +60,20 @@ class HgRole(SphinxRole):
         return [node], []
 
 
+class ConfigDocRole(SphinxRole):
+    """A role for `config-doc`"""
+
+    def run(self) -> tuple[list[nodes.Node], list[nodes.system_message]]:
+
+        # I (paugier) don't understand the config-doc role
+        # (used in mercurial/helptext/config.txt)
+        return [], []
+
+
 def setup(app: Sphinx) -> ExtensionMetadata:
 
     app.add_role("hg", HgRole())
+    app.add_role("config-doc", ConfigDocRole())
 
     return {
         "version": "0.1",
