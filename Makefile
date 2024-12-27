@@ -32,5 +32,5 @@ lock:
 	pdm lock
 
 format:
-	mdformat source/*.md
+	mdformat *.md source/*.md
 	black source

@@ -114,7 +114,7 @@ def prepare_source():
     topics_dir = generated_dir / "topics"
     topics_dir.mkdir(exist_ok=True)
     path_topics_md = topics_dir.with_suffix(".md")
-    md = ["# Additional help topics\n"]
+    md = ["# Additional topics\n"]
     for title, kind in topics_doc.items():
         md.append("```{rubric} " + title + "\n```")
         for command in kind:
