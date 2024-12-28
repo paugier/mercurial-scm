@@ -1,0 +1,29 @@
+stages:
+  - doc
+
+image: python:3.11
+
+pages:
+  stage: doc
+  script:
+    - apt-get update
+    - apt-get install rsync -y
+    - pip install pdm
+    - pdm sync
+    # - pdm run python -m bash_kernel.install
+    - pdm build-site
+    - mkdir -p public/$CI_COMMIT_REF_NAME
+    - rsync -rvc --delete build/html/* public/$CI_COMMIT_REF_NAME/
+    # This directory can become too large leading to error.
+    # It can be purged with the bottom "Clear runner caches"
+    # in https://foss.heptapod.net/mercurial/hg-website/-/pipelines
+    - ls public
+    - echo "CI_COMMIT_REF_NAME="$CI_COMMIT_REF_NAME
+    - echo See https://mercurial.pages.heptapod.net/hg-website/$CI_COMMIT_REF_NAME
+  artifacts:
+    name: "$CI_COMMIT_REF_NAME"
+    paths:
+      - public
+    expire_in: 5 days
+  when: always
+
