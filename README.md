@@ -20,8 +20,7 @@ Our target for the website is:
 
 ## Todo
 
-- commands provided by extensions evolve, topic and hg-git
-- download.md
+- commands provided by extensions evolve,
 - guide.md
 - pages to visualize result of MR
 - issue disable "content" top right

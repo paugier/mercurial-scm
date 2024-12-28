@@ -90,6 +90,7 @@ guide.md
 install.md
 Extensions <https://wiki.mercurial-scm.org/UsingExtensions>
 News/Wiki <https://wiki.mercurial-scm.org/>
+contribute.md
 ```
 
 ```{toctree}
