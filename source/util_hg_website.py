@@ -1,3 +1,4 @@
+import os
 import subprocess
 
 from dataclasses import dataclass
@@ -56,7 +57,14 @@ def parse_help_text(doc, cls=Command):
             kind = []
             kinds[line] = kind
         else:
-            name, short_doc = line.strip().split(" ", 1)
+            if line[1] == " ":
+                print(f"Issue with line\n{line}")
+                continue
+            try:
+                name, short_doc = line.strip().split(" ", 1)
+            except ValueError:
+                print(f"ValueError for line:\n{line}")
+                continue
             short_doc = short_doc.strip()
             kind.append(cls(name, short_doc))
     return kinds
@@ -72,13 +80,15 @@ def save_file(path, content):
 def prepare_source():
 
     command = ["hg", "help"]
-    extensions = ["hggit", "evolve", "topic"]
+    extensions = []  # "hggit", "evolve", "topic"]
     for ext in extensions:
         command.extend(["--config", f"extensions.{ext}="])
+    env = os.environ.copy()
+    env.update({"HGRCPATH": "", "LANG": "C"})
 
     process = subprocess.run(
         command,
-        env={"HGRCPATH": ""},
+        env=env,
         check=True,
         text=True,
         capture_output=True,
