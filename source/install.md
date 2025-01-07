@@ -5,21 +5,29 @@ result, Mercurial is available on [Microsoft Windows], [GNU/Linux], [Mac OS X],
 [Solaris 11 Express] and others. You can either download a binary package for the system
 of your choice or build it from [sources](https://www.mercurial-scm.org/release).
 
+For people that are looking for the utmost performance, a growing part of Mercurial is
+being written in Rust. For more information see [](./_generated/topics/rust.rst).
+
 Windows users are likely to enjoy the [TortoiseHg] GUI the most. It integrates Mercurial
 directly into your explorer.
 
-Packages for common Linux, BSD and Solaris distributions can be installed from the system
-specific repositories:
+Packages for common Linux and BSD distributions can be installed from the system specific
+repositories:
 
 `````{tab-set}
 ````{tab-item} Debian/Ubuntu
 ```sh
-apt-get install mercurial
+apt install mercurial
 ```
 ````
 ````{tab-item} Fedora
 ```sh
 dnf install mercurial
+```
+````
+````{tab-item} Arch Linux
+```sh
+pacman -S mercurial
 ```
 ````
 ````{tab-item} Gentoo
@@ -36,11 +44,6 @@ brew install mercurial
 ```sh
 cd /usr/ports/devel/mercurial
 make install
-```
-````
-````{tab-item} Solaris 11 Express
-```sh
-pkg install SUNWmercurial
 ```
 ````
 `````

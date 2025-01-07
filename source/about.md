@@ -23,7 +23,7 @@ Committing, branching and merging are fast and cheap.
 
 Mercurial's implementation and data structures are designed to be fast. You can generate
 diffs between revisions, or jump back in time within seconds. Therefore Mercurial is
-perfectly suitable for large projects such as nginx ([hg](http://hg.nginx.org/nginx/)) or
+perfectly suitable for large projects such as Firefox (https://hg.mozilla.org/) or
 NetBeans
 ([hg](https://netbeans.apache.org/wiki/main/netbeansdevelopperfaq/DevFaqAccessSourcesUsingMercurial/)).
 
@@ -31,7 +31,9 @@ NetBeans
 
 Mercurial was written with platform independence in mind. Therefore most of Mercurial is
 written in Python, with a small part in portable C for performance reasons. As a result,
-binary releases are available on all major platforms.
+binary releases are available on all major platforms. We also have a growing part that is
+written in Rust - though it only currently officially supports Linux - and binary
+releases are coming very soon.
 
 ## Extensible
 
@@ -57,16 +59,17 @@ later version.
 
 ## Similar projects
 
-Mercurial is used for version control of files. Similar projects include [Git] and
-[Bazaar]. Version control systems without a distributed architecture include [Subversion]
-and [CVS].
+Mercurial is used for version control of files. Similar projects include [Git], [Pijul]
+or [Jujutsu]. Version control systems without a distributed architecture include
+[Subversion] and [CVS].
 
 ## The Website
 
 The website is a project of the Mercurial community. The source is licensed under GPLv2
 or later. Feel free to send us patches.
 
-[bazaar]: https://bazaar.canonical.com/
 [cvs]: https://www.nongnu.org/cvs/
 [git]: https://git-scm.com/
+[jujutsu]: https://github.com/jj-vcs/jj
+[pijul]: https://pijul.org/
 [subversion]: https://subversion.apache.org/

@@ -25,6 +25,11 @@ Some links to resources for learning Mercurial, sorted by length
   Learn using Mercurial step by step in workflows. This guide skips the conceptual
   explanations to focus only on the practical usage.
 
+- [Modern Mercurial](https://octobus.net/blog/2020-11-26-modern-mercurial)
+
+  "Our goal with this article is to re-state some of the evolutions that Mercurial has
+  seen over the past few years and to review some of its strong points and weaknesses."
+
 - [Hg Init: a Mercurial tutorial](http://hginit.com/)
 
   In this user-friendly, six-part tutorial, Joel Spolsky teaches you the key concepts of

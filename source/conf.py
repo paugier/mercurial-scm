@@ -14,6 +14,8 @@ import sys
 
 from pathlib import Path
 
+from mercurial.__version__ import version as hg_version
+
 sys.path.append(str(Path(__file__).parent))
 sys.path.append(str(Path(__file__).parent / "_ext"))
 
@@ -22,9 +24,9 @@ from util_hg_website import prepare_source
 prepare_source()
 
 project = "Mercurial"
-copyright = "2024, Mercurial developers"
+copyright = "2025, Mercurial developers"
 author = "Mercurial developers"
-release = "6.9"
+release = hg_version.decode()
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -50,6 +52,7 @@ myst_enable_extensions = [
     "deflist",
     "dollarmath",
     "html_image",
+    "linkify",
 ]
 
 # nb_custom_formats = {".Rmd": ["jupytext.reads", {"fmt": "Rmd"}]}
@@ -112,3 +115,5 @@ html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 
 # copybutton_selector = "div:not(.output) > div.highlight pre"
+
+myst_linkify_fuzzy_links = False

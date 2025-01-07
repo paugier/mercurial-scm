@@ -17,7 +17,6 @@ class Command:
     short_doc: str
 
     def get_rst_doc(self):
-
         name = self.name
         if name in ("help", "version", "import"):
             name = name + "_"
@@ -37,7 +36,6 @@ class Command:
 
 
 class Topic(Command):
-
     def get_rst_doc(self):
         name = self.name
         if name == "templating":
@@ -78,7 +76,6 @@ def save_file(path, content):
 
 
 def prepare_source():
-
     command = ["hg", "help"]
     extensions = []  # "hggit", "evolve", "topic"]
     for ext in extensions:
@@ -139,5 +136,4 @@ def prepare_source():
 
 
 if __name__ == "__main__":
-
     prepare_source()

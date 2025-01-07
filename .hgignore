@@ -5,3 +5,5 @@ build
 .pdm-python
 __pycache__
 _generated
+
+.ruff_cache

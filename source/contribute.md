@@ -1,10 +1,9 @@
 # Contribute
 
-Development repositories
+The development repository is https://foss.heptapod.net/mercurial/mercurial-devel (see
+https://wiki.mercurial-scm.org/Heptapod).
 
-- The main repository of the Mercurial maintainer
-  [Matt Mackall](https://www.mercurial-scm.org/wiki/mpm) can be found at
-  <https://www.mercurial-scm.org/repo/hg>.
+The historical repository can be found at https://www.mercurial-scm.org/repo/hg.
 
-- The development repository is <https://foss.heptapod.net/mercurial/mercurial-devel>
-  (see <https://wiki.mercurial-scm.org/Heptapod>).
+Our full contribution guidelines are in our wiki, please see:
+https://www.mercurial-scm.org/wiki/ContributingChanges
