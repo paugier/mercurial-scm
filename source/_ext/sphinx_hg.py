@@ -6,6 +6,11 @@ from sphinx.application import Sphinx
 from sphinx.util.docutils import SphinxRole
 from sphinx.util.typing import ExtensionMetadata
 
+commands_not_topic = set(
+    ["resolve", "export", "bundle", "unbundle", "paths", "parents", "push", "pull"]
+)
+aliases = {"templates": "templating", "revsets": "revisions"}
+
 
 class HgRole(SphinxRole):
     """A role for hg commands"""
@@ -13,22 +18,30 @@ class HgRole(SphinxRole):
     def run(self) -> tuple[list[nodes.Node], list[nodes.system_message]]:
         link = True
 
-        text = self.text
-        if text == "help resolve":
-            text = "resolve"
-        elif text == "help export":
-            text = "export"
-        elif text == "help <command>":
-            link = False
-        elif text == "help templates":
-            text = "help templating"
+        text = self.text.replace("\n", " ")
+        if " " not in text:
+            pass
+        elif text.startswith("help "):
+            # could be a topic but...
+            topic = text[len("help ") :]
+            if topic in commands_not_topic:
+                text = topic
+            elif topic in aliases:
+                text = "help " + aliases[topic]
+            elif topic == "<command>":
+                link = False
+            elif topic == "internals":
+                # not yet in the website
+                link = False
+            elif topic == "-e clonebundles":
+                # not yet in the website
+                link = False
         elif text == "debug-repair-issue-6528":
-            link = False
-        elif text.startswith("help internals"):
-            # not yet in the website
             link = False
         elif text == "config merge-tools":
             text = "help config.merge-tools"
+        elif text == "pull -r X":
+            text = "pull"
 
         if not link:
             node = nodes.inline(text=f"`hg {self.text}`")
@@ -52,7 +65,7 @@ class HgRole(SphinxRole):
             refuri = to_base + f"_generated/topics/{topic}.html{section}"
         else:
             command = text.split(" ", 1)[0]
-            refuri = to_base + f"_generated/commands/{command}.html"
+            refuri = to_base + f"_generated/commands/{command.replace('::', '_')}.html"
 
         node = nodes.reference(self.text, f"`hg {self.text}`", refuri=refuri)
 
