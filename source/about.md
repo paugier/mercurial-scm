@@ -23,8 +23,9 @@ Committing, branching and merging are fast and cheap.
 
 Mercurial's implementation and data structures are designed to be fast. You can generate
 diffs between revisions, or jump back in time within seconds. Therefore Mercurial is
-perfectly suitable for large projects such as Firefox (https://hg.mozilla.org/) or
-NetBeans
+perfectly suitable for large projects such as Firefox (https://hg.mozilla.org/),
+[Heptapod] (a Gitlab fork supporting Mercurial,
+[hg repositories](https://foss.heptapod.net/heptapod/)) or [NetBeans]
 ([hg](https://netbeans.apache.org/wiki/main/netbeansdevelopperfaq/DevFaqAccessSourcesUsingMercurial/)).
 
 ## Platform independent
@@ -70,6 +71,8 @@ or later. Feel free to send us patches.
 
 [cvs]: https://www.nongnu.org/cvs/
 [git]: https://git-scm.com/
+[heptapod]: https://heptapod.net/
 [jujutsu]: https://github.com/jj-vcs/jj
+[netbeans]: https://en.wikipedia.org/wiki/NetBeans
 [pijul]: https://pijul.org/
 [subversion]: https://subversion.apache.org/
