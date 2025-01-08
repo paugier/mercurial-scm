@@ -21,10 +21,3 @@ Our target for the website is:
 
 Currently, the result of MR can be visualized in Gitlab pages with links as
 <https://mercurial.pages.heptapod.net/hg-website/topic/default/with-sphinx>.
-
-## Todo
-
-- guide.md
-- commands provided by extensions evolve
-- setup https://mercurial-scm.readthedocs.io (advantage: readthedocs well referenced) ?
-- issue disable "content" top right
