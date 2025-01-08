@@ -26,17 +26,11 @@ chose Mercurial in 2006.
 
 <https://www.mozilla.org>
 
-```{rubric} Nginx
-```
-
-The nginx web server is among one of the most popular and used over the world.
-
-<http://nginx.org/>
 
 ```{rubric} and others...
 ```
 
-Not just Mozilla and nginx use Mercurial. A lot of projects of various sizes have decided
+Not just Facebook and Mozilla use Mercurial. A lot of projects of various sizes have decided
 to use Mercurial for its efficiency and power. A longer list of projects which use
 Mercurial can be found
 [in the wiki](https://wiki.mercurial-scm.org/ProjectsUsingMercurial).

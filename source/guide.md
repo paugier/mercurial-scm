@@ -13,13 +13,18 @@ the concepts used, because there are already many other great resources doing th
 
 Alternatives to this guide and further reading:
 
-- Tutorial - a more exhaustive tutorial.
-- Mercurial: The Definitive Guide - a very detailed description of Mercurial including
-  behind the scenes, an indepth article on the design of Mercurial.
-- Understanding Mercurial - the concepts behind Mercurial.
+- [Tutorial](https://www.mercurial-scm.org/wiki/Tutorial) - a more exhaustive tutorial.
+- [Mercurial: The Definitive Guide](https://book.mercurial-scm.org/) - a very detailed
+  description of Mercurial including
+  [behind the scenes](https://book.mercurial-scm.org/read/concepts.html), an indepth
+  article on the design of Mercurial.
+- [Understanding Mercurial](https://www.mercurial-scm.org/wiki/UnderstandingMercurial) -
+  the concepts behind Mercurial.
 
 ```{note}
 This guide doesn't require any prior knowledge of version control systems (though
 subversion users will likely feel at home quite quickly). Basic command line abilities
 are helpful, because we'll use the command line client.
 ```
+
+...

@@ -4,10 +4,36 @@ sd_hide_title: true
 
 # Mercurial documentation
 
-# Work easier, Work faster
+`````{grid}
+---
+reverse:
+gutter: 3 4 4 4
+margin: 1 2 1 2
+---
+````{grid-item}
+:columns: 12 4 4 4
 
-**Mercurial is a free, distributed source control management tool. It efficiently handles
-projects of any size and offers an easy and intuitive interface.**
+```{image} _static/logo-square.svg
+:width: 150px
+:class: sd-m-auto
+```
+
+````
+
+````{grid-item}
+:columns: 12 8 8 8
+:child-align: justify
+:class: sd-fs-5
+
+```{rubric} Work easier, Work faster
+```
+
+Mercurial is a free, distributed source control management tool. It efficiently handles
+projects of any size and offers an easy and intuitive interface.
+
+````
+
+`````
 
 ````{margin}
 ## Quick Start

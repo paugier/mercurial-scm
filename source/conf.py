@@ -100,6 +100,8 @@ html_theme_options = {
     "use_repository_button": True,
     "repository_provider": "gitlab",
     "path_to_docs": "",
+    "toc_title": "On this page",
+    "announcement": "This new website is a work in progress!",
     # "home_page_in_toc": True,
     # "show_navbar_depth": 1,
     # "use_edit_page_button": True,
