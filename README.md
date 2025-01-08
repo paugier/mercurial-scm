@@ -14,15 +14,16 @@ Our target for the website is:
 - quick overview of the main feature
 - download link for the various platform
 - documentation / tutorial
-- information about hosting option, other supporting tools and commercial support options
+- information about hosting options, other supporting tools and commercial support options
 - not being 15 year old
 - maintainable, easy to modify.
 
+Currently, the result of MR can be visualized in Gitlab pages with links as
+<https://mercurial.pages.heptapod.net/hg-website/topic/default/with-sphinx>.
+
 ## Todo
 
-- commands provided by extensions evolve,
 - guide.md
-- pages to visualize result of MR
+- commands provided by extensions evolve
+- setup https://mercurial-scm.readthedocs.io (advantage: readthedocs well referenced) ?
 - issue disable "content" top right
-- setup https://mercurial-scm.readthedocs.io (advantage: readthedocs well referenced)
-- mail mercurial.dev
