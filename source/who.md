@@ -26,11 +26,10 @@ chose Mercurial in 2006.
 
 <https://www.mozilla.org>
 
-
 ```{rubric} and others...
 ```
 
-Not just Facebook and Mozilla use Mercurial. A lot of projects of various sizes have decided
-to use Mercurial for its efficiency and power. A longer list of projects which use
-Mercurial can be found
+Not just Facebook and Mozilla use Mercurial. A lot of projects of various sizes have
+decided to use Mercurial for its efficiency and power. A longer list of projects which
+use Mercurial can be found
 [in the wiki](https://wiki.mercurial-scm.org/ProjectsUsingMercurial).

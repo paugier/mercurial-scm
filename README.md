@@ -21,3 +21,6 @@ Our target for the website is:
 
 Currently, the result of MR can be visualized in Gitlab pages with links as
 <https://mercurial.pages.heptapod.net/hg-website/topic/default/with-sphinx>.
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for instructions how to build and contribute to
+the website.
