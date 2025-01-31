@@ -15,6 +15,7 @@ dependencies = [
     "mercurial>=6.9",
     "hg-evolve>=11.1.6",
     "hg-git>=1.1.4",
+    "ablog",
 ]
 requires-python = "==3.11.*"
 readme = "README.md"
@@ -27,7 +28,7 @@ distribution = false
 [tool.pdm.scripts]
 build-site = "sphinx-build -M html source build"
 format-py = "ruff format source"
-format-md = {shell="mdformat *.md source/*.md"}
+format-md = {shell="mdformat *.md source/**/**/*.md"}
 format = {composite = ["format-py", "format-md"]}
 
 [dependency-groups]

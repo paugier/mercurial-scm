@@ -40,11 +40,24 @@ extensions = [
     "sphinx.ext.viewcode",
     "sphinx_design",
     "sphinx_hg",
+    "ablog",
 ]
 
 templates_path = ["_templates"]
 exclude_patterns = []
 
+
+news_sidebars = [
+    "navbar-logo.html",
+    "icon-links.html",
+    "ablog/categories.html",
+    "ablog/tagcloud.html",
+    "ablog/archives.html",
+]
+html_sidebars = {
+    "news": news_sidebars,
+    "news/**": news_sidebars,
+}
 
 myst_enable_extensions = [
     "amsmath",
@@ -101,7 +114,7 @@ html_theme_options = {
     "repository_provider": "gitlab",
     "path_to_docs": "",
     "toc_title": "On this page",
-    "announcement": "This new website is a work in progress!",
+    # "announcement": "This new Mercurial website is a work in progress!",
     # "home_page_in_toc": True,
     # "show_navbar_depth": 1,
     # "use_edit_page_button": True,
@@ -119,3 +132,18 @@ html_css_files = ["custom.css"]
 # copybutton_selector = "div:not(.output) > div.highlight pre"
 
 myst_linkify_fuzzy_links = False
+
+# -- ABlog ---------------------------------------------------
+
+# taken and adapted from https://github.com/choldgraf/choldgraf.github.io
+
+blog_baseurl = ""
+blog_title = "Mercurial"
+blog_path = "news"
+blog_post_pattern = "news/*/*"
+blog_feed_fulltext = True
+blog_feed_subtitle = "Versioning"
+fontawesome_included = True
+post_redirect_refresh = 1
+post_auto_image = 1
+post_auto_excerpt = 2
