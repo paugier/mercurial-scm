@@ -13,7 +13,7 @@ margin: 1 2 1 2
 ````{grid-item}
 :columns: 12 4 4 4
 
-```{image} _static/logo-square.svg
+```{image} _static/logo-hg.svg
 :width: 150px
 :class: sd-m-auto
 ```
