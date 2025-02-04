@@ -76,8 +76,10 @@ class ConfigDocRole(SphinxRole):
     """A role for `config-doc`"""
 
     def run(self) -> tuple[list[nodes.Node], list[nodes.system_message]]:
-        # I (paugier) don't understand the config-doc role
-        # (used in mercurial/helptext/config.txt)
+        # the config-doc role (used for example in mercurial/helptext/config.txt)
+        # fetches the doc of the corresponding item from the file
+        # mercurial/configitems.toml.
+        # TODO: implement config-doc
         return [], []
 
 
