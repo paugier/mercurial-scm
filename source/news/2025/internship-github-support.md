@@ -7,9 +7,9 @@ tags: [internship]
 
 # Towards native Github support for Mercurial
 
-Git/Github and Gitlab are so central nowadays in programming that any new versioning tool has
-to be highly compatible with Git. The two recent projects [Sapling] and [Jujutsu] (also
-called `jj`) are both "Git compatible".
+Git/Github and Gitlab are so central nowadays in programming that any new versioning tool
+has to be highly compatible with Git. The two recent projects [Sapling] and [Jujutsu]
+(also called `jj`) are both "Git compatible".
 
 - Sapling website says that it "integrate[s] with Git":
 

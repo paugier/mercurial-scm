@@ -28,7 +28,7 @@ distribution = false
 [tool.pdm.scripts]
 build-site = "sphinx-build -M html source build"
 format-py = "ruff format source"
-format-md = {shell="mdformat *.md source/**/**/*.md"}
+format-md = {shell="mdformat *.md source/*.md source/*/*.md source/*/*/*.md"}
 format = {composite = ["format-py", "format-md"]}
 
 [dependency-groups]

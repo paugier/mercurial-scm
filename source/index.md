@@ -112,8 +112,8 @@ hidden:
 maxdepth: 2
 ---
 about.md
-guide.md
 install.md
+guide.md
 Extensions <https://wiki.mercurial-scm.org/UsingExtensions>
 news.md
 Wiki <https://wiki.mercurial-scm.org/>
