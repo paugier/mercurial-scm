@@ -116,12 +116,12 @@ html_theme_options = {
     "logo": {
         "image_light": "_static/logo-square-light.svg",
         "image_dark": "_static/logo-square-dark.svg",
-    }
+    },
+    "use_download_button": False,
     # "announcement": "This new Mercurial website is a work in progress!",
     # "home_page_in_toc": True,
     # "show_navbar_depth": 1,
     # "use_edit_page_button": True,
-    # "use_download_button": True,
     # "navigation_with_keys": False,
 }
 
