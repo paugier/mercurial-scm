@@ -104,7 +104,6 @@ suppress_warnings = ["mystnb.unknown_mime_type"]
 
 html_title = ""
 html_theme = "sphinx_book_theme"
-html_logo = "_static/mercurial-logo.png"
 html_favicon = "_static/logo-droplets.svg"
 
 html_theme_options = {
@@ -114,6 +113,10 @@ html_theme_options = {
     "repository_provider": "gitlab",
     "path_to_docs": "",
     "toc_title": "On this page",
+    "logo": {
+        "image_light": "_static/logo-square-light.svg",
+        "image_dark": "_static/logo-square-dark.svg",
+    }
     # "announcement": "This new Mercurial website is a work in progress!",
     # "home_page_in_toc": True,
     # "show_navbar_depth": 1,
