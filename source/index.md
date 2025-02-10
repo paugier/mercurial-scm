@@ -33,9 +33,7 @@ projects of any size and offers an easy and intuitive interface.
 
 ````
 
-`````
-
-````{margin}
+````{grid-item}
 ## Quick Start
 
 *Clone a project and push changes*
@@ -60,6 +58,7 @@ hg commit -m 'Initial commit'
 ```
 
 ````
+`````
 
 ______________________________________________________________________
 
