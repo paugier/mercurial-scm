@@ -1,5 +1,7 @@
 # Contribute to hg-website
 
+## Install and test locally
+
 One needs to install [PDM] and `make`.
 
 | commands      |                     |
@@ -8,7 +10,14 @@ One needs to install [PDM] and `make`.
 | `make format` | Format sources      |
 | `make lock`   | Relock dependencies |
 
-Submit topic based merge requests to https://foss.heptapod.net/mercurial/hg-website
+
+## Sending changes
+
+This project uses basically the same workflow as Mercurial itself: see https://wiki.mercurial-scm.org/Heptapod for a more thorough overview.
+
+Submit topic-based merge requests to https://foss.heptapod.net/mercurial/hg-website
+
+Example:
 
 ```sh
 hg pull
