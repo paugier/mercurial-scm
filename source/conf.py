@@ -105,7 +105,7 @@ suppress_warnings = ["mystnb.unknown_mime_type"]
 html_title = ""
 html_theme = "sphinx_book_theme"
 html_logo = "_static/mercurial-logo.png"
-# html_favicon = "_static/logo-square.svg"
+html_favicon = "_static/logo-droplets.svg"
 
 html_theme_options = {
     "repository_url": "https://foss.heptapod.net/mercurial/hg-website",
