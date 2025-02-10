@@ -14,7 +14,7 @@ html:
 	@echo "file://"$(shell pwd)"/build/html/index.html"
 
 clean:
-	rm -rf source/_generated
+	rm -rf source/help
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
 
 # Put it first so that "make" without argument is like "make help".

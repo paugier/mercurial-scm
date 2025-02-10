@@ -125,6 +125,6 @@ caption: hg help
 hidden:
 maxdepth: 2
 ---
-_generated/commands.md
-_generated/topics.md
+help/commands.md
+help/topics.md
 ```

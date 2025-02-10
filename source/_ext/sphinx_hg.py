@@ -62,10 +62,10 @@ class HgRole(SphinxRole):
                 section = "#" + section
             else:
                 section = ""
-            refuri = to_base + f"_generated/topics/{topic}.html{section}"
+            refuri = to_base + f"help/topics/{topic}.html{section}"
         else:
             command = text.split(" ", 1)[0]
-            refuri = to_base + f"_generated/commands/{command.replace('::', '_')}.html"
+            refuri = to_base + f"help/commands/{command.replace('::', '_')}.html"
 
         node = nodes.reference(self.text, f"`hg {self.text}`", refuri=refuri)
 

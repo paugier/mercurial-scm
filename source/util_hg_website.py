@@ -120,7 +120,7 @@ def prepare_source():
     topics_doc = parse_help_text(topics_doc, cls=Topic)
 
     source_dir = Path(__file__).absolute().parent
-    generated_dir = source_dir / "_generated"
+    generated_dir = source_dir / "help"
     generated_dir.mkdir(exist_ok=True)
 
     commands_dir = generated_dir / "commands"

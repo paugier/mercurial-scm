@@ -1,10 +1,12 @@
 syntax: glob
 
 .venv
-build
 .pdm-python
 __pycache__
-_generated
-
 .ruff_cache
+
+syntax: rootglob
+
+build
 .vscode
+source/help

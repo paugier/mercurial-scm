@@ -6,7 +6,7 @@ result, Mercurial is available on [Microsoft Windows], [GNU/Linux], [Mac OS X],
 of your choice or build it from [sources](https://www.mercurial-scm.org/release).
 
 For people that are looking for the utmost performance, a growing part of Mercurial is
-being written in Rust. For more information see [](./_generated/topics/rust.rst).
+being written in Rust. For more information see [](./help/topics/rust.rst).
 
 Windows users are likely to enjoy the [TortoiseHg] GUI the most. It integrates Mercurial
 directly into your explorer.
