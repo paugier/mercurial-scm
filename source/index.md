@@ -98,7 +98,7 @@ Mercurial strives to deliver on each of its promises. Most tasks simply work on 
 first try and without requiring arcane knowledge.
 
 +++
-[Learn more »](https://foss.heptapod.net/mercurial/mercurial-devel/-/pipelines/95490)
+[Learn more »](guide.md)
 ```
 
 ````
