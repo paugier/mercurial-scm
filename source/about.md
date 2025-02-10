@@ -72,6 +72,5 @@ or later. Feel free to send us patches.
 [git]: https://git-scm.com/
 [heptapod]: https://heptapod.net/
 [jujutsu]: https://github.com/jj-vcs/jj
-[netbeans]: https://en.wikipedia.org/wiki/NetBeans
 [pijul]: https://pijul.org/
 [subversion]: https://subversion.apache.org/
