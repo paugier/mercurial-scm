@@ -13,3 +13,9 @@ h3::before {
     counter-increment: subsubsection;
     content: counter(subsection) "." counter(subsubsection) ". ";
 } */
+
+@media (min-width: 960px) {
+    button.sidebar-toggle.primary-toggle {
+        display: none;
+    }
+}
