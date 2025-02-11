@@ -1,5 +1,6 @@
 stages:
   - image
+  - lint
   - doc
 
 variables:
@@ -41,6 +42,17 @@ image:build:
       --single-snapshot
       --cleanup
       --destination $DOCKER_IMAGE_PATH:stable
+
+
+lint:check:
+  stage: lint
+  needs:
+    - job: "image:build"
+      optional: true
+  script:
+    - pdm sync
+    - pdm run format-check
+
 
 pages:
   stage: doc

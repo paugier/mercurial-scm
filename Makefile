@@ -33,3 +33,6 @@ lock:
 
 format:
 	pdm format
+
+format-check:
+	pdm format-check
