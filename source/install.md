@@ -41,6 +41,12 @@ brew install mercurial
 ```
 ````
 ````{tab-item} FreeBSD
+Binary packages can be installed using `pkg`:
+```sh
+pkg install mercurial
+```
+
+Alternatively, you can install from source via the ports collection:
 ```sh
 cd /usr/ports/devel/mercurial
 make install
