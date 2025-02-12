@@ -5,7 +5,7 @@ category: communication
 
 # Presentations at FOSDEM'25
 
-Few Mercurial contributors attended the FOSDEM conference in Brussels. FOSDEM is a
+A few Mercurial contributors attended the FOSDEM conference in Brussels. FOSDEM is a
 two-day event organized by volunteers to promote the widespread use of free and open
 source software.
 
