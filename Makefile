@@ -13,6 +13,7 @@ ROOT_DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
 html:
 	pdm install
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
+	@echo "$$(hg id -R $(ROOT_DIR) -q)" > $(BUILDDIR)/html/version
 	@echo "file://"$(ROOT_DIR)"/build/html/index.html"
 
 clean:
