@@ -50,7 +50,7 @@ lint:check:
     - job: "image:build"
       optional: true
   script:
-    - pdm sync
+    - pdm sync -G format
     - pdm run format-check
 
 
@@ -60,7 +60,7 @@ pages:
     - job: "image:build"
       optional: true
   script:
-    - pdm sync
+    - pdm sync -G web
     # - pdm run python -m bash_kernel.install
     - pdm build-site
     - mkdir -p public/$CI_COMMIT_REF_NAME
