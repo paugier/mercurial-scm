@@ -8,10 +8,12 @@ SPHINXBUILD   ?= pdm run sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = build
 
+ROOT_DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
+
 html:
 	pdm install
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
-	@echo "file://"$(shell pwd)"/build/html/index.html"
+	@echo "file://"$(ROOT_DIR)"/build/html/index.html"
 
 clean:
 	rm -rf source/help
