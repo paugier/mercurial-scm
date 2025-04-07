@@ -1,5 +1,5 @@
+// Fetches the latest version of Mercurial and displays it in the header
 window.onload = (_event) => {
-    // Fetch the latest version of Mercurial
     const headerButton = document.getElementsByClassName("article-header-buttons")[0];
     if (headerButton == null) {
         console.error("could not find the version tag anchor point");
@@ -17,16 +17,40 @@ window.onload = (_event) => {
         console.info("successfully fetched version info")
         return res.text();
     }).then((contents) => {
-        const versionPattern = /\d+\t([^\t]*)\t.*/;
-        const match = versionPattern.exec(contents)[1];
-        if (match != null) {
+        const latest = extractLatestHg(contents);
+        if (latest != null) {
             const versionSpan = document.createElement("span");
             versionSpan.setAttribute("title", "Latest Mercurial version");
             versionSpan.setAttribute("id", "hg-version-tag");
-            versionSpan.innerHTML = match;
+            versionSpan.innerHTML = latest;
             anchorPoint.prepend(versionSpan);
         } else {
-            return Promise.reject(`invalid latest.dat: ${match}`);
+            return Promise.reject(`invalid latest.dat: ${latest}`);
         }
     });
 };
+
+function extractLatestHg(contents) {
+    const versionPattern = /(\d+)\t([^\t]*)\t.*/;
+    const lines = contents.split("\n");
+    const versions = lines.reduce((acc, curr) => {
+        const matches = versionPattern.exec(curr);
+        if (matches == null) {
+            return acc;
+        }
+        const priority = matches[1];
+        const version = matches[2];
+        if (priority == null || version == null) {
+            return acc;
+        }
+        const priorityInt = parseInt(priority, 10);
+        if (!isNaN(priorityInt)) {
+            acc.push([priorityInt, version]);
+        }
+        return acc;
+    }, []);
+    const highestPriorityVersion = versions.sort((a, b) => b[0] - a[0])[0];
+    if (highestPriorityVersion != null) {
+        return highestPriorityVersion[1];
+    }
+}
