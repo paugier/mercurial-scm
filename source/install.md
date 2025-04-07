@@ -20,26 +20,36 @@ repositories:
 apt install mercurial
 ```
 ````
+
+
 ````{tab-item} Fedora
 ```sh
 dnf install mercurial
 ```
 ````
+
+
 ````{tab-item} Arch Linux
 ```sh
 pacman -S mercurial
 ```
 ````
+
+
 ````{tab-item} Gentoo
 ```sh
 emerge mercurial
 ```
 ````
+
+
 ````{tab-item} macOS (Homebrew)
 ```sh
 brew install mercurial
 ```
 ````
+
+
 ````{tab-item} FreeBSD
 Binary packages can be installed using `pkg`:
 ```sh
@@ -63,11 +73,15 @@ version with any PyPI front-ends (like [UV], [pipx], [pip], ...):
 uv tool install mercurial
 ```
 ````
+
+
 ````{tab-item} pipx
 ```sh
 pipx install mercurial
 ```
 ````
+
+
 ````{tab-item} pip
 ```sh
 pip install mercurial
@@ -86,6 +100,8 @@ pip install conda-app
 conda-app install mercurial
 ```
 ````
+
+
 ````{tab-item} Pixi
 ```sh
 pixi global install mercurial
