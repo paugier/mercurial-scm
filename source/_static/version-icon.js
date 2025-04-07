@@ -25,7 +25,7 @@ window.onload = (_event) => {
             versionSpan.innerHTML = latest;
             anchorPoint.prepend(versionSpan);
         } else {
-            return Promise.reject(`invalid latest.dat: ${latest}`);
+            return Promise.reject(`invalid latest.dat: ${contents}`);
         }
     });
 };
