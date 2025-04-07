@@ -22,7 +22,7 @@ window.onload = (_event) => {
             const versionSpan = document.createElement("span");
             versionSpan.setAttribute("title", "Latest Mercurial version");
             versionSpan.setAttribute("id", "hg-version-tag");
-            versionSpan.innerHTML = latest;
+            versionSpan.innerHTML = `Latest: ${latest}`;
             anchorPoint.prepend(versionSpan);
         } else {
             return Promise.reject(`invalid latest.dat: ${contents}`);
