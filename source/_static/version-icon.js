@@ -1,36 +1,52 @@
-// Fetches the latest version of Mercurial and displays it in the header
 window.onload = (_event) => {
-    const headerButton = document.getElementsByClassName("article-header-buttons")[0];
-    if (headerButton == null) {
-        console.error("could not find the version tag anchor point");
-        return;
-    }
-    const anchorPoint = headerButton.parentElement;
+    let anchorPoint = document.getElementsByClassName("article-header-buttons")[0]?.parentElement;
     if (anchorPoint == null) {
         console.error("could not find the version tag anchor point");
         return;
     }
-    window.fetch("/latest.dat").then((res) => {
-        if (!res.ok) {
-            return Promise.reject("failed to fetch latest Mercurial version");
-        }
-        console.info("successfully fetched version info")
-        return res.text();
-    }).then((contents) => {
-        const latest = extractLatestHg(contents);
-        if (latest != null) {
-            const versionSpan = document.createElement("span");
-            versionSpan.setAttribute("title", "Latest Mercurial version");
-            versionSpan.setAttribute("id", "hg-version-tag");
-            versionSpan.innerHTML = `Latest: ${latest}`;
-            anchorPoint.prepend(versionSpan);
-        } else {
-            return Promise.reject(`invalid latest.dat: ${contents}`);
-        }
-    });
+    displayVersionFor(anchorPoint, "/latest.dat", "Mercurial");
+
+    anchorPoint = document.getElementById("windows-badge-marker")?.parentElement?.parentElement;
+    if (anchorPoint == null) {
+        console.error("could not find the Windows version tag anchor point");
+        return;
+    }
+    displayVersionFor(anchorPoint, "/release/windows/latest.dat", "Mercurial for Windows", true);
+
+    anchorPoint = document.getElementById("tortoisehg-badge-marker")?.parentElement?.parentElement;
+    if (anchorPoint == null) {
+        console.error("could not find the TortoiseHg version tag anchor point");
+        return;
+    }
+    displayVersionFor(anchorPoint, "/release/tortoisehg/latest.dat", "TortoiseHg", true);
 };
 
-function extractLatestHg(contents) {
+function displayVersionFor(anchorPoint, url, name, verbose) {
+    window.fetch(url).then((res) => {
+        if (!res.ok) {
+            return Promise.reject(`failed to fetch latest ${name} version`);
+        }
+        console.info(`successfully fetched version info for ${name}`);
+        return res.text();
+    }).then((contents) => {
+        const latest = extractLatest(contents);
+        if (latest != null) {
+            const versionSpan = document.createElement("span");
+            versionSpan.setAttribute("title", `Latest ${name} version`);
+            versionSpan.classList.add("hg-version-tag");
+            if (verbose) {
+                versionSpan.innerHTML = `Latest ${name}: ${latest}`;
+            } else {
+                versionSpan.innerHTML = `Latest: ${latest}`;
+            }
+            anchorPoint.prepend(versionSpan);
+        } else {
+            return Promise.reject(`invalid latest.dat for ${name}: ${contents}`);
+        }
+    });
+}
+
+function extractLatest(contents) {
     const versionPattern = /(\d+)\t([^\t]*)\t.*/;
     const lines = contents.split("\n");
     const versions = lines.reduce((acc, curr) => {

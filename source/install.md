@@ -65,6 +65,7 @@ make install
 
 
 ````{tab-item} Windows (Mercurial)
+<span id="windows-badge-marker"></span>
 Using the `winget` package manager:
 ```sh
 winget install Mercurial.Mercurial -e
@@ -75,6 +76,7 @@ Or download from the [list of binary releases](https://www.mercurial-scm.org/rel
 
 
 ````{tab-item} Windows (TortoiseHg)
+<span id="tortoisehg-badge-marker"></span>
 Using the `winget` package manager:
 ```sh
 winget install TortoiseHg.TortoiseHg -e

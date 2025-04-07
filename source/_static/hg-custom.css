@@ -21,9 +21,13 @@ h3::before {
 }
 
 /* Dynamically created after page load */
-#hg-version-tag {
+.hg-version-tag {
     background-color: #4bc51d;
     color: white;
     padding: 0 0.5em;
     border-radius: 1em;
+}
+
+span[id$="-badge-marker"] {
+    display: none;
 }
