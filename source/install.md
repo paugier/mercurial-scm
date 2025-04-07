@@ -62,6 +62,27 @@ cd /usr/ports/devel/mercurial
 make install
 ```
 ````
+
+
+````{tab-item} Windows (Mercurial)
+Using the `winget` package manager:
+```sh
+winget install Mercurial.Mercurial -e
+```
+
+Or download from the [list of binary releases](https://www.mercurial-scm.org/release/windows/).
+````
+
+
+````{tab-item} Windows (TortoiseHg)
+Using the `winget` package manager:
+```sh
+winget install TortoiseHg.TortoiseHg -e
+
+```
+
+Or download from the [list of binary releases](https://www.mercurial-scm.org/release/tortoisehg/windows/).
+````
 `````
 
 Mercurial is available on PyPI as wheels and sdist, so one can install the last stable
