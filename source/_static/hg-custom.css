@@ -19,3 +19,11 @@ h3::before {
         display: none;
     }
 }
+
+/* Dynamically created after page load */
+#hg-version-tag {
+    background-color: #4bc51d;
+    color: white;
+    padding: 0 0.5em;
+    border-radius: 1em;
+}

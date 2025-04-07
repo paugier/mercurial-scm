@@ -131,6 +131,7 @@ html_theme_options = {
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 html_css_files = ["hg-custom.css"]
+html_js_files = ["version-icon.js"]
 
 # copybutton_selector = "div:not(.output) > div.highlight pre"
 
