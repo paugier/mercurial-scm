@@ -7,4 +7,4 @@ tags: [major-release]
 # Mercurial 6.9 released
 
 Regularly scheduled (but late) major release. An
-[overview of new features](https://wiki.mercurial-scm.org/Release6.9) is available.
+[overview of new features](../../relnotes/6.9) is available.

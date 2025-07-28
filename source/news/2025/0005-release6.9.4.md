@@ -8,4 +8,4 @@ tags: [minor-release, security]
 
 Out of schedule **security** minor release to address CVE-2025-2361.
 
-See the [release notes](https://wiki.mercurial-scm.org/Release6.9) for details.
+See the [release notes](../../relnotes/6.9) for details.

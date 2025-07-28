@@ -10,4 +10,4 @@ Out of schedule **security** minor release to address a vulnerability in zstd.
 
 Backported from the new stable branch (7.0.x) to make packagers' work easier.
 
-See the [release notes](https://wiki.mercurial-scm.org/Release6.9) for details.
+See the [release notes](../../relnotes/6.9) for details.

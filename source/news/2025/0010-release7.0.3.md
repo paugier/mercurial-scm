@@ -8,4 +8,4 @@ tags: [minor-release]
 
 Scheduled (late) minor release.
 
-See the [release notes](https://wiki.mercurial-scm.org/Release7.0) for details.
+See the [release notes](../../relnotes/7.0) for details.

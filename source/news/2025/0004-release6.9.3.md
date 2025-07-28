@@ -8,4 +8,4 @@ tags: [minor-release]
 
 Out of schedule minor release to address a regression introduced in 6.9.2
 
-See the [release notes](https://wiki.mercurial-scm.org/Release6.9) for details.
+See the [release notes](../../relnotes/6.9) for details.
