@@ -67,6 +67,7 @@ myst_enable_extensions = [
     "html_image",
     "linkify",
 ]
+myst_heading_anchors = 5
 
 # nb_custom_formats = {".Rmd": ["jupytext.reads", {"fmt": "Rmd"}]}
 nb_execution_mode = "cache"
