@@ -115,6 +115,7 @@ install.md
 guide.md
 Extensions <https://wiki.mercurial-scm.org/UsingExtensions>
 news.md
+relnotes.md
 contribute.md
 ```
 
