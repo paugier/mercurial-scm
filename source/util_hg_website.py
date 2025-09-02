@@ -6,7 +6,7 @@ from importlib import resources
 from pathlib import Path
 from textwrap import dedent
 
-from mercurial import commands as hg_commands
+from mercurial import help as hg_help, ui as hg_ui, commands as hg_commands
 
 
 @dataclass
@@ -18,28 +18,27 @@ class Command:
 
     def get_rst_doc(self):
         name = self.name
-        if name in ("help", "version", "import"):
-            name = name + "_"
-        elif name == "bookmarks":
+        if name == "bookmarks":
             name = "bookmark"
         elif name == "admin::verify":
-            name = "admin_commands_mod.admin_verify"
+            name = "admin_commands_mod.verify"
 
+        cmd_name = name
+        mod = hg_commands
+        print(name)
         if "." in name:
             mod_name, cmd_name = name.split(".")
             mod = getattr(hg_commands, mod_name)
-            cmd = getattr(mod, cmd_name)
-        else:
-            cmd = getattr(hg_commands, name)
-        rst = cmd.__doc__
+        ui = hg_ui.ui()
+        ui.setconfig(b"ui", b"verbose", True)
+        rst = hg_help.formattedhelp(ui, mod, cmd_name.encode()).decode()
         assert rst is not None, self.name
 
         subtitle, content = rst.split("\n", 1)
 
         title = "hg " + self.name
         rst = (
-            f":orphan:\n\n{title}\n{'=' * len(title)}\n\n{subtitle}\n{'-' * len(subtitle)}\n"
-            + dedent(content)
+            f":orphan:\n\n{title}\n{dedent(content)}"
         )
 
         return rst
