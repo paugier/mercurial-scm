@@ -138,6 +138,12 @@ Some third party extensions are available on PyPI (usually with a `hg-` prefix i
 name).
 
 `````{tab-set}
+````{tab-item} UV
+```sh
+uv tool install mercurial --with hg-evolve --with hg-git
+```
+````
+
 ````{tab-item} pipx
 ```sh
 pipx inject mercurial hg-evolve hg-git
