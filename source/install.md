@@ -132,6 +132,21 @@ pixi global install mercurial
 ````
 `````
 
+## Installing Third Party Extensions
+
+Some third party extensions are available on PyPI (usually with a `hg-` prefix in the
+name).
+
+`````{tab-set}
+````{tab-item} pipx
+```sh
+pipx inject mercurial hg-evolve hg-git
+```
+````
+`````
+
+Extensions installed that way will still need to be enabled from the configuration.
+
 [conda-forge]: https://conda-forge.org/
 [gnu/linux]: http://kernel.org/
 [macos]: http://www.apple.com/
