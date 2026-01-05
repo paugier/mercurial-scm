@@ -135,5 +135,6 @@ caption: More
 hidden:
 maxdepth: 2
 ---
+steering-committee.md
 contribute-website.md
 ```
