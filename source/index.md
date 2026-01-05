@@ -128,3 +128,12 @@ maxdepth: 2
 help/commands.md
 help/topics.md
 ```
+
+```{toctree}
+---
+caption: More
+hidden:
+maxdepth: 2
+---
+contribute-website.md
+```
