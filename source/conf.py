@@ -26,7 +26,10 @@ prepare_source()
 project = "Mercurial"
 copyright = "2025, Mercurial developers"
 author = "Mercurial developers"
-release = hg_version.decode()
+if isinstance(hg_version, bytes):
+    release = hg_version.decode()
+else:
+    release = hg_version
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
