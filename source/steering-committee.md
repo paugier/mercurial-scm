@@ -12,6 +12,7 @@ As of January 2026, the members are (in first name alphabetical order):
 
 - Georges Racinet
 - Matt Harbison
+- Pierre-Yves David
 - Raphaël Gomès
 
 ## How to reach the Steering Committee
