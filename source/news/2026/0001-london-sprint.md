@@ -125,3 +125,10 @@ As some of the details might change before the event, we encourage you to check 
 this announcement in case there are any changes.
 
 See you in London!
+
+## Bonus
+
+Images of the meeting rooms:
+
+![Meeting room 1](/_static/2026-london-sprint/meeting-room-1.jpg)
+![Meeting room 2](/_static/2026-london-sprint/meeting-room-2.jpg)
