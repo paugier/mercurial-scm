@@ -87,6 +87,11 @@ Or download from the [list of binary releases](https://www.mercurial-scm.org/rel
 ````
 `````
 
+```{note}
+If you want to build Mercurial from source, you still need `hg` installed, but not system-wide: your system Python
+needs to **not** have Mercurial installed. Use one of the methods below to install Mercurial instead.
+```
+
 Mercurial is available on PyPI as wheels and sdist, so one can install the last stable
 version with any PyPI front-ends (like [UV], [pipx], [pip], ...):
 
@@ -101,6 +106,10 @@ uv tool install mercurial
 ````{tab-item} pipx
 ```sh
 pipx install mercurial
+```
+```{note}
+On Debian/Ubuntu, make sure your `pipx` install matches your Python and pip installs: for instance if you used `apt` to
+install Python, also use it to for `pipx` and `pip`.
 ```
 ````
 
