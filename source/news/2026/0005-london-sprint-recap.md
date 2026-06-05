@@ -8,49 +8,32 @@ tags: [sprint]
 
 The sprint is already over!
 
-The sprint was set in motion and organized by Pierre-Yves David and Raphaël Gomès, both
-maintainers of Mercurial working at [Octobus](https://octobus.net/).
-
-# XXX should we also shout out to Arun,
-
 Thanks to the gracious hosting by [Jane Street](https://www.janestreet.com), we gathered
 a bit less than 20 people every day and managed to discuss and work on a large variety of
 subjects, including truly riveting discussions over the genetics of cross-breeding apples
 and oranges over lunch break.
 
-We were too busy during the sprint to remember to take a picture of everyone, so we
-unfortunately only have a few pictures of whiteboards, as pictured:
+The sprint was set in motion and organized by Pierre-Yves David and Raphaël Gomès, both
+maintainers of Mercurial working at [Octobus](https://octobus.net/), as well as Arun
+Kulshreshtha from Jane Street.
 
-![A picture of a whiteboard with a lot of drawing relating to FUSE][0]
-
-# XXX Maybe one or 1 photo of London to illustra the article, the white board picture is a bit obscure (can be integrated later on)
-
-# like https://commons.wikimedia.org/wiki/London#/media/File:London_Skyline_(125508655).jpeg
-
-# https://commons.wikimedia.org/wiki/File:City_of_London_skyline_from_London_City_Hall_-_Oct_2008_-_Aligned.jpg
-
-# https://commons.wikimedia.org/wiki/File:Tower_Bridge_view_at_dawn_crop.jpg
+![A picture of the City Of London at night][22]
 
 ## Day 1 - Wednesday 27th
 
 The first day saw everyone get started on tasks that they either had wanted to get done
-for a long time, or that sparked up from ad-hoc discussions.
-
-XXX low level opinion that it could be clearer? This was very much the point of this
-first day: a focus on boostrapping occasional contributor and overall project
+for a long time, or that sparked up from ad-hoc discussions. This was very much the point
+of this first day: a focus on bootstrapping occasional contributors and overall project
 maintenance.
 
 If we include everything submitted during the 3-day window as far as visible changes go,
 we received a few bug fixes ([#1965][1], [#1968][2], [#1969][3], [#1970][4], [#1971][5],
 [#1976][6]), some documentation ([#1967][7], [#1975][8], [poulpe#82][9]) and website
 improvements ([hg-website#31][10]), a new debug command ([#1973][11]) to create a
-synthetic repo from a DAG,
-
-# XXX the topic for the command to create synthetic repo from a DAG is still at super early stage and basic. I would probably not include it.
-
-and some good progress on larger work that never gets enough attention ([#1974][12],
-[#1966][13]). We also hatched a plan with Matt Harbison remoting in from the US to fix
-the Windows console encoding deprecation problem.
+synthetic repo from a DAG, and some good progress on larger work that never gets enough
+attention ([#1974][12], [#1966][13], [ci-images#66][24]). We also hatched a plan with
+Matt Harbison remoting in from the US to fix the Windows console encoding deprecation
+problem.
 
 Progress was made on projects external to Mercurial but very much integral to its
 ecosystem. Manuel Jacob helped lay out a plan for [hg-git's][14] tech debt, while Georges
@@ -79,7 +62,7 @@ fight this scale and improve their developer experience, and it's time for Mercu
 grow its FOSS, fully integrated VFS.
 
 Upstream development of this effort was started earlier this year. The first experimental
-read-only and local version based on fuse is already being used by real users in
+read-only and local version based on FUSE is already being used by real users in
 conjunction with an overlay filesystem to support writes. This has improved the time to
 first interaction for a new working copy in the worst cases from 20s+ to under 2s, with
 only a 10-20% overhead in normal operations.
@@ -113,18 +96,12 @@ in a separate post when it becomes usable.
 ### First-class conflicts
 
 As soon as you can do multiple things concurrently, you will have conflicts: they are an
-inevitable part of version control and many version control systems give you neither a
-good model nor a good interface to help you with them.
+inevitable part of version control. A conflict is an ambiguity, and many version control
+systems give you neither a good model nor a good interface to help you with them.
 
 [Pijul](https://pijul.org) (the spiritual successor to [Darcs](https://darcs.net)) is the
 only active version control system that we know of with a mathematical model of
 conflicts.
-
-# XXX a bit fuzzy, maybe we should talk about CRDT more directly?
-
-# XXX
-
-# XXX A key point discussed at the print is that "A conflict is an ambiguity", we could cite that, (but maybe later)
 
 For our users, this model can be thought of as an extension of the Mercurial branching
 model: multiple heads on a branch is a natural consequence of things happening at the
@@ -134,50 +111,33 @@ things happening at the same time in a distributed version control system.
 Why should we model file changes any differently than we do branches? It turns out that
 this model's contact with the real world is not without its share of headaches, and there
 are still a lot of things to iron out. Pierre-Étienne Meunier, creator and maintainer of
-Pijul, has been very open to collaboration
+Pijul, has been very open to collaboration.
 
-# XXX "and has helped us on these issues over the past few years."
-
-# XXX in pratique, while we discuss from time to time, we lacked the time to properly collaborate, and not actual problem were worked one in theses paste years.
-
-Of course, lately the [JJ](https://docs.jj-vcs.dev/latest) VCS has become very popular,
-with its own flavor of first-class conflicts. Some users seem to get a lot of mileage out
-of it and we can definitely learn something from the use cases it covers. Nevertheless, a
-more general and complete model is needed as there are edge cases were the approach
-suffer. Conflict handling turns out to be especially painful in the context of
-distributed safe mutable history, a central feature unique to Mercurial.
+Of course, lately the [Jujutsu](https://docs.jj-vcs.dev/latest) VCS has become very
+popular, with its own flavor of first-class conflicts. Some users seem to get a lot of
+mileage out of it and we can definitely learn something from the use cases it covers.
+Nevertheless, a more general and complete model is needed as there are edge cases were
+the approach suffers. Conflict handling turns out to be especially painful in the context
+of distributed safe mutable history, a central feature unique to Mercurial.
 
 To that end, a lot of people gathered during the sprint to discuss how first-class
 conflicts can be brought to Mercurial, as well as other tools like Git or JJ. Caleb Owens
 from [GitButler](https://gitbutler.com) has already written down some of his thoughts in
 [a small article][18]!
 
-The discussions covered many topics. How to formally defined some of core concept: What's
-a change? What's a merge, What's a conflict? What's the strength and weakness of each
-main model, merging state (git, hg, jj) or merging patches (pijul). What could it
-actually means to do a N way merge with multiple parents in the "state". Why are history
-rewriting (and rebase in particular) and challenge for "patch" model.
+The discussions covered many questions about how we can formally define some of the core
+concepts: what's a change? What's a merge? What's a conflict? What's the strength and
+weakness of each main models, merging state (Git, Mercurial, Jujustu) or merging patches
+(Pijul)? What could it actually mean to do a N way merge with multiple bases in the
+"state" model? Why is history rewriting (and rebase in particular) a challenge for the
+"patch" model?
 
-While the couple of hour of discussion didn't magically produces perfect solutions. It
-helped the participants to share knowledge and get a fresh angle on the problems.
+Florian ended up re-inventing the Pijul model from first principles, who knew that
+different mathematicians could come up with the same ideas? While the couple of hours of
+discussion didn't magically produce perfect solutions, it helped the participants in
+sharing knowledge and get a fresh angle on the set of problems.
 
-# XXX probably drop this, but the replacement is not-equivalent
-
-# 
-
-# Most of the discussion was spent looking at example cases, and re-inventing the
-
-# Pijul model from first principles thanks to Florian and Laurent (who knew that
-
-# different mathematicians could come up with the same ideas!). A hybrid world
-
-# where immutable changes (the "public phase" in Mercurial) are still stored in a
-
-# Merkle tree, but mutable changes (the "draft phase") are represented as real
-
-# patches is still a goal we strive for. More work needs to happen, but we feel
-
-# that it is possible.
+![A picture of the City Of London at night][25]
 
 ### Normalized and composable history sharding
 
@@ -207,33 +167,34 @@ whom seemed keen in sponsoring some of that work to benefit their corporate usag
 
 ### Evolution: safe mutable distributed history
 
-Mercurial's Changeset Evolution concept have been around for a while and is the corner
+Mercurial's Changeset Evolution concept has been around for a while, and is the corner
 stone of how Mercurial is capable of safe and simple collaboration on draft history in a
 fully distributed setup.
 
-At the sprint Caleb Owens presented how GitButler is approaching these collaboration
-problems. How GitButler are trying to extend git data model to tracks more information to
-supports these usecases.
+At the sprint, Caleb Owens presented how GitButler approaches these collaboration
+problems, and how they are trying to extend Git's data model to track more information to
+supports these use-cases.
 
-The current git data model creates some challenges, the model for storing content is a
-CRDT, the branching model isn't so dealing with distributed change affecting branches is
-complex. This led Gitbutler to start with a rather centralised approach, with constrained
-synchronisation phases. These clear synchronisation barriers offer an opportunity to
-detect the intrinsic issues of distributed history edit and provide a UX to solve them.
-On the other hand, Mercurial data model, can a wider set of history editing information
-while retaining its full CDRT property. This can express a wider set of state without the
-need to solve theses issues at synchronisation time. While we believe the richer model of
-Mercurial allows to more flexible and powerful workflow, the GitButler work on UX is
-quite interesting and each approach have to learn from the other one.
+The current data model of Git creates some challenges: the content model is a [CRDT][23],
+but unlike Mercurial the branching model isn't, so dealing with distributed changes
+affecting branches is complex. This has led Gitbutler to start with a rather centralized
+approach, with constrained synchronization phases. These clear synchronization barriers
+offer an opportunity to detect the intrinsic issues of distributed history edit and
+provide a UX to solve them. On the other hand, Mercurial's data model can represent a
+wider set of history editing information, all while retaining its full [CDRT][23]
+property. This can express a wider set of states without the need to solve theses issues
+at synchronization time. While we believe the richer model of Mercurial allows for more
+flexible and powerful workflows, GitButler's work on UX is quite interesting, and each
+approach has to learn from the other one.
 
-Regarding user experience, we also discussed the downside of eagerly rebasing changeset
-during history edition, and how some rebases are not properly reversible, "silently"
-dropping some changes.
+Speaking of user experience, we also discussed the downsides of eagerly rebasing
+changesets during history edition, and how some rebases are not properly reversible,
+"silently" dropping some potentially crucial changes.
 
-A wider roundtable of changeset evolution users let them express what they liked and
+A wider round-table of changeset evolution users let them express what they liked and
 disliked about the current experience in Mercurial. Finally we discussed how to adapt
-GitLab's marge-bot[21] for Heptapod. The result of this discussion has already been put
-in production.
+GitLab's [marge-bot][21] for Heptapod: the result of this discussion has already been put
+in production somewhere, and the source should be made available soon.
 
 ### Git compatibility (embrace, extend, extinguish)
 
@@ -245,35 +206,12 @@ them are supported in the core of either VCS.
 Caleb Owens representing the Git world and Raphaël Gomès representing the Mercurial world
 discussed the very real possibility of Mercurial becoming a great Git server, building on
 top of the many projects currently underway. This idea was floated around at the previous
-minisprint in Grenoble hosted by Pierre Augier,
+minisprint in Grenoble hosted by Pierre Augier, and has been a topic of discussion with
+Patrick Steinhardt for a few months now.
 
-# XXX I would not throw Patrick under the bus here (pulling gitlab with him)
-
-# XXX for something super hypothetical
-
-# XXX
-
-# XXX and has been a topic of discussion with Patrick Steinhardt for a few
-
-# XXX months now.
-
-In more concrete terms, Mercurial's scaling capabilities could soon allow it to
-transparently speak Git's wire protocol and deliver unmatched performance for clones and
-fetches.
-
-# XXX it's not so much the scaling capability that are used to speak Git, but
-
-# XXX more about speaking git that would give access to Mercurial scaling
-
-# XXX capability to a wider audience.
-
-# XXX
-
-# XXX being able to translate things quickly is part of the equation, but just
-
-# XXX a part of it. They key point is the improvement and extensibility of
-
-# XXX Mercurial storage (and data model)
+In more concrete terms, Mercurial's scaling capabilities coupled with the correct work
+could allow it to transparently speak Git's wire protocol and deliver unmatched
+performance for clones and fetches.
 
 Separately, a Mercurial repository could easily expose a fake Git repository for simple
 use cases (IDEs, shell prompt, AI agents, etc.) using a similar VFS approach than the one
@@ -282,10 +220,6 @@ detailed above.
 Fixing the general problem of bi-directional Git support seems like it's not worth the
 work, but supporting 90% of use cases could already make Mercurial very relevant as a
 tool for the future of both client-side and server-side.
-
-# XXX I feel like we are overselling the current plan as "coming soon". The
-
-# XXX doesn't seems like a good idea.
 
 ### The Hyperlog, a new powerful storage format
 
@@ -298,10 +232,10 @@ optimizations.
 
 With all of this said, the format has been showing signs of weakness for a long time and
 would be unable to truly usher us into the next jump in scale or user experience. We have
-been working for a couple of years towards a new version of the revlog: "v2". We
-nicknamed it `Hyperlog` for the purpose of convincing management. And while that name
-started out as a joke, but it feels perfectly corny and a worthy successor of `RevlogNG`,
-the original name of V1.
+been working for a couple of years towards a new version of the revlog: V2, which we
+nicknamed `Hyperlog` for the purpose of convincing management. while that name started
+out as a joke, it feels perfectly corny and a worthy successor of `RevlogNG`, the
+original name of V1.
 
 Here is a non-exhaustive list of features that were discussed at the sprint:
 
@@ -325,11 +259,19 @@ We made a lot of progress in different areas, and had people from multiple compa
 projects highly involved the entire time, all within a fun atmosphere that kept going
 well after business hours.
 
+We were too busy to remember to take a picture of everyone, so we unfortunately only have
+a few pictures of whiteboards, as pictured:
+
+![A picture of a whiteboard with a lot of drawing relating to the VFS][0]
+
+We want to thank everyone that came out or otherwise participated, giving their precious
+time to help free and open-source version control move forward.
+
 A few people were missing from last minute planning changes on their side, but we are
 hoping to see them (and more!) in the next edition of the sprint, which we are yet to
 start planning.
 
-[0]: /_static/2026-london-sprint/whiteboard.jpg "A long discussion about FUSE"
+[0]: /_static/2026-london-sprint/whiteboard.jpg "A long discussion about the VFS"
 [1]: https://foss.heptapod.net/mercurial/mercurial-devel/-/merge_requests/1965
 [2]: https://foss.heptapod.net/mercurial/mercurial-devel/-/merge_requests/1968
 [3]: https://foss.heptapod.net/mercurial/mercurial-devel/-/merge_requests/1969
@@ -351,3 +293,7 @@ start planning.
 [19]: https://hg-git.github.io
 [20]: https://github.com/glandium/git-cinnabar
 [21]: https://gitlab.com/marge-org/marge-bot
+[22]: /_static/2026-london-sprint/london.jpg "London at night"
+[23]: https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type
+[24]: https://foss.heptapod.net/mercurial/ci-images/-/merge_requests/66
+[25]: /_static/2026-london-sprint/london2.jpg "London during the day"
