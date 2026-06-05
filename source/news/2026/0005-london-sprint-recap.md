@@ -209,7 +209,35 @@ corporate usage.
 
 ### Evolution: safe mutable distributed history
 
-TODO
+Mercurial's Changeset Evolution concept have been around for a while and is the
+corner stone of how Mercurial is capable of safe and simple collaboration on
+draft history in a fully distributed setup.
+
+At the sprint Caleb Owens presented how GitButler is approaching these collaboration problems.
+How GitButler are trying to extend git data model to tracks more information to supports these usecases.
+
+The current git data model creates some challenges, the model for storing
+content is a CRDT, the branching model isn't so dealing with distributed change
+affecting branches is complex.
+This led Gitbutler to start with a rather centralised approach, with
+constrained synchronisation phases.
+These clear synchronisation barriers offer an opportunity to detect the
+intrinsic issues of distributed history edit and provide a UX to solve them.
+On the other hand, Mercurial data model, can a wider set of history editing
+information while retaining its full CDRT property.
+This can express a wider set of state without the need to solve theses issues
+at synchronisation time.
+While we believe the richer model of Mercurial allows to more flexible and
+powerful workflow, the GitButler work on UX is quite interesting and each
+approach have to learn from the other one.
+
+Regarding user experience, we also discussed the downside of eagerly rebasing
+changeset during history edition, and how some rebases are not properly
+reversible, "silently" dropping some changes.
+
+A wider roundtable of changeset evolution users let them express what they liked and disliked about the current experience in Mercurial.
+Finally we discussed how to adapt GitLab's marge-bot[21] for Heptapod.
+The result of this discussion has already been put in production.
 
 ### Git compatibility (embrace, extend, extinguish)
 
@@ -315,3 +343,4 @@ we are yet to start planning.
 [18]: https://cto.je/tech/should-badmerge-conflict
 [19]: https://hg-git.github.io
 [20]: https://github.com/glandium/git-cinnabar
+[21]: https://gitlab.com/marge-org/marge-bot
