@@ -14,6 +14,7 @@ One needs to install [PDM] and `make`.
 | ------------- | ------------------- |
 | `make`        | Local build         |
 | `make format` | Format sources      |
+| `make test`   | Run the tests       |
 | `make lock`   | Relock dependencies |
 
 ## Sending changes

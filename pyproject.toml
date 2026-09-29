@@ -31,6 +31,9 @@ format = [
     "mdformat",
     "mdformat-myst",
 ]
+test = [
+    "pytest>=9.1.1",
+]
 
 
 [tool.pdm]
@@ -38,6 +41,7 @@ distribution = false
 
 [tool.pdm.scripts]
 build-site = "sphinx-build -M html source build"
+test = "pytest tests"
 format-py = "ruff format source"
 format-md = {shell="mdformat *.md source/*.md source/news/2*/*.md"}
 format = {composite = ["format-py", "format-md"]}

@@ -39,3 +39,7 @@ format:
 
 format-check:
 	pdm format-check
+
+test:
+	pdm install
+	pdm test

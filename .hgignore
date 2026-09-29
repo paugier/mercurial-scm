@@ -4,6 +4,7 @@ syntax: glob
 .pdm-python
 __pycache__
 .ruff_cache
+.pytest_cache
 
 syntax: rootglob
 
