@@ -5,7 +5,7 @@
 groups = ["default", "dev", "format", "test", "web"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:9405752e46870321293fd3f571be254203be80f8c4b2f193a67ba56f92b2cdb8"
+content_hash = "sha256:30697993da685a25a170243ebe9ade5e8bed260fca10cb7c06b5fc76691ec9c5"
 
 [[metadata.targets]]
 requires_python = "==3.11.*"
@@ -333,13 +333,13 @@ files = [
 
 [[package]]
 name = "hg-evolve"
-version = "11.1.10"
-requires_python = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,<4,>=2.7"
+version = "12.0.0"
+requires_python = "<4,>=3.6.2"
 summary = "Flexible evolution of Mercurial history."
 groups = ["web"]
 files = [
-    {file = "hg_evolve-11.1.10-py3-none-any.whl", hash = "sha256:5de6b8fa9d525a2fcb27e8c79697dadfa80c6c7f79c07ffdc6343fb8d05478a4"},
-    {file = "hg_evolve-11.1.10.tar.gz", hash = "sha256:71c16aeec01290e9052783abe5d859a5f291d057590266f38837cadc519c6983"},
+    {file = "hg_evolve-12.0.0-py3-none-any.whl", hash = "sha256:fca084d13c79acc784f50266bf802d62c2435f6ef714e585541539627e4f366f"},
+    {file = "hg_evolve-12.0.0.tar.gz", hash = "sha256:590a75ada084fa1a668eeb6f5d5583879754372f9f108eaf5c9b2d84b898f5d0"},
 ]
 
 [[package]]

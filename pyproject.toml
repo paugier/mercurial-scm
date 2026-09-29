@@ -19,7 +19,7 @@ web = [
     "sphinx-copybutton>=0.5.2",
     "linkify-it-py",
     "mercurial>=7.2.4",
-    "hg-evolve>=11.1.6",
+    "hg-evolve>=12.0",
     "hg-git>=1.1.4",
     "ablog",
 ]
