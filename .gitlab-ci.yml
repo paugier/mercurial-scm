@@ -1,6 +1,7 @@
 stages:
   - image
   - lint
+  - test
   - doc
 
 variables:
@@ -52,6 +53,16 @@ lint:check:
   script:
     - pdm sync -G format
     - pdm run format-check
+
+
+test:
+  stage: test
+  needs:
+    - job: "image:build"
+      optional: true
+  script:
+    - pdm sync -G web -G test
+    - pdm run test
 
 
 pages:
