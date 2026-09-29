@@ -6,6 +6,9 @@ import re
 
 from textwrap import dedent
 
+# Label of the section of the global options, on the page of the commands.
+GLOBAL_OPTIONS_LABEL = "hg-global-options"
+
 
 def heading(title: str, char: str, overline: bool = False) -> str:
     """Return a RST section title."""

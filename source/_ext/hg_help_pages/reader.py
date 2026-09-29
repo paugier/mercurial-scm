@@ -24,6 +24,7 @@ from mercurial.main_script import cmd_finder
 
 from .model import Command, Extension, HelpData, HelpGenerationError, Topic
 from .rst import (
+    GLOBAL_OPTIONS_LABEL,
     heading,
     options_rst,
     page_name_conflicts,
@@ -100,11 +101,15 @@ def _render_command(ui, key: bytes, entry, extension: str | None = None) -> Comm
         )
     if body:
         rst.append(body + "\n")
+    rst.append(".. rubric:: Options\n")
+    # the global options are only listed on the page of the commands
+    rst.append(
+        f"Every command accepts the :ref:`global options <{GLOBAL_OPTIONS_LABEL}>`.\n"
+    )
     if entry[1]:
         table = hg_help.optrst(b"options", entry[1], VERBOSE_OPTIONS, ui)
         options = options_rst(_str(table))
         if options:
-            rst.append(".. rubric:: Options\n")
             rst.append(options)
 
     category = getattr(func, "helpcategory", None)

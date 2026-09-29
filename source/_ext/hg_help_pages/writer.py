@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .model import Command, HelpData
 from .reader import help_data
+from .rst import GLOBAL_OPTIONS_LABEL
 
 # list of the generated files, to remove the ones which are not generated anymore
 MANIFEST_NAME = "MANIFEST"
@@ -34,6 +35,7 @@ def render_pages(data: HelpData) -> dict[str, str]:
 
     md = _index("Commands", data, data.command_categories, "commands")
     if data.global_options:
+        md.append(f"({GLOBAL_OPTIONS_LABEL})=")
         md.append("## Global options\n")
         md.append("These options are accepted by all the commands.\n")
         md.append("```{eval-rst}\n" + data.global_options + "\n```")

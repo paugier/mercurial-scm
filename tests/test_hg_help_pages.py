@@ -143,6 +143,21 @@ def test_command_page(pages):
     assert "use --verbose" not in rst
 
 
+def test_global_options(pages):
+    """The global options are documented once, all the commands link to them."""
+    assert "(hg-global-options)=\n## Global options\n" in pages["commands.md"]
+    assert "``--repository REPO``" in pages["commands.md"]
+    commands = [page for page in pages if page.startswith("commands/")]
+    assert commands
+    for page in commands:
+        assert (
+            ".. rubric:: Options\n\n"
+            "Every command accepts the "
+            ":ref:`global options <hg-global-options>`.\n"
+        ) in pages[page], page
+        assert "``--repository REPO``" not in pages[page], page
+
+
 def test_commands_not_changed_by_extensions(pages):
     """Core commands are documented without the options of the extensions."""
     assert "--topic" not in pages["commands/commit.rst"]
