@@ -1,10 +1,9 @@
 # Release Notes
 
-```{toctree}
+The release notes of older versions are [archived](./relnotes-archive.md).
+
+```{relnotes-toctree} recent
 ---
 maxdepth: 1
-reversed:
-glob:
 ---
-relnotes/*
 ```

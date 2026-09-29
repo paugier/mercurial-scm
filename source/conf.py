@@ -38,8 +38,13 @@ extensions = [
     # generates the pages of `hg help` in source/help
     "hg_help_pages",
     "sphinx_hg",
+    # lists the release notes, the older ones on an archive page
+    "relnotes_toctree",
     "ablog",
 ]
+
+# number of release notes listed in the menu
+relnotes_recent = 10
 
 templates_path = ["_templates"]
 exclude_patterns = []
