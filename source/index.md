@@ -116,6 +116,7 @@ guide.md
 Extensions <https://wiki.mercurial-scm.org/UsingExtensions>
 news.md
 relnotes.md
+community.md
 contribute.md
 ```
 
