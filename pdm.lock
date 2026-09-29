@@ -5,7 +5,7 @@
 groups = ["default", "dev", "format", "web"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:328c5cc93de2bd9ad5b2c5dcd6c5ea082fa607c2444c35436f90a7b03dc0311d"
+content_hash = "sha256:9aec19346b80101981cb44e5159c59194400bf2d6e944d4c67ef371ee6fbf78b"
 
 [[metadata.targets]]
 requires_python = "==3.11.*"
@@ -785,20 +785,20 @@ files = [
 
 [[package]]
 name = "mercurial"
-version = "7.1.2"
+version = "7.2.4"
 requires_python = ">=3.9"
 summary = "Fast scalable distributed SCM (revision control, version control) system"
 groups = ["web"]
 files = [
-    {file = "mercurial-7.1.2-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:0ab8d783825cbabfa3ccd6fd0fb366aab0279b08aea97baec35753ed338d35f2"},
-    {file = "mercurial-7.1.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:d5bbd5fce6d9140b6217eae3a1dbb98a2944d27591006ef57fd41f5e0fb0afbd"},
-    {file = "mercurial-7.1.2-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:0fb87c11615edfa75534cb9d71de4061717f5bbcbc33a040c7a203204d092f66"},
-    {file = "mercurial-7.1.2-cp311-cp311-musllinux_1_2_i686.whl", hash = "sha256:a03f82debda6d19639d8c08adcb4f1679a7970a4953d7af3503596c351f65e26"},
-    {file = "mercurial-7.1.2-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:707007a038f63adf9df93d980e3294795621183216d54add5e065e48cb9e4aa3"},
-    {file = "mercurial-7.1.2-cp311-cp311-win32.whl", hash = "sha256:1be5a57aa8ff6fbb508abe59c119552bd6d49e4e4075994fb0e4ac9fd931f9e8"},
-    {file = "mercurial-7.1.2-cp311-cp311-win_amd64.whl", hash = "sha256:6e84e9851e4aa23356ebcc1a5d751b53f2c6262628be2dde1318bc3a977e1411"},
-    {file = "mercurial-7.1.2-cp311-cp311-win_arm64.whl", hash = "sha256:f698bf2034ae43a3bd7ac0d8573aa0223fcebca946ca2c2fee0f0ed3aaf6ed01"},
-    {file = "mercurial-7.1.2.tar.gz", hash = "sha256:ce27b9a4767cf2ea496b51468bae512fa6a6eaf0891e49f8961dc694b4dc81ca"},
+    {file = "mercurial-7.2.4-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:afbf0386d74f534db47bc79c7faa2f2ac56c94eb8d6c1987a657062345b598aa"},
+    {file = "mercurial-7.2.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:851e0e7036e75157a1cd517799a2e727b3ec6295a3a59c5667ad7004f121b317"},
+    {file = "mercurial-7.2.4-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:17b18abaee2e3aec08b51782e78079b9f1394156d14622fe31796321d15589db"},
+    {file = "mercurial-7.2.4-cp311-cp311-musllinux_1_2_i686.whl", hash = "sha256:1d0ed47394c5c09c9e51cf278e7664e7db26fc133897b528f6152fdd38e46cea"},
+    {file = "mercurial-7.2.4-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:fbe1e50ee1ae8bed0077d38442f3b2570a1dc495241bf70587d70e658eddf6a6"},
+    {file = "mercurial-7.2.4-cp311-cp311-win32.whl", hash = "sha256:d52e1e15029f3172cc215e067a4511a6e62a2895460a346124a47e570a774dae"},
+    {file = "mercurial-7.2.4-cp311-cp311-win_amd64.whl", hash = "sha256:794e17795fbb17f70a76bc844ede4328b8660319b35d1bc6fbcfdbe761f4a5e9"},
+    {file = "mercurial-7.2.4-cp311-cp311-win_arm64.whl", hash = "sha256:2f0d14b15a03eaa7142bfc90bb64c9151824d59650164f8c109a909db7931d7e"},
+    {file = "mercurial-7.2.4.tar.gz", hash = "sha256:85839e0f39e6cb893a88932aa36ef661759f3c5c5de4551ad26bd9df53cb71a2"},
 ]
 
 [[package]]

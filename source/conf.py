@@ -14,22 +14,15 @@ import sys
 
 from pathlib import Path
 
-from mercurial.__version__ import version as hg_version
-
-sys.path.append(str(Path(__file__).parent))
 sys.path.append(str(Path(__file__).parent / "_ext"))
 
-from util_hg_website import prepare_source
-
-prepare_source()
+# has to be imported before any Mercurial module
+from hg_help_pages import mercurial_version
 
 project = "Mercurial"
 copyright = "2025, Mercurial developers"
 author = "Mercurial developers"
-if isinstance(hg_version, bytes):
-    release = hg_version.decode()
-else:
-    release = hg_version
+release = mercurial_version()
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -42,6 +35,8 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.viewcode",
     "sphinx_design",
+    # generates the pages of `hg help` in source/help
+    "hg_help_pages",
     "sphinx_hg",
     "ablog",
 ]

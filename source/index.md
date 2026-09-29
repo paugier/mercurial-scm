@@ -127,6 +127,7 @@ maxdepth: 2
 ---
 help/commands.md
 help/topics.md
+help/extensions.md
 ```
 
 ```{toctree}
