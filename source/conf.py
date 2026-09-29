@@ -44,6 +44,7 @@ extensions = [
 templates_path = ["_templates"]
 exclude_patterns = []
 
+smartquotes = False
 
 news_sidebars = [
     "navbar-logo.html",
