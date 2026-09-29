@@ -155,3 +155,23 @@ fontawesome_included = True
 post_redirect_refresh = 1
 post_auto_image = 1
 post_auto_excerpt = 2
+
+
+def register_blog_posts(app):
+    """Register the posts before ablog generates the pages of the news.
+
+    ablog only registers the posts when a page is written. When nothing
+    changed since the previous build, no page is written and the pages listing
+    the posts, which are always generated, would be empty.
+    """
+    from ablog.blog import Blog
+    from ablog.post import register_posts
+
+    if not Blog(app):
+        register_posts(app)
+    return []
+
+
+def setup(app):
+    # has to run before the handler of ablog for this event (priority 500)
+    app.connect("html-collect-pages", register_blog_posts, priority=100)
