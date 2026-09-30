@@ -63,11 +63,11 @@ html_sidebars = {
     "news/**": news_sidebars,
 }
 
+# No "amsmath" and "dollarmath": there are no equations in the website, while
+# there are many `$` which would be understood as such.
 myst_enable_extensions = [
-    "amsmath",
     "colon_fence",
     "deflist",
-    "dollarmath",
     "html_image",
     "linkify",
 ]
