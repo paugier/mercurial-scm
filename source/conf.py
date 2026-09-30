@@ -175,12 +175,20 @@ def register_blog_posts(app):
     ablog only registers the posts when a page is written. When nothing
     changed since the previous build, no page is written and the pages listing
     the posts, which are always generated, would be empty.
+
+    Likewise, the builder only knows the images of the pages it writes. The
+    images of the other posts would be linked, in the pages listing the posts,
+    with their path in the sources instead of `_images`.
     """
     from ablog.blog import Blog
     from ablog.post import register_posts
 
-    if not Blog(app):
+    blog = Blog(app)
+    if not blog:
         register_posts(app)
+    for post in blog.posts:
+        for node in post.excerpt:
+            app.builder.post_process_images(node)
     return []
 
 
