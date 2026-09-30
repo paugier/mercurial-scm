@@ -31,6 +31,14 @@ the images are set and the files which are not used are removed.
 - `site_optimize = False` in `source/conf.py` disables all of this, which helps to tell
   if a problem comes from it.
 
+## Incremental builds
+
+`make` only builds what changed since the previous build, and gives the same website as a
+build from scratch (see `source/_ext/incremental_build.py`): when something shown by all
+the pages changes, like a title or the tags of a post, all the pages are written again,
+and what is not part of the website anymore is removed. If the result looks wrong anyway,
+`make clean` then `make` builds everything again.
+
 ## Sending changes
 
 This project uses basically the same workflow as Mercurial itself: see

@@ -41,6 +41,8 @@ extensions = [
     # lists the release notes, the older ones on an archive page
     "relnotes_toctree",
     "ablog",
+    # writes again and removes what Sphinx would leave outdated
+    "incremental_build",
     # reduces the size of the website once it is built
     "site_optimize",
 ]
