@@ -17,6 +17,20 @@ One needs to install [PDM] and `make`.
 | `make test`   | Run the tests       |
 | `make lock`   | Relock dependencies |
 
+## Size of the website
+
+Once the pages are written, the build reduces what the readers have to download (see
+`source/_ext/site_optimize.py`): the style sheets are gathered in a single one without
+the rules that no page uses, the icon fonts only keep the icons in use, the dimensions of
+the images are set and the files which are not used are removed.
+
+- The class names that a script builds at runtime cannot be found: if some style is
+  missing for an element created by a script, add a pattern matching its class to
+  `site_optimize_safelist` in `source/conf.py`.
+- Compress the images before adding them, photos rarely need more than 150 kB.
+- `site_optimize = False` in `source/conf.py` disables all of this, which helps to tell
+  if a problem comes from it.
+
 ## Sending changes
 
 This project uses basically the same workflow as Mercurial itself: see

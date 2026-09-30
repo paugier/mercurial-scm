@@ -41,6 +41,14 @@ extensions = [
     # lists the release notes, the older ones on an archive page
     "relnotes_toctree",
     "ablog",
+    # reduces the size of the website once it is built
+    "site_optimize",
+]
+
+# class names built by the scripts at runtime, which cannot be found in them
+site_optimize_safelist = [
+    # tooltips and popovers of Bootstrap
+    r"^bs-(tooltip|popover)-",
 ]
 
 # number of release notes listed in the menu

@@ -31,3 +31,9 @@ h3::before {
 span[id$="-badge-marker"] {
     display: none;
 }
+
+/* The dimensions of the images are set in the pages to reserve their space,
+   the height has to follow when the width is constrained. */
+:where(img[width][height]) {
+    height: auto;
+}
