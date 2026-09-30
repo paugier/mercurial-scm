@@ -137,6 +137,9 @@ html_theme_options = {
 html_static_path = ["_static"]
 html_css_files = ["hg-custom.css"]
 html_js_files = ["version-icon.js"]
+# the sources of the pages are in the repository
+html_copy_source = False
+html_show_sourcelink = False
 
 # copybutton_selector = "div:not(.output) > div.highlight pre"
 
