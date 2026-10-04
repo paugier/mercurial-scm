@@ -22,7 +22,7 @@ web = [
     "hg-evolve>=12.0",
     "hg-git>=1.1.4",
     "ablog",
-    "fonttools[woff]>=4.66.1",
+    "fonttools[woff]>=4.66.0",
     "tinycss2>=1.5.1",
 ]
 dev = [
