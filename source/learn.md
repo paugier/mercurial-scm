@@ -16,7 +16,7 @@ Some links to resources for learning Mercurial, sorted by length
   Learn the basic Mercurial commands. A bit more verbose than the short quick start
   above.
 
-- [TortoiseHg Quick Start](https://tortoisehg.readthedocs.org/en/latest/quick.html)
+- [TortoiseHg Quick Start](https://tortoisehg.readthedocs.io/en/latest/quick.html)
 
   Easily use Mercurial integrated into the Windows Explorer.
 
