@@ -20,7 +20,7 @@ sys.path.append(str(Path(__file__).parent / "_ext"))
 from hg_help_pages import mercurial_version
 
 project = "Mercurial"
-copyright = "2025, Mercurial developers"
+copyright = "2026, Mercurial developers"
 author = "Mercurial developers"
 release = mercurial_version()
 
