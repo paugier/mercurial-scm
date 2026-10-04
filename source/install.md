@@ -163,13 +163,13 @@ pipx inject mercurial hg-evolve hg-git
 Extensions installed that way will still need to be enabled from the configuration.
 
 [conda-forge]: https://conda-forge.org/
-[gnu/linux]: http://kernel.org/
+[gnu/linux]: https://kernel.org/
 [macos]: http://www.apple.com/
 [microsoft windows]: http://www.microsoft.com/windows
 [miniforge]: https://github.com/conda-forge/miniforge
 [pip]: https://pip.pypa.io
 [pipx]: https://pipx.pypa.io
-[pixi]: https://pixi.sh
+[pixi]: https://pixi.prefix.dev/
 [solaris 11 express]: http://oracle.com/solaris
-[tortoisehg]: http://tortoisehg.org/
+[tortoisehg]: https://tortoisehg.bitbucket.io/
 [uv]: https://docs.astral.sh/uv
