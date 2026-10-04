@@ -56,3 +56,8 @@ lock = ["-G", ":all"]
 
 [tool.pdm.resolution]
 exclude-newer = "7d"
+
+[tool.pdm.resolution.exclude-newer-override]
+hg-evolve = false
+hg-git = false
+mercurial = false
