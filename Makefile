@@ -14,7 +14,7 @@ html:
 	pdm install
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
 	@echo "$$(hg id -R $(ROOT_DIR) -q)" > $(BUILDDIR)/html/version
-	@echo "file://"$(ROOT_DIR)"/build/html/index.html"
+	@echo "file://$(ROOT_DIR)$(BUILDDIR)/html/index.html"
 
 clean:
 	rm -rf source/help
