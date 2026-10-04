@@ -1,7 +1,7 @@
 [project]
 name = "hg-website"
 version = "0.1.0"
-description = "Default template for PDM package"
+description = "Mercurial website"
 authors = [
     { name = "Pierre Augier", email = "pierre.augier@univ-grenoble-alpes.fr" },
 ]
