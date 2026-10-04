@@ -53,3 +53,6 @@ format-check = {composite = ["format-py-check", "format-md-check"]}
 
 [tool.pdm.options]
 lock = ["-G", ":all"]
+
+[tool.pdm.resolution]
+exclude-newer = "7d"
