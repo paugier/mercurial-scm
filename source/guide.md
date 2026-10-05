@@ -51,7 +51,7 @@ As first step, you should teach Mercurial your name. For that you open the file 
 (or `mercurial.ini` in your home directory for Windows) with a text-editor and add the ui
 section (user interaction) with your username:
 
-```
+```ini
 [ui]
 username = Mr. Johnson <johnson@smith.com>
 ```
@@ -79,13 +79,13 @@ hg commit
 
 output of hg add:
 
-```
+```text
 adding hello.py
 ```
 
 display of hg commit (with your message):
 
-```
+```text
 Initial commit.
 
 HG: Enter commit message.  Lines beginning with 'HG:' are removed.
@@ -113,7 +113,7 @@ hg log
 
 output of hg log:
 
-```
+```text
 changeset:   0:a5ecbf5799c8
 user:        Mr. Johnson
 date:        Sun Nov 20 11:00:00 2011 +0100
@@ -123,7 +123,7 @@ summary:     Initial commit.
 ````{note}
 By default Log only shows the first line of the commit message. To show the full message, use
 
-```
+```sh
 hg log -v
 ```
 ````
@@ -131,9 +131,9 @@ hg log -v
 ````{note}
 You can also go into an existing directory with files and init the repository there.
 
-```
-$ cd project
-$ hg init
+```sh
+cd project
+hg init
 ```
 ````
 
