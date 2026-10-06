@@ -14,4 +14,5 @@ hidden:
 maxdepth: 2
 ---
 contribute-website.md
+heptapod.md
 ```
