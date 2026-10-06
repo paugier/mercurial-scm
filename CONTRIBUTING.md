@@ -42,7 +42,7 @@ and what is not part of the website anymore is removed. If the result looks wron
 ## Sending changes
 
 This project uses basically the same workflow as Mercurial itself: see
-https://wiki.mercurial-scm.org/Heptapod for a more thorough overview.
+[Contributing through Heptapod](./heptapod.md) for a more thorough overview.
 
 Submit topic-based merge requests to https://foss.heptapod.net/mercurial/hg-website
 

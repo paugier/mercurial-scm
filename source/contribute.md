@@ -1,7 +1,7 @@
 # Contribute
 
 The development repository is https://foss.heptapod.net/mercurial/mercurial-devel (see
-https://wiki.mercurial-scm.org/Heptapod).
+[](./heptapod.md)).
 
 The historical repository can be found at https://www.mercurial-scm.org/repo/hg.
 
