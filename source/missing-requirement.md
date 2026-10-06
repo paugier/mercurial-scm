@@ -77,7 +77,7 @@ configuration option may be used to instruct Mercurial to create older repositor
 formats. For example, to convert a `dotencode` repository into the previous format, the
 command
 
-```
+```sh
 hg --config format.dotencode=0 clone --pull repoA repoB
 ```
 
