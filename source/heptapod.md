@@ -21,11 +21,11 @@ We recommend you start with the
 
 ______________________________________________________________________
 
-## 1. For Contributors
+## For Contributors
 
 This section will present the workflow from a contributor's perspective.
 
-### 1.1. Building Your Changes
+### Building Your Changes
 
 Each contribution should be made in a series of small and independent patches, see
 https://www.mercurial-scm.org/wiki/ContributingChanges.
@@ -37,7 +37,7 @@ We strongly recommend you enable the `evolve` extension too from the same Python
 This is covered by
 [Heptapod's Quickstart Guide](https://heptapod.net/pages/quick-start-guide.html)
 
-### 1.2. Joining the Project on Heptapod
+### Joining the Project on Heptapod
 
 You need to create an account on foss.heptapod.net and request `Developer` access to
 [the project](https://foss.heptapod.net/mercurial/mercurial-devel) by clicking the link
@@ -46,7 +46,7 @@ just under the logo, it should be granted to you very quickly.
 People from Octobus have plans to improve the drive-by contribution experience to remove
 this step, but the development effort required is non-trivial.
 
-### 1.3. Sharing and testing your changes
+### Sharing and testing your changes
 
 While developing your changes, you can push them to Heptapod to test a full CI run[^1] or
 get early feedback from specific people pre-review.
@@ -67,7 +67,7 @@ example, to have a unique URL to check the results of CI runs), however please m
 MR as "Draft" until it is ready for review. This is done using the pre-built button in
 GitLab.
 
-### 1.4. Submitting your change for review
+### Submitting your change for review
 
 When your changes are ready for review, simply take the following actions:
 
@@ -79,7 +79,7 @@ When your changes are ready for review, simply take the following actions:
 The change will then be picked up by reviewers who will provide feedback and eventually
 accept it.
 
-### 1.5. Discussing and applying feedback
+### Discussing and applying feedback
 
 If some aspect of your patches needs to be clarified or changed, reviewers will:
 
@@ -95,7 +95,7 @@ Do not mark the thread as resolved, that's the reviewer's responsibility.
 Once all feedback and questions have been answered, you should leave a comment directed
 at whoever asked for changes/questions.
 
-### 1.6. When your series is accepted
+### When your series is accepted
 
 In the general case, your series will eventually be accepted and become part of the main
 history.
@@ -105,12 +105,12 @@ sense), the topic will fade away and the MR will be automatically detected as "m
 If the changesets needed a rebase or some small adjustment, changeset evolution will keep
 track of that for you and a simple `hg evolve` after pulling should be enough.
 
-### 1.7. Getting a series out of the review queue
+### Getting a series out of the review queue
 
 If a series needs to be stashed away or if lengthy rework is expected, it is useful to
 get it out of the review queue. To do so, mark it as "Draft".
 
-### 1.8. Fully abandoning a series
+### Fully abandoning a series
 
 If you want to fully abandon a series, keep track of your topic parent (usually `s0` in
 `hg stack`), then simply use `hg prune -r topic(mytopic)` and push the (former) parent of
@@ -119,7 +119,7 @@ descendant of the topic parent will work)
 
 ______________________________________________________________________
 
-## 2. For reviewers
+## For reviewers
 
 This section will present the workflow from a reviewer's perspective.
 
@@ -130,7 +130,7 @@ patch series to wait for the CI to complete and merge the change. You do not nee
 CI is done for email patches.
 ```
 
-### 2.1. Setup
+### Setup
 
 First set up yourself to
 [contribute through Heptapod](https://heptapod.net/pages/quick-start-guide.html).
@@ -144,14 +144,14 @@ server-side check soon, for now this is the best we've got.
 auto-publish = abort
 ```
 
-### 2.2. Checking for series that need review
+### Checking for series that need review
 
 These are all non-"Draft" series with "Mercurial Review" as a reviewer.
 
 Here's a bookmark:
 https://foss.heptapod.net/mercurial/mercurial-devel/-/merge_requests?scope=all&state=opened&reviewer_username=mercurial.review&draft=no
 
-### 2.3. Providing feedback on a review
+### Providing feedback on a review
 
 If a series needs changes or clarification:
 
@@ -168,13 +168,13 @@ The reviewer (you), is responsible for marking thread as **resolved**. This will
 easy to remember because merging is disallowed through the Web UI when conversations are
 not resolved.
 
-### 2.4. Approving a Series
+### Approving a Series
 
 There is an `Approve` button on MR, click it and your approval will be visible in the UI.
 This is useful for users that don't have merge rights or simply to signify "Looks good,
 but I want someone else to also look at this".
 
-### 2.5. "Merging" the change
+### "Merging" the change
 
 ```{note}
 This is the GitLab's notion of merge which does *not* necessarily mean a
@@ -192,9 +192,9 @@ validates that the CI is happy about the change you are about to merge.
 
 ______________________________________________________________________
 
-## 3. References
+## References
 
-### 3.1. Series States
+### Series States
 
 Here is a summary of the states a series can be in.
 
@@ -207,9 +207,9 @@ Here is a summary of the states a series can be in.
 
 ______________________________________________________________________
 
-## 4. Current issues
+## Current issues
 
-### 4.1. Per-commit thread
+### Per-commit thread
 
 We cannot currently easily comment on the commit message. GitLab is actively working on
 it. The effort can be tracked here: https://gitlab.com/gitlab-org/gitlab/-/issues/19691.
@@ -217,7 +217,7 @@ it. The effort can be tracked here: https://gitlab.com/gitlab-org/gitlab/-/issue
 In the meantime, people can still quote commit messages in regular comments and use the
 first line of the commit for example.
 
-### 4.2. Stacked topics
+### Stacked topics
 
 - Merging a stacked topic currently also merges the underlying topics
 
@@ -232,7 +232,7 @@ bear with us. Help is always appreciated.
 
 ______________________________________________________________________
 
-## 5. External tooling
+## External tooling
 
 It is fairly easy to connect automation to GitLab, currently nothing of the sort (that
 could work well with Mercurial) has been written, but if someone wants to enforce some of
