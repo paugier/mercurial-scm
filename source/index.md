@@ -138,5 +138,6 @@ hidden:
 maxdepth: 2
 ---
 steering-committee.md
+code-of-conduct.md
 contribute-website.md
 ```
