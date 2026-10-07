@@ -77,13 +77,13 @@ hg commit
 
 (your default editor opens, enter the commit message, save and close.)
 
-output of hg add:
+output of `hg add`:
 
 ```text
 adding hello.py
 ```
 
-display of hg commit (with your message):
+display of `hg commit` (with your message):
 
 ```text
 Initial commit.
@@ -96,7 +96,7 @@ HG: branch 'default'
 HG: added hello.py
 ```
 
-````{note}
+````{tip}
 To avoid switching to an editor, you can also enter the commit message on the command-line:
 
 ```sh
@@ -105,13 +105,13 @@ hg commit -m "[MESSAGE]"
 
 ````
 
-You can then look into your initial history with hg log:
+You can then look into your initial history with `hg log`:
 
 ```sh
 hg log
 ```
 
-output of hg log:
+output of `hg log`:
 
 ```text
 changeset:   0:a5ecbf5799c8
