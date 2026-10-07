@@ -242,7 +242,7 @@ directory named `REPO`:
 $ vim REPO/.hg/hgrc
 ...
 [extensions]
-hgext.convert=
+convert =
 ...
 ```
 
