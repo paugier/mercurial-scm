@@ -64,6 +64,15 @@ Now you add a new folder in which you want to work:
 hg init project
 ```
 
+````{tip}
+You can also go into an existing directory with files and init the repository there.
+
+```sh
+cd project
+hg init
+```
+````
+
 ##### Add files and track them
 
 Enter the project folder, create some files, then add and commit them.
@@ -125,15 +134,6 @@ By default Log only shows the first line of the commit message. To show the full
 
 ```sh
 hg log -v
-```
-````
-
-````{note}
-You can also go into an existing directory with files and init the repository there.
-
-```sh
-cd project
-hg init
 ```
 ````
 
