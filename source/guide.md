@@ -22,8 +22,8 @@ Alternatives to this guide and further reading:
   the concepts behind Mercurial.
 
 ```{note}
-This guide doesn't require any prior knowledge of version control systems (though
-subversion users will likely feel at home quite quickly). Basic command line abilities
+This guide doesn't require any prior knowledge of version control systems (though Git or
+Subversion users will likely feel at home quite quickly). Basic command line abilities
 are helpful, because we'll use the command line client.
 ```
 
