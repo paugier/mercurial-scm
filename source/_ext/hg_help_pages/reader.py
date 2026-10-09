@@ -44,7 +44,7 @@ THIRD_PARTY_EXTENSIONS = ("topic", "evolve", "hggit")
 
 # Show the options flagged as deprecated, experimental or advanced, as
 # `hg help --verbose` does.
-VERBOSE_OPTIONS = False
+VERBOSE_OPTIONS = True
 
 
 def _str(value: bytes) -> str:
