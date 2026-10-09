@@ -25,7 +25,10 @@ class Command:
 
     @property
     def page(self) -> str:
-        return self.name.replace("::", "_")
+        result = self.name.replace("::", "_")
+        if self.extension is not None:
+            result = self.extension + "." + result
+        return result
 
 
 @dataclass
