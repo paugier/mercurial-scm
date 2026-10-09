@@ -46,6 +46,10 @@ THIRD_PARTY_EXTENSIONS = ("topic", "evolve", "hggit")
 # `hg help --verbose` does.
 VERBOSE_OPTIONS = True
 
+# Show the extensions flagged as deprecated, experimental or advanced, as
+# `hg help --verbose` does.
+VERBOSE_EXTENSIONS = True
+
 
 def _str(value: bytes) -> str:
     return value.decode("utf-8")
@@ -181,8 +185,9 @@ def _documented_extensions(ui) -> list[str]:
     """The third party extensions, then the ones listed by `hg help extensions`."""
     names = list(THIRD_PARTY_EXTENSIONS)
     for name, summary in sorted(hg_extensions.disabled().items()):
-        if any(keyword in summary for keyword in hg_help._exclkeywords):
-            continue
+        if not VERBOSE_EXTENSIONS:
+            if any(keyword in summary for keyword in hg_help._exclkeywords):
+                continue
         names.append(_str(name))
     return names
 
