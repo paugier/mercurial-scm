@@ -37,7 +37,7 @@ def render_pages(data: HelpData) -> dict[str, str]:
     if data.global_options:
         md.append(f"({GLOBAL_OPTIONS_LABEL})=")
         md.append("## Global options\n")
-        md.append("These options are accepted by all the commands.\n")
+        md.append("These options are accepted by all commands.\n")
         md.append("```{eval-rst}\n" + data.global_options + "\n```")
     pages["commands.md"] = "\n".join(md)
 
