@@ -102,15 +102,15 @@ def _render_command(ui, key: bytes, entry, extension: str | None = None) -> Comm
     if body:
         rst.append(body + "\n")
     rst.append(".. rubric:: Options\n")
-    # the global options are only listed on the page of the commands
-    rst.append(
-        f"Every command accepts the :ref:`global options <{GLOBAL_OPTIONS_LABEL}>`.\n"
-    )
     if entry[1]:
         table = hg_help.optrst(b"options", entry[1], VERBOSE_OPTIONS, ui)
         options = options_rst(_str(table))
         if options:
             rst.append(options)
+    # the global options are only listed on the page of the commands
+    rst.append(
+        f"Every command also accepts the :ref:`global options <{GLOBAL_OPTIONS_LABEL}>`.\n"
+    )
 
     category = getattr(func, "helpcategory", None)
     return Command(

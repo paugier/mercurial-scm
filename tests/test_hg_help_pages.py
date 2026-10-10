@@ -150,9 +150,9 @@ def test_global_options(pages):
     commands = [page for page in pages if page.startswith("commands/")]
     assert commands
     for page in commands:
+        assert ".. rubric:: Options\n\n" in pages[page], page
         assert (
-            ".. rubric:: Options\n\n"
-            "Every command accepts the "
+            "Every command also accepts the "
             ":ref:`global options <hg-global-options>`.\n"
         ) in pages[page], page
         assert "``--repository REPO``" not in pages[page], page
