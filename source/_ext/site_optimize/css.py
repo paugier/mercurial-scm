@@ -217,7 +217,9 @@ def relative_url(path: str, url: str, base: str = BUNDLE) -> str:
     >>> relative_url("_static/vendor/css/all.css", "../fonts/solid.woff2?v=1")
     'vendor/fonts/solid.woff2?v=1'
     """
-    url, separator, suffix = re.match(r"([^?#]*)([?#]?)(.*)", url).groups()
+    match = re.match(r"([^?#]*)([?#]?)(.*)", url)
+    assert match is not None  # help mypy
+    url, separator, suffix = match.groups()
     target = posixpath.normpath(posixpath.join(posixpath.dirname(path), url))
     relative = posixpath.relpath(target, posixpath.dirname(base))
     return relative + separator + suffix
