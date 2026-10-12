@@ -88,7 +88,7 @@ class HelpData:
     @functools.cached_property
     def command_pages(self) -> dict[str, str]:
         """Map the names and aliases of the commands to their page."""
-        pages = {}
+        pages: dict[str, str] = {}
         for command in self.commands:
             for name in command.aliases:
                 pages.setdefault(name, command.page)
@@ -100,7 +100,7 @@ class HelpData:
     @functools.cached_property
     def topic_pages(self) -> dict[str, str]:
         """Map the names and aliases of the topics to their page."""
-        pages = {}
+        pages: dict[str, str] = {}
         for topic in self.topics:
             for name in [topic.name, *topic.aliases]:
                 pages.setdefault(name, topic.page)
