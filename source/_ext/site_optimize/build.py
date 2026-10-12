@@ -48,7 +48,7 @@ class Optimizer:
             if "_static" not in path.relative_to(self.outdir).parts
         }
         bundled = self.bundled_style_sheets(pages)
-        self.imported = []
+        self.imported: list[str] = []
         version = self.write_bundle(bundled, pages) if bundled else None
         if version is None:
             version = self.current_version()
