@@ -53,6 +53,9 @@ lint:check:
   script:
     - pdm sync -G format
     - pdm run format-check
+    - pdm sync -G web -G test
+    - pdm add -G types  # FIXME use `pdm sync` after updating pdm.lock
+    - pdm run type-check
 
 
 test:

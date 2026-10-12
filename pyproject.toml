@@ -33,6 +33,14 @@ format = [
     "mdformat",
     "mdformat-myst",
 ]
+types = [
+    "lxml-stubs",
+    "mypy",
+    "types-Pygments",
+    "types-docutils",
+    "types-pytz",
+    "types-tinycss2",
+]
 test = [
     "pytest>=9.1.1",
 ]
@@ -50,6 +58,22 @@ format = {composite = ["format-py", "format-md"]}
 format-py-check = "ruff format --check source"
 format-md-check = {shell="mdformat --check *.md source/*.md source/news/2*/*.md"}
 format-check = {composite = ["format-py-check", "format-md-check"]}
+type-check = "mypy"
 
 [tool.pdm.options]
 lock = ["-G", ":all"]
+
+[tool.mypy]
+files = [
+    "source/_ext",
+    "tests",
+]
+warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+module = [
+    "fontTools.*",
+    "imagesize.*",
+    "mercurial.*",
+]
+follow_untyped_imports = true
