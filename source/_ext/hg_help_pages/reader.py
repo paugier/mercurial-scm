@@ -214,8 +214,8 @@ def collect() -> HelpData:
 
     # core commands
     table = dict(hg_commands.table)
-    shown, _summaries, _synonyms = hg_help._getcategorizedhelpcmds(ui, table, None)
-    shown = {_str(name) for names in shown.values() for name in names}
+    cats, h, syns = hg_help._getcategorizedhelpcmds(ui, table, None)
+    shown = {_str(name) for names in cats.values() for name in names}
     by_category = {}
     hidden = []
     for key, entry in sorted(table.items()):
