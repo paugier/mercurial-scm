@@ -84,7 +84,10 @@ def subset_font(font: Path, directory: Path, codepoints: set[int]) -> str | None
 
     std_logging.getLogger("fontTools").setLevel(std_logging.WARNING)
     with TTFont(font, recalcTimestamp=False) as content:
-        wanted = codepoints & set(content.getBestCmap())
+        cmap = content.getBestCmap()
+        if not cmap:
+            return None
+        wanted = codepoints & set(cmap)
         if not wanted:
             return None
         options = subset.Options(flavor="woff2", layout_features=["*"])
