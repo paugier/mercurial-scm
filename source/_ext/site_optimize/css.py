@@ -149,10 +149,10 @@ class Purger:
                 return ""
             return f"{start}{{{content}}}"
         if keyword == "font-face" and self.font_face is not None:
-            declarations = tinycss2.parse_blocks_contents(
+            items = tinycss2.parse_blocks_contents(
                 rule.content, skip_comments=True, skip_whitespace=True
             )
-            return self.font_face(declarations, path)
+            return self.font_face(items, path)
         if keyword in ("font-face", "page"):
             content = declarations(rule.content, path)
         else:
