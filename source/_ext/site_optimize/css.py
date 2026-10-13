@@ -200,7 +200,7 @@ def declaration(item) -> str:
 def rebase_urls(css: str, path: str) -> str:
     """Make the URLs relative to the style sheet gathering all the others."""
 
-    def rebase(match: re.Match) -> str:
+    def rebase(match: re.Match[str]) -> str:
         url = match.group(2)
         if is_external(url):
             return match.group(0)
@@ -234,7 +234,7 @@ def escape_non_ascii(css: str) -> tuple[str, set[int]]:
     """
     codepoints = set()
 
-    def escape(match: re.Match) -> str:
+    def escape(match: re.Match[str]) -> str:
         codepoint = ord(match.group(0))
         codepoints.add(codepoint)
         return f"\\{codepoint:x} "
