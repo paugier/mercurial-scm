@@ -73,7 +73,9 @@ def _is_debug(name: str) -> bool:
     return name.startswith("debug")
 
 
-def _render_command(ui, key: bytes, entry, extension: str | None = None) -> Command:
+def _render_command(
+    ui: uimod.ui, key: bytes, entry, extension: str | None = None
+) -> Command:
     """Build the page of a command from its entry in a command table."""
     name, *aliases = _names(key)
     func = entry[0]
@@ -123,7 +125,7 @@ def _render_command(ui, key: bytes, entry, extension: str | None = None) -> Comm
     )
 
 
-def _render_topic(ui, entry) -> Topic:
+def _render_topic(ui: uimod.ui, entry) -> Topic:
     """Build the page of a topic from its entry in `help.helptable`."""
     names, title, loader = entry[0:3]
     names = [_str(n) for n in names]
@@ -145,7 +147,7 @@ def _render_topic(ui, entry) -> Topic:
 
 
 def _render_extension(
-    ui, name: str, module, core_pages: set[str], undocumented: set[str]
+    ui: uimod.ui, name: str, module, core_pages: set[str], undocumented: set[str]
 ) -> Extension:
     """Build the page of a loaded extension and the pages of its commands."""
     doc = hg_help.ext_help(ui, module) or b"(no help text available)"
@@ -177,7 +179,7 @@ def _render_extension(
     return Extension(name=name, summary=summary, rst="\n".join(rst), commands=commands)
 
 
-def _documented_extensions(ui) -> list[str]:
+def _documented_extensions(ui: uimod.ui) -> list[str]:
     """The third party extensions, then the ones listed by `hg help extensions`."""
     names = list(THIRD_PARTY_EXTENSIONS)
     for name, summary in sorted(hg_extensions.disabled().items()):
