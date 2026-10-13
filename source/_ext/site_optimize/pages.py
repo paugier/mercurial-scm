@@ -79,7 +79,7 @@ def optimize_head(
     bundle = posixpath.normpath(posixpath.join(root, BUNDLE)) + f"?v={version}"
     done = bool(_BUNDLE_VERSION_RE.search(head))
 
-    def link(match: re.Match) -> str:
+    def link(match: re.Match[str]) -> str:
         nonlocal done
         values = attributes(match.group(0))
         path = local_path(values.get("href", ""), page)
@@ -93,7 +93,7 @@ def optimize_head(
             return f'    <link rel="stylesheet" type="text/css" href="{bundle}" />\n'
         return match.group(0)
 
-    def script(match: re.Match) -> str:
+    def script(match: re.Match[str]) -> str:
         values = attributes(f"<script {match.group(1)}>")
         path = local_path(values.get("src", ""), page)
         if path is None or "defer" in values or "async" in values:
@@ -124,7 +124,7 @@ def set_image_sizes(
     """
     content_images = 0
 
-    def image(match: re.Match) -> str:
+    def image(match: re.Match[str]) -> str:
         nonlocal content_images
         tag = match.group(0)
         values = attributes(tag)
