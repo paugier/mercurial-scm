@@ -55,6 +55,20 @@ lint:check:
     - pdm run format-check
 
 
+mypy:
+  stage: lint
+  needs:
+    - job: "image:build"
+      optional: true
+  script:
+    - pdm sync -G web -G test -G types
+    - pdm run type-check
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push"
+      when: manual
+  allow_failure: true
+
+
 test:
   stage: test
   needs:
