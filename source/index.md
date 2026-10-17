@@ -39,7 +39,7 @@ projects of any size and offers an easy and intuitive interface.
 *Clone a project and push changes*
 
 ```sh
-hg clone https://www.mercurial-scm.org/repo/hello
+hg clone https://repo.mercurial-scm.org/hello
 cd hello
 # (edit files)
 hg add (new files)
