@@ -164,7 +164,6 @@ blog_title = "Mercurial"
 blog_path = "news"
 blog_post_pattern = "news/*/*"
 blog_feed_fulltext = True
-blog_feed_subtitle = "Versioning"
 fontawesome_included = True
 post_redirect_refresh = 1
 post_auto_image = 1
