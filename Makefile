@@ -35,9 +35,11 @@ lock:
 	pdm lock
 
 format:
+	pdm sync -G format
 	pdm format
 
 format-check:
+	pdm sync -G format
 	pdm format-check
 
 test:
