@@ -13,7 +13,7 @@ A static archive of most of the (non-spam) pages from the former wiki is kept at
 
 Certain important pages have been or will be redirected from the archive to their new
 version on this website. **If anything important is missing and should be migrated to
-either of those places, please reach out.**
+either of those places, please [reach out](./community.md).**
 
 You can read the announcement of the wiki's demise in our
 [mailing list](https://lists.mercurial-scm.org/pipermail/mercurial/2025-July/106680.html).
