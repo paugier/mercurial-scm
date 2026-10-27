@@ -11,7 +11,7 @@ BUILDDIR      = build
 ROOT_DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
 
 html:
-	pdm install
+	pdm sync -G web
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
 	@echo "$$(hg id -R $(ROOT_DIR) -q)" > $(BUILDDIR)/html/version
 	@echo "file://$(ROOT_DIR)$(BUILDDIR)/html/index.html"
@@ -41,5 +41,5 @@ format-check:
 	pdm format-check
 
 test:
-	pdm install
+	pdm sync -G web -G test
 	pdm test
