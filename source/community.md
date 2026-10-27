@@ -10,6 +10,24 @@ Where to get help, discuss Mercurial and follow its development.
 - **IRC**: `#mercurial` on [Libera.Chat](https://libera.chat/) (`irc.libera.chat`). This
   channel is unofficially bridged to the Matrix one.
 
+## Issue trackers
+
+To report bugs or file feature requests, use the following links:
+
+- [Mercurial](https://foss.heptapod.net/mercurial/mercurial-devel/-/issues)
+
+- [Evolve extension](https://foss.heptapod.net/mercurial/mercurial-devel/-/issues?label_name%5B%5D=evolution)
+  (add `evolve` label to new items)
+
+- [Topic extension](https://foss.heptapod.net/mercurial/mercurial-devel/-/issues?label_name%5B%5D=topic-experiment)
+  (add `topic-experiment` label to new items)
+
+- [hg-git](https://foss.heptapod.net/mercurial/hg-git/-/issues)
+
+- [TortoiseHg](https://foss.heptapod.net/mercurial/tortoisehg/thg/-/issues)
+
+- [Mercurial website](https://foss.heptapod.net/mercurial/hg-website/-/issues)
+
 ## Mailing lists
 
 | List                                          | Purpose                                      | Links                                                                                                                                                         |

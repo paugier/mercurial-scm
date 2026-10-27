@@ -6,6 +6,9 @@ and uses [sphinx-book-theme] and [ablog]. Most content is written in .md files u
 
 The repository is hosted on https://foss.heptapod.net/mercurial/hg-website.
 
+If you only want to report an issue or file a feature request, see
+[](./community.md#issue-trackers).
+
 ## Install and test locally
 
 One needs to install [PDM] and `make`.
