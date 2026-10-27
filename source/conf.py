@@ -159,7 +159,7 @@ myst_linkify_fuzzy_links = False
 
 # taken and adapted from https://github.com/choldgraf/choldgraf.github.io
 
-blog_baseurl = ""
+blog_baseurl = "https://www.mercurial-scm.org"
 blog_title = "Mercurial"
 blog_path = "news"
 blog_post_pattern = "news/*/*"
