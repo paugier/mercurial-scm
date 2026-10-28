@@ -7,6 +7,9 @@ BUILDDIR      = build
 
 ROOT_DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
 
+.PHONY: all
+all: format html
+
 .PHONY: html
 html:
 	pdm sync -G web
