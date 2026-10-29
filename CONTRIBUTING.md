@@ -20,6 +20,29 @@ One needs to install [PDM] and `make`.
 | `make test`   | Run the tests       |
 | `make lock`   | Relock dependencies |
 
+## Advanced PDM usage
+
+Occasionally the website needs to be upgraded. The current versions of the dependencies
+are locked in `pdm.lock` file. Here's how to work with it safely:
+
+- First see if there are any outdated packages: `pdm outdated`. You can also specify a
+  package or a pattern (glob) of packages and `--include-sub` to also show
+  sub-dependencies: `pdm outdated --include-sub sphinx*`.
+
+- Then try updating and see if hg-website works correctly: `pdm update -G web ablog`. To
+  also update sub-dependencies recursively, use `--update-eager`, and to see what would
+  be updated without installing anything, use `--dry-run`:
+  `pdm update -G web ablog --update-eager --dry-run`.
+
+- To update some packages to a release candidate, use `--prerelease` flag:
+  `pdm update --prerelease -G web mercurial`.
+
+Also useful:
+
+- To see what depends on a package, try `pdm list --tree --reverse lxml`.
+
+- To update all packages, try `pdm update --update-all`.
+
 ## Size of the website
 
 Once the pages are written, the build reduces what the readers have to download (see
