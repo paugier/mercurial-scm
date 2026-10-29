@@ -55,6 +55,21 @@ lint:check:
     - pdm run format-check
 
 
+pip-audit:
+  stage: lint
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule"'
+    - if: '$CI_PIPELINE_SOURCE == "push"'
+  needs:
+    - job: "image:build"
+      optional: true
+  script:
+    - pdm sync -G :all
+    - pdm add --dev --no-lock pip-audit
+    - pdm run pip-audit --strict --desc on --aliases on
+  allow_failure: true
+
+
 test:
   stage: test
   needs:
