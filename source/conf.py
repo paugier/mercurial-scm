@@ -34,6 +34,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.autodoc",
     "sphinx.ext.viewcode",
+    "sphinx.ext.graphviz",
     "sphinx_design",
     # generates the pages of `hg help` in source/help
     "hg_help_pages",
