@@ -188,7 +188,7 @@ The rationale behind Mercurial's global tags is briefly justified in
 (January 2009).
 
 See also:
-[Giving a persistent name to a revision](http://hgbook.red-bean.com/read/managing-releases-and-branchy-development.html#id383990).
+[Giving a persistent name to a revision](https://book.mercurial-scm.org/read/branch.html#giving-a-persistent-name-to-a-revision).
 
 ## Behavioral differences
 
