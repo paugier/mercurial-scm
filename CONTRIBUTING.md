@@ -13,13 +13,13 @@ If you only want to report an issue or file a feature request, see
 
 One needs to install [PDM] and `make`.
 
-| commands             |                     |
-| -------------------- | ------------------- |
-| `make html`          | Local build         |
-| `make format`        | Format sources      |
-| `make` or `make all` | Format and build    |
-| `make test`          | Run the tests       |
-| `make lock`          | Relock dependencies |
+| commands             |                         |
+| -------------------- | ----------------------- |
+| `make html`          | Local build             |
+| `make format`        | Format sources          |
+| `make` or `make all` | Format and build        |
+| `make test`          | Run the tests           |
+| `make lock`          | Relock all dependencies |
 
 ## Advanced PDM usage
 
