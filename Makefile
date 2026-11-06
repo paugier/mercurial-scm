@@ -10,6 +10,19 @@ ROOT_DIR := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
 .PHONY: all
 all: format html
 
+.PHONY: help
+help:
+	@echo 'Commonly used make targets:'
+	@echo '  html         - build HTML docs using Sphinx'
+	@echo '  sphinx-help  - list all available Sphinx targets and formats'
+	@echo '  format       - format source files'
+	@echo '  format-check - check formatting of source files'
+	@echo '  test         - run all tests'
+	@echo '  clean        - remove files created by other targets'
+	@echo ''
+	@echo 'Additional Sphinx formats:'
+	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
+
 .PHONY: html
 html:
 	pdm sync -G web
@@ -21,10 +34,6 @@ html:
 clean:
 	rm -rf source/help
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS)
-
-.PHONY: sphinx-help
-sphinx-help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 .PHONY: Makefile
 
