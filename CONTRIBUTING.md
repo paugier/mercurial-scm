@@ -10,13 +10,13 @@ The repository is hosted on https://foss.heptapod.net/mercurial/hg-website.
 
 One needs to install [PDM] and `make`.
 
-| commands             |                     |
-| -------------------- | ------------------- |
-| `make html`          | Local build         |
-| `make format`        | Format sources      |
-| `make` or `make all` | Format and build    |
-| `make test`          | Run the tests       |
-| `make lock`          | Relock dependencies |
+| commands             |                         |
+| -------------------- | ----------------------- |
+| `make html`          | Local build             |
+| `make format`        | Format sources          |
+| `make` or `make all` | Format and build        |
+| `make test`          | Run the tests           |
+| `make lock`          | Relock all dependencies |
 
 ## Size of the website
 
