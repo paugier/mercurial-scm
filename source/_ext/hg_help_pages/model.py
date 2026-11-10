@@ -58,6 +58,20 @@ class Extension:
 
 
 @dataclass
+class DisambiguationPage:
+    """A disambiguation page for a list of commands."""
+
+    name: str
+    summary: str
+    rst: str
+    commands: list[Command] = field(default_factory=list)
+
+    @property
+    def page(self) -> str:
+        return self.name.replace("::", "_")
+
+
+@dataclass
 class HelpData:
     """Everything documented on the website."""
 
@@ -67,6 +81,7 @@ class HelpData:
     # (category title, topics), in the order of `hg help`
     topic_categories: list[tuple[str, list[Topic]]]
     extensions: list[Extension]
+    disambiguation_pages: list[DisambiguationPage]
     global_options: str
     # names which exist in Mercurial but have no page on the website
     undocumented: set[str]

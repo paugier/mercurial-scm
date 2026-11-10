@@ -7,6 +7,7 @@ before any Mercurial module.
 from __future__ import annotations
 
 import functools
+import itertools
 
 from textwrap import dedent
 
@@ -22,7 +23,14 @@ from mercurial import (
 )
 from mercurial.main_script import cmd_finder
 
-from .model import Command, Extension, HelpData, HelpGenerationError, Topic
+from .model import (
+    Command,
+    DisambiguationPage,
+    Extension,
+    HelpData,
+    HelpGenerationError,
+    Topic,
+)
 from .rst import (
     GLOBAL_OPTIONS_LABEL,
     heading,
@@ -124,6 +132,33 @@ def _render_command(ui, key: bytes, entry, extension: str | None = None) -> Comm
         category=category,
         rst="\n".join(rst),
         extension=extension,
+    )
+
+
+def _render_disambiguation_page(
+    ui: uimod.ui, name: str, commands: list[Command]
+) -> DisambiguationPage:
+    """Build a disambiguation page of commands that all share the same name."""
+    summary = f"``hg {name}`` command is provided by multiple sources."
+
+    rst = [":orphan:\n", heading(f"hg {name}", "="), summary, "\n"]
+
+    rst.append(".. rubric:: Sources\n")
+
+    for command in commands:
+        if command.extension is None:
+            source = "Mercurial core"
+        else:
+            source = f"the :doc:`{command.extension} </help/extensions/{command.extension}>` extension"
+        rst.append(
+            f"- :doc:`{name} </help/commands/{command.page}>` command from {source}: {command.summary}\n"
+        )
+
+    return DisambiguationPage(
+        name=name,
+        summary=summary,
+        rst="\n".join(rst),
+        commands=commands,
     )
 
 
@@ -315,11 +350,36 @@ def collect() -> HelpData:
     for category, category_topics in sorted(topics.items()):
         topic_categories.append((category, category_topics))
 
+    # disambiguation pages for commands present in multiple sources
+    commands_by_name = {}
+    for command in itertools.chain.from_iterable(
+        extension.commands
+        for extension in sorted(extensions, key=lambda extension: extension.name)
+    ):
+        commands_by_name.setdefault(command.name, []).append(command)
+    duplicated_commands = {}
+    for name, commands in commands_by_name.items():
+        if len(commands) > 1:
+            duplicated_commands[name] = commands
+    disambiguation_pages = []
+    for name, commands in duplicated_commands.items():
+        for command in commands:
+            command.name = f"{command.extension}.{command.name}"
+        disambiguation_page = _step(
+            f"disambiguation page for {name!r}",
+            _render_disambiguation_page,
+            ui,
+            name,
+            commands,
+        )
+        disambiguation_pages.append(disambiguation_page)
+
     data = HelpData(
         version=mercurial_version(),
         command_categories=command_categories,
         topic_categories=topic_categories,
         extensions=extensions,
+        disambiguation_pages=disambiguation_pages,
         global_options=global_options,
         undocumented=undocumented,
         warnings=warnings,
@@ -328,6 +388,7 @@ def collect() -> HelpData:
         ("commands", [c.page for c in data.commands]),
         ("topics", [t.page for t in data.topics]),
     ):
+        # page name conflicts not caught by disambiguation_pages
         conflicts = page_name_conflicts(pages)
         if conflicts:
             raise HelpGenerationError(

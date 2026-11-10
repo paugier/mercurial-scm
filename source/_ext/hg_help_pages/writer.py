@@ -32,6 +32,8 @@ def render_pages(data: HelpData) -> dict[str, str]:
         pages[f"topics/{topic.page}.rst"] = topic.rst
     for extension in data.extensions:
         pages[f"extensions/{extension.page}.rst"] = extension.rst
+    for disambiguation_page in data.disambiguation_pages:
+        pages[f"commands/{disambiguation_page.page}.rst"] = disambiguation_page.rst
 
     md = _index("Commands", data, data.command_categories, "commands")
     if data.global_options:
