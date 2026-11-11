@@ -74,6 +74,7 @@ mercurial = false
 
 [tool.mypy]
 files = [
+    "contrib",
     "source/_ext",
     "tests",
 ]
