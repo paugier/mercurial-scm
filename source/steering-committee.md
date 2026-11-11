@@ -15,8 +15,9 @@ run by the community, coordinated by the committers and reviewers.
 
 ## Current members
 
-As of January 2026, the members are (in first name alphabetical order):
+As of November 2026, the members are (in first name alphabetical order):
 
+- Arun Kulshreshtha
 - Georges Racinet
 - Matt Harbison
 - Pierre-Yves David
