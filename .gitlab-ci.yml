@@ -3,6 +3,7 @@ stages:
   - lint
   - test
   - doc
+  - deploy
 
 variables:
   DOCKER_IMAGE_PATH: registry.heptapod.net:443/mercurial/hg-website/ci/default
@@ -102,3 +103,32 @@ pages:
       - public
     expire_in: 5 days
   when: always
+
+
+# Publish the default branch to www.mercurial-scm.org. The server only lets
+# this key rsync into the website directory (see the `website` role in
+# hginfra). It needs these protected CI variables:
+#
+# - WEBSITE_DEPLOY_TARGET: `user@host` to rsync to
+# - WEBSITE_DEPLOY_SSH_KEY (file): the private key
+# - WEBSITE_DEPLOY_KNOWN_HOSTS (file): the server's SSH host keys
+#
+# The job does not run while WEBSITE_DEPLOY_TARGET is unset.
+deploy:
+  stage: deploy
+  needs:
+    - job: "lint:check"
+    - job: test
+    - job: pages
+      artifacts: true
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "branch/default" && $WEBSITE_DEPLOY_TARGET'
+  resource_group: website-deploy
+  script:
+    - install -m 700 -d ~/.ssh
+    - install -m 600 "$WEBSITE_DEPLOY_SSH_KEY" ~/.ssh/website-deploy
+    - install -m 600 "$WEBSITE_DEPLOY_KNOWN_HOSTS" ~/.ssh/known_hosts
+    - >
+      rsync --recursive --links --checksum --delete-after --delay-updates
+      --rsh "ssh -i $HOME/.ssh/website-deploy -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes"
+      "public/$CI_COMMIT_REF_NAME/" "$WEBSITE_DEPLOY_TARGET:./"
