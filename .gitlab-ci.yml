@@ -125,6 +125,13 @@ deploy:
     - if: '$CI_COMMIT_BRANCH == "branch/default" && $WEBSITE_DEPLOY_TARGET'
   resource_group: website-deploy
   script:
+    # A variable of the wrong type holds the key itself rather than its path,
+    # which a failing command would print in this public log.
+    - |
+      if ! test -f "$WEBSITE_DEPLOY_SSH_KEY" || ! test -f "$WEBSITE_DEPLOY_KNOWN_HOSTS"; then
+        echo "WEBSITE_DEPLOY_SSH_KEY and WEBSITE_DEPLOY_KNOWN_HOSTS must be variables of type File." >&2
+        exit 1
+      fi
     - install -m 700 -d ~/.ssh
     - install -m 600 "$WEBSITE_DEPLOY_SSH_KEY" ~/.ssh/website-deploy
     - install -m 600 "$WEBSITE_DEPLOY_KNOWN_HOSTS" ~/.ssh/known_hosts
